@@ -20,6 +20,14 @@ Rails.application.routes.draw do
 
   get 'questions/new'
 
+  get 'questions/edit'
+
+  get 'questions/update'
+
+  get 'questions/create'
+
+  get 'questions/destroy'
+
   get 'users/new'
 
   get 'users/create'
