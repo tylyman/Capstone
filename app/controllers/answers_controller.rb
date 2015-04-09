@@ -16,4 +16,7 @@ class AnswersController < ApplicationController
 
   def update
   end
+
+  def destroy
+  end
 end
