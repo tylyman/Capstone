@@ -1,44 +1,8 @@
 Rails.application.routes.draw do
-
-  get 'answers/index'
-
-  get 'answers/show'
-
-  get 'answers/new'
-
-  get 'answers/create'
-
-  get 'answers/edit'
-
-  get 'answers/update'
-
-  get 'events/new'
-
-  get 'events/create'
-
-  get 'events/update'
-
-  get 'events/edit'
-
-  get 'events/destroy'
-
-  get 'events/show'
-
-  get 'events/index'
-
-  get 'questions/index'
-
-  get 'questions/show'
-
-  get 'questions/new'
-
-  get 'questions/edit'
-
-  get 'questions/update'
-
-  get 'questions/create'
-
-  get 'questions/destroy'
+  
+  root to: "users#index"
+  
+  get 'users/index'
 
   get 'users/new'
 
@@ -52,9 +16,11 @@ Rails.application.routes.draw do
 
   get 'users/show'
 
-  get 'users/index'
-
   devise_for :users
 
-  root to: "users#index"
+  resources :answers #only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  resources :events #only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  resources :questions #only: [:index, :show, :new, :create, :edit, :update, :destroy]
+
+
 end
