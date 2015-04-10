@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   
   get '/contact', to: 'static_pages#contact', as: :contact
 
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'registrations' }
+  
   resources :users only: [:index, :show]
 
   resources :answers #only: [:index, :show, :new, :create, :edit, :update, :destroy]
