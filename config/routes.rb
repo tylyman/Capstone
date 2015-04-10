@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
   
-  get 'static_pages/home'
+  root 'static_pages#home'
 
-  get 'static_pages/about'
-
-  get 'static_pages/contact'
-
-  root to: "users#index"
+  get '/about', to: 'static_pages#about', as: :about
+  
+  get '/contact', to: 'static_pages#contact', as: :contact
   
   get 'users/index'
 
