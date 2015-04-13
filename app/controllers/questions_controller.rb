@@ -26,7 +26,7 @@ class QuestionsController < ApplicationController
   end
 
   def edit
-    if @qustion.posted = true
+    if @question.posted = true
       flash[:danger] = "This question has already been posted and cannot be edited."
       redirect_to request.referrer
     end
