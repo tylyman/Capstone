@@ -1,4 +1,7 @@
 class EventsController < ApplicationController
+  before_action :set_event, only: [:show, :update, :edit, :destroy]
+  before_action :set_user
+
   def new
     @event = Event.new
   end
@@ -13,14 +16,12 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event = Event.find(params[:id])
-    if @event.user != current_user
+    unless @event.users.include?(current_user)
       redirect_to @event, notice: "You are not authorized to edit this event."
     end
   end
 
   def update
-    @event = Event.find(params[:id])
     if @event.update(event_params)
       redirect_to @event
     else
@@ -29,17 +30,17 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    @event = Event.find(params[:id])
-    if @event.user != current_user
-      redirect_to @event, notice: "You are not authorized to delete this event."
+    if current_user == @event.users
+      @event.destroy
+      flash[:success] = "The Event was destroyed"
+      redirect_to events_path
     else
-    @event.destroy
-    redirect_to users_show_path
+      flash[:danger] = "You are not authorized to delete this event."
+      redirect_to @event
     end
   end
 
-  def show
-    @event = Event.find(params[:id]) 
+  def show 
   end
 
   def index
@@ -48,6 +49,14 @@ class EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:title, :description, :datetime, :city, :state, :cost, :vacancies, :created_at, :updated_at)
+    params.require(:event).permit(:title, :description, :datetime, :city, :state, :cost, :vacancies, :user_id)
+  end
+
+  def set_event
+    @event = Event.find(params[:id])
+  end
+
+  def set_user
+    @user = current_user
   end
 end
