@@ -21,21 +21,37 @@ class AnswersController < ApplicationController
       flash[:success] = "Answer created successfully."
       redirect_to request_referrer
     else
-      flash[:danger] = "Error.  Answer was not created."
+      flash[:danger] = "Error-Answer was not created."
       render :new
     end
   end
 
   def edit
-    
+    if current_user != @answer.user
+      flash[:danger] = "You are not authorized to edit this answer."
+      redirect_to request.referrer
+    end
   end
 
   def update
-  
+    if @answer.update(question_params)
+      flash[:success] = "Answer updated successfully."
+      redirect_to @question
+    else
+      flash[:danger] = "Answer was not updated."
+      render :edit
+    end
   end
 
   def destroy
-  
+    if current_user = @answer.user
+      @answer.destroy
+      flash[:success] = "The selected answer has been destroyed"
+      redirect_to request.referrer
+    else
+      flash[:danger] = "You are not authorized to delete this answer."
+      redirect_to @question
+    end
   end
 
   private    
