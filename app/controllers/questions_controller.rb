@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
   before_action :set_user
-  before_action :authenticate_user!, except: [:show, :index]
+  #before_action :authenticate_user!, except: [:show, :index]
   
   def show
   end
