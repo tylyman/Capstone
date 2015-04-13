@@ -1,5 +1,7 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
+  before_action :set_user
+  before_action :authenticate_user!, except: [:show, :index]
   
   def show
   end
@@ -24,6 +26,10 @@ class QuestionsController < ApplicationController
   end
 
   def edit
+    if @qustion.posted = true
+      flash[:danger] = "This question has already been posted and cannot be edited."
+      redirect_to request.referrer
+    end
     if current_user != @question.user
       flash[:danger] = "You are not authorized to edit this question."
       redirect_to request.referrer
@@ -58,5 +64,9 @@ class QuestionsController < ApplicationController
 
     def set_question
       @question = Question.find(params[:id])
+    end
+
+    def set_user
+      @user = current_user
     end
 end
