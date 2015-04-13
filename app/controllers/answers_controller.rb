@@ -3,25 +3,31 @@ class AnswersController < ApplicationController
   before_action :set_question
   before_action :set_user
   before_action :authenticate_user!, except: [:show, :index]
-
-  def index
-
+  
+  def show
   end
 
-  def show
-  
+  def index
+    @answers = Answer.all
   end
 
   def new
-  
+    @answer = Answer.new
   end
 
   def create
-  
+    @answer = Answer.new(answer_params)
+    if @answer.save
+      flash[:success] = "Answer created successfully."
+      redirect_to request_referrer
+    else
+      flash[:danger] = "Error.  Answer was not created."
+      render :new
+    end
   end
 
   def edit
-  
+    
   end
 
   def update
