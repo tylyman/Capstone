@@ -6,3 +6,7 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+  padding-bottom: 65px;
+}

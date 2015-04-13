@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+   <h1>New Project</h1>
+    <%= form_for @event do |f| %>
+        <%= f.label :title %> 
+        <%= f.text_field :title, class: 'form-control' %>
+
+        <%= f.label :description %>
+        <%= f.text_area :description, class: 'form-control'  %>
+
+        <%= f.label :datetime %> 
+        <%= f.text_field :datetime, class: 'form-control'  %>
+
+        <%= f.label :city %>: 
+        <%= f.text_field :city, class: 'form-control'  %>
+
+        <%= f.label :state %>: 
+        <%= f.text_field :state, class: 'form-control'  %>       
+
+        <%= f.label :cost %>
+        <%= f.text_field :cost, class: 'form-control'  %>
+
+        <%= f.label :vacancies %>
+        <%= f.text_field :vacancies, class: 'form-control'  %>
+
+        <%= f.submit "Submit", class: "btn btn-primary sign_up_button", id: "events-btn-space"  %>
+      <% end %>
+  </div>
+</div>

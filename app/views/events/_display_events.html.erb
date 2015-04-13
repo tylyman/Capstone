@@ -1,0 +1,13 @@
+<%= link_to event_path(event) do %>
+<div class="block-update-card status">
+    <div class="update-card-body">
+        <h3><%= event.title %></h4>
+        <% end %>
+        <p><%= event.description %></p>
+        <p> <%= event.datetime %> <%= event.cost %></p>
+        <p><%= event.city %></p>
+        <p><%= event.state %></p>
+        <p><%= event.vacancies %></p>
+    </div>
+</div>
+
