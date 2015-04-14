@@ -34,7 +34,7 @@ class AnswersController < ApplicationController
   end
 
   def update
-    if @answer.update(question_params)
+    if @answer.update(answer_params)
       flash[:success] = "Answer updated successfully."
       redirect_to @question
     else

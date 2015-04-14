@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  content: MyText
+  content: Test1
   question_id: 1
   user_id: 1
-  helpful: 1
+  helpful: 0
 
 two:
-  content: MyText
-  question_id: 1
-  user_id: 1
-  helpful: 1
+  content: Test2
+  question_id: 2
+  user_id: 2
+  helpful: 0
