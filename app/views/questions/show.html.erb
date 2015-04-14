@@ -1,1 +1,3 @@
+<%= link_to 'Answer this question', new_answer_path(:question_id => @question.id) %>
+
 <%= render partial: 'display_question', locals: { :question => @question } %>

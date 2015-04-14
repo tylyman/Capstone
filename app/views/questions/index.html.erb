@@ -2,22 +2,22 @@
 
 <div class = "container">
 	<%= link_to 'Ask a question', new_question_path, class: 'btn' %>
-	<table class = 'table'>
-		<thead>
-	    <tr>
-	    	<th>Title</th>
-	      <th>answers</th>
-	      <th></th>
-	    </tr>
-	  </thead>
-	  <tbody>
-		  <% @questions.each do |question| %>
-			  <tr>
-				  <td><%= question.title %></td>
-				  <td><%= question.answers.count %></td>
-					<td><%= link_to 'View', question_path(question), class: "btn" %></td>
-				</tr>
-			<% end %>
-	  </tbody>
-	</table>
+		<table class = 'table'>
+			<thead>
+		    <tr>
+		    	<th>Questions</th>
+		      <th>Answers</th>
+		      <th></th>
+		    </tr>
+		  </thead>
+		  <tbody>
+			  <% @questions.each do |question| %>
+				  <tr>
+					  <td><%= question.title %></td>
+					  <td style="width:100px"><%= question.answers.count %></td>
+						<td style="width:100px"><%= link_to 'View', question_path(question), class: "btn" %></td>
+					</tr>
+				<% end %>
+		  </tbody>
+		</table>
 </div>
