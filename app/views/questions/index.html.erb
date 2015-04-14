@@ -1,8 +1,4 @@
 <%= link_to 'Ask a question', new_question_path, class: 'btn' %>
 <%= @questions.each do |question| %>
-<div class = 'container'> 
- <h3><%= question.title %></h4>
- <p><%= question.content %><p>
- <h4>Posted by: <%= question.user.user_name  %></h4>
-</div>
+
 <% end %>
