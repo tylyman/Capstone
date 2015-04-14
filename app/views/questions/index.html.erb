@@ -1,2 +1,23 @@
-<h1>Questions#index</h1>
-<p>Find me in app/views/questions/index.html.erb</p>
+
+
+<div class = "container">
+	<%= link_to 'Ask a question', new_question_path, class: 'btn' %>
+		<table class = 'table'>
+			<thead>
+		    <tr>
+		    	<th>Questions</th>
+		      <th>Answers</th>
+		      <th></th>
+		    </tr>
+		  </thead>
+		  <tbody>
+			  <% @questions.each do |question| %>
+				  <tr>
+					  <td><%= question.title %></td>
+					  <td style="width:100px"><%= question.answers.count %></td>
+						<td style="width:100px"><%= link_to 'View', question_path(question), class: "btn" %></td>
+					</tr>
+				<% end %>
+		  </tbody>
+		</table>
+</div>

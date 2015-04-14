@@ -6,18 +6,17 @@ class QuestionsControllerTest < ActionController::TestCase
     @question = questions(:one)
     sign_in @user
   end
-  test "should get index" do
-    get :index
-    assert_response :success
-  end
-
-  test "should get show" do
-    get :show, id: @question.id
-    assert_response :success
-  end
 
   test "should get new" do
-    get :new
+    get :new, user_id: @user.id
     assert_response :success
+  end
+
+  test "should create question" do
+    assert_difference('Question.count', 1) do
+      post :create, question: { :title => 'Test', :content => 'Test description', :user_id => 1}
+    end
+    question = assigns(:question)
+    assert_redirected_to question_path(question.id)
   end
 end
