@@ -9,41 +9,40 @@ class AnswersControllerTest < ActionController::TestCase
   end
 
   test "should get new" do
-    get :new
+    get :new, question_id: @question.id
     assert_response :success
   end
 
-  test "should get create" do
-    post :create, answer: {title: 'Simple Title'}
-    assert_redirected_to assigns(:answer)
+  test "should post create" do
+    post :create, question_id: @question.id, answer: { :content => 'Test' }
+    answer = assigns(:answer)
+    assert answer.content, "Test"
+    assert_redirected_to @question
   end
 
-  test "should get update" do
-    put :update, id: @answer.id, asnwer: {title: 'Title updated'}
+  test "should put update" do
+    put :update, id: @answer.id, answer: {content: 'Content updated'}, question_id: @question.id
     @answer.reload
-    assert_redirected_to @answer
-    assert_equal  'Title updated', @answer.title
+    assert_redirected_to @question
+    assert_equal  'Content updated', @answer.content
   end
 
   test "should get edit" do
-    @answer.users << users(:one)
-    get :edit, id: @answer.id
-    assert_response :success
+    get :edit, id: @answer.id, question_id: @question.id
+    put :update, id: @answer.id, answer: {content: 'Content updated'}, question_id: @question.id
+    @answer.reload
+    assert_redirected_to @question
+    assert_equal  'Content updated', @answer.content
   end
 
   test "should destroy answer" do
-    @answer.users << users(:one)
-    delete :destroy, id: @answer.id
-    assert_redirected_to @answer
+    delete :destroy, id: @answer.id, question_id: @question.id
+    assert_redirected_to @question
   end
 
   test "should get show" do
-    get :show, id: @answer.id
+    get :show, id: @answer.id, question_id: @question.id
     assert_response :success
   end
 
-  test "should get index" do
-    get :index
-    assert_response :success
-  end
 end

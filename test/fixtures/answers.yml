@@ -2,12 +2,12 @@
 
 one:
   content: Test1
-  question_id: 1
+  question: one
   user_id: 1
   helpful: 0
 
 two:
   content: Test2
-  question_id: 2
+  question: two
   user_id: 2
   helpful: 0

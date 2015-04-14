@@ -7,10 +7,6 @@ class AnswersController < ApplicationController
   def show
   end
 
-  def index
-    @answers = Answer.all
-  end
-
   def new
     @answer = Answer.new
   end
@@ -19,7 +15,7 @@ class AnswersController < ApplicationController
     @answer = Answer.new(answer_params)
     if @answer.save
       flash[:success] = "Answer created successfully."
-      redirect_to request_referrer
+      redirect_to @question
     else
       flash[:danger] = "Error-Answer was not created."
       render :new
@@ -29,7 +25,7 @@ class AnswersController < ApplicationController
   def edit
     if current_user != @answer.user
       flash[:danger] = "You are not authorized to edit this answer."
-      redirect_to request.referrer
+      redirect_to @question
     end
   end
 
@@ -47,7 +43,7 @@ class AnswersController < ApplicationController
     if current_user = @answer.user
       @answer.destroy
       flash[:success] = "The selected answer has been destroyed"
-      redirect_to request.referrer
+      redirect_to @question
     else
       flash[:danger] = "You are not authorized to delete this answer."
       redirect_to @question
@@ -64,7 +60,7 @@ class AnswersController < ApplicationController
     end
     
     def set_question 
-      @question = Question.find(params[:id])
+      @question = Question.find(params[:question_id])
     end
 
     def set_answer
