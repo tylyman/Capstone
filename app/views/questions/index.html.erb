@@ -1,6 +1,23 @@
-<%= link_to 'Ask a question', new_question_path, class: 'btn' %>
-<%= @questions.each do |question| %>
-	<div class "container">
-	<%= render partial: 'display_question', locals: { :question => question }  %>
-	</div>
-<% end %>
+
+
+<div class = "container">
+	<%= link_to 'Ask a question', new_question_path, class: 'btn' %>
+	<table class = 'table'>
+		<thead>
+	    <tr>
+	    	<th>Title</th>
+	      <th>answers</th>
+	      <th></th>
+	    </tr>
+	  </thead>
+	  <tbody>
+		  <% @questions.each do |question| %>
+			  <tr>
+				  <td><%= question.title %></td>
+				  <td><%= question.answers.count %></td>
+					<td><%= link_to 'View', question_path(question), class: "btn" %></td>
+				</tr>
+			<% end %>
+	  </tbody>
+	</table>
+</div>
