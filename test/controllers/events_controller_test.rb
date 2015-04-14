@@ -33,7 +33,7 @@ class EventsControllerTest < ActionController::TestCase
   test "should destroy event" do
     @event.users << users(:one)
     delete :destroy, id: @event.id
-    assert_redirected_to @event
+    assert_redirected_to events_path
   end
 
   test "should get show" do

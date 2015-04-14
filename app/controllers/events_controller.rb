@@ -1,14 +1,15 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :update, :edit, :destroy]
   before_action :set_user
-  
+
   def new
-    @event = Event.new
+    @event = @user.events.build
   end
 
   def create
-    @event = Event.new(event_params)
+    @event = @user.events.build(event_params)
     if @event.save
+      @event.users << @user
       redirect_to events_path
     else
       redirect_to :new
@@ -30,7 +31,7 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    if current_user == @event.users
+    if @event.users.include? current_user
       @event.destroy
       flash[:success] = "The Event was destroyed"
       redirect_to events_path
