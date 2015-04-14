@@ -12,9 +12,12 @@ class EventsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get create" do
+  test "should create event for logged in user" do
     post :create, event: {title: 'Simple Title'}
-    assert_redirected_to assigns(:events)
+    event_created = assigns(:event)
+    assert_redirected_to events_path
+    @user.reload
+    assert_includes event_created.users, @user
   end
 
   test "should get update" do

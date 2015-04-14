@@ -8,8 +8,8 @@ class EventsController < ApplicationController
 
   def create
     @event = @user.events.build(event_params)
+    @event.users << @user
     if @event.save
-      @event.users << @user
       redirect_to events_path
     else
       redirect_to :new
