@@ -1,5 +1,6 @@
-<div class="form-group">
-		<%= form_for question do |f| %>
+<div class "container">	
+	<div class="form-group">
+		<%= form_for @question do |f| %>
 			<%= f.label :title	 %> 
 		  <%= f.text_field :title, class: 'form-control' %>
 
@@ -11,3 +12,4 @@
 		  <%= f.submit "Submit", class: "btn submit-btn"  %>
 		<% end %>
 	</div>
+</div>

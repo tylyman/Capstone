@@ -1,4 +1,6 @@
 <%= link_to 'Ask a question', new_question_path, class: 'btn' %>
 <%= @questions.each do |question| %>
-
+	<div class "container">
+	<%= render partial: 'display_question', locals: { :question => question }  %>
+	</div>
 <% end %>
