@@ -1,6 +1,12 @@
 require 'test_helper'
 
 class AnswersControllerTest < ActionController::TestCase
+  def setup
+    @user = users(:one)
+    @answer = answers(:one)
+    sign_in @user
+  end
+
   test "should get index" do
     get :index
     assert_response :success
@@ -30,5 +36,4 @@ class AnswersControllerTest < ActionController::TestCase
     get :update
     assert_response :success
   end
-
 end

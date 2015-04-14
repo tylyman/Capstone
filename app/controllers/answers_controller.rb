@@ -3,7 +3,7 @@ class AnswersController < ApplicationController
   before_action :set_question
   before_action :set_user
   before_action :authenticate_user!, except: [:show, :index]
-  
+
   def show
   end
 
