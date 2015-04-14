@@ -1,33 +1,47 @@
 require 'test_helper'
 
 class AnswersControllerTest < ActionController::TestCase
-  test "should get index" do
-    get :index
-    assert_response :success
-  end
-
-  test "should get show" do
-    get :show
-    assert_response :success
+  def setup
+    @user = users(:one)
+    @answer = answers(:one)
+    @question = questions(:one)
+    sign_in @user
   end
 
   test "should get new" do
-    get :new
+    get :new, question_id: @question.id
     assert_response :success
   end
 
-  test "should get create" do
-    get :create
-    assert_response :success
+  test "should post create" do
+    post :create, question_id: @question.id, answer: { :content => 'Test' }
+    answer = assigns(:answer)
+    assert answer.content, "Test"
+    assert_redirected_to @question
+  end
+
+  test "should put update" do
+    put :update, id: @answer.id, answer: {content: 'Content updated'}, question_id: @question.id
+    @answer.reload
+    assert_redirected_to @question
+    assert_equal  'Content updated', @answer.content
   end
 
   test "should get edit" do
-    get :edit
-    assert_response :success
+    get :edit, id: @answer.id, question_id: @question.id
+    put :update, id: @answer.id, answer: {content: 'Content updated'}, question_id: @question.id
+    @answer.reload
+    assert_redirected_to @question
+    assert_equal  'Content updated', @answer.content
   end
 
-  test "should get update" do
-    get :update
+  test "should destroy answer" do
+    delete :destroy, id: @answer.id, question_id: @question.id
+    assert_redirected_to @question
+  end
+
+  test "should get show" do
+    get :show, id: @answer.id, question_id: @question.id
     assert_response :success
   end
 
