@@ -1,2 +1,7 @@
-<h1>Questions#index</h1>
-<p>Find me in app/views/questions/index.html.erb</p>
+<%= @questions.each do |question| %>
+<div class = 'container'> 
+ <h3><%= question.title %></h4>
+ <p><%= question.content %><p>
+ <h4>Posted by: <%= question.user.user_name  %></h4>
+</div>
+<% end %>
