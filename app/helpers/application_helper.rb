@@ -11,4 +11,8 @@ module ApplicationHelper
   def devise_mapping 
     @devise_mapping||= Devise.mappings[:user]
   end
+
+  def set_event
+    @event = Event.find(params[:id])
+  end
 end

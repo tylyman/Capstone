@@ -14,7 +14,7 @@ class EventsControllerTest < ActionController::TestCase
 
   test "should get create" do
     post :create, event: {title: 'Simple Title'}
-    assert_redirected_to assigns(:event)
+    assert_redirected_to assigns(:events)
   end
 
   test "should get update" do

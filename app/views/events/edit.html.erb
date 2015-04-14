@@ -1,4 +1,4 @@
 <div class="block-update-card form">
 <h1 class = 'center'> Edit this Event </h1>
-  <%= render 'events_form' %>
+  <%= render partial: 'events_form', locals: {:event => @event}  %>
 </div>
