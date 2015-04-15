@@ -1,6 +1,6 @@
 class AnswersController < ApplicationController
   before_action :set_answer, only: [:show, :edit, :update, :destroy]
-  before_action :set_question, except: [:create, :update]
+  before_action :set_question, except: [:create, :edit, :destroy]
   before_action :set_user
   before_action :authenticate_user!, except: [:show, :index]
 
@@ -43,10 +43,10 @@ class AnswersController < ApplicationController
     if current_user = @answer.user
       @answer.destroy
       flash[:success] = "The selected answer has been destroyed"
-      redirect_to @question
+      redirect_to @answer.question
     else
       flash[:danger] = "You are not authorized to delete this answer."
-      redirect_to @question
+      redirect_to @answer.question
     end
   end
 
