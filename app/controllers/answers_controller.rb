@@ -1,6 +1,6 @@
 class AnswersController < ApplicationController
   before_action :set_answer, only: [:show, :edit, :update, :destroy]
-  before_action :set_question, except: [:create, :edit, :destroy]
+  before_action :set_question, only: [:create, :new]
   before_action :set_user
   before_action :authenticate_user!, except: [:show, :index]
 
@@ -8,11 +8,11 @@ class AnswersController < ApplicationController
   end
 
   def new
-    @answer = Answer.new
+    @answer = @question.answers.build
   end
 
   def create
-    @answer = Answer.new(answer_params)
+    @answer = @question.answers.build(answer_params)
     if @answer.save
       flash[:success] = "Answer created successfully."
       redirect_to @answer.question
@@ -32,7 +32,7 @@ class AnswersController < ApplicationController
   def update
     if @answer.update(answer_params)
       flash[:success] = "Answer updated successfully."
-      redirect_to @question
+      redirect_to @answer.question
     else
       flash[:danger] = "Answer was not updated."
       render :edit
