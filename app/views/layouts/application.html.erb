@@ -7,18 +7,36 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render 'layouts/nav' %>
+  <%= render 'layouts/nav' %>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 
-<% flash.each do |message_type, message| %>
-       <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
-     <% end %>
+  <% flash.each do |message_type, message| %>
+  <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+  <% end %>
 
 
-<%= yield %>
+  <%= yield %>
 
- 
+   
 </body>
 </html>
+
+
+
+
+  <!-- Sign In Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+            </div>
+            <div class="modal-body">
+              <%= render 'layouts/sign_in_form' %>
+            </div>
+          </div>
+        </div>
+      </div>
