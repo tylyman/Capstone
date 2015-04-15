@@ -10,9 +10,9 @@ Rails.application.routes.draw do
   
   resources :users, only: [:index, :show]
 
-  resources :answers #only: [:index, :show, :new, :create, :edit, :update, :destroy]
-
+  resources :questions do
+	  resources :answers #only: [:index, :show, :new, :create, :edit, :update, :destroy]
+	end
   resources :events #only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
-  resources :questions #only: [:index, :show, :new, :create, :edit, :update, :destroy]
 end
