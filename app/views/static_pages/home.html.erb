@@ -1,4 +1,6 @@
-<%= render'devise/registrations/signup_form' %>
+<div id="signin_form">
+  <%= render'devise/registrations/signup_form' %>
+</div>
 
 <% @events.each do |event| %>
 <%= render partial: 'events/display_events', locals: {:event => event} %> 
