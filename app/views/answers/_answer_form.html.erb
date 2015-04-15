@@ -1,0 +1,14 @@
+<div class = "container">	
+	<div class= "form-group">
+		<% form_for @answer do |f| %>
+			<%= f.label :content  %>
+			<%= f.text_area :content, class: 'form-control'  %>
+
+			<%= f.hidden_field :user_id, value: current_user.id, class: 'form-control'  %>
+
+			<%= f.hidden_field :question_id, value: @question.id, class: 'form-control'  %>
+
+			<%= f.submit "Submit", class: "btn submit-btn"  %>
+		<% end %>
+	</div>
+</div>
