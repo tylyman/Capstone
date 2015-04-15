@@ -1,15 +1,8 @@
+
+<%= render partial: 'display_question', locals: { :question => @question } %>
+
 <div class = "container">
-	<%= link_to 'Answer this question', new_question_answer_path(@question) %>
-	<h4><%= @question.title %></h4><p>Author:<%= @question.user.user_name %></p>
-	</p><%= @question.content %></p>
+	<%= link_to 'Answer this question', new_question_answer_path(@question), class: 'btn btn-default' %>
 </div>
-<div class = "container">
-	<% @question.answers.each do |answer| %>
-	<p><%= answer.content %></p>
-	<p>Author:<%= answer.user.user_name %></p>
-	user:<%= answer.user_id %>
-	question:<%= answer.question_id %>
-	<%= link_to "Edit", edit_question_answer_path(@question, answer) %>
-	<%= link_to "Delete", question_answer_path(@question, answer), method: :delete if current_user == answer.user %>
-	<% end %>
-</div>
+
+<%= render partial: 'display_answers', locals: { :question => @question } %>
