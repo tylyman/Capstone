@@ -1,13 +1,26 @@
-<div id="signin_form">
-  <%= render'devise/registrations/signup_form' %>
-</div>
-
 <div class="container">
-  <div class="col-sm-1"></div>
-  <% @events.each do |event| %>
-    <div class="col-sm-5">
-      <%= render partial: 'events/display_events', locals: {:event => event} %> 
-    </div>
-  <% end %>
-  <div class="col-sm-1"></div>
+  <div class="row">
+    <% if user_signed_in? %>
+      <div class='col-lg-10'>
+      <%= image_tag "Agoge.png", class: "img img-responsive" %>
+      </div>
+    <% else %>
+      <div class='col-sm-8'>
+        <%= image_tag "Agoge.png", class: "img img-responsive" %>
+      </div>
+      <div class="col-sm-4">
+        <%= render'devise/registrations/signup_form' %>
+      </div>
+     </div>
+    <% end %>
+
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <% @events.each do |event| %>
+      <div class="col-sm-5">
+        <%= render partial: 'events/display_events', locals: {:event => event} %> 
+      </div>
+    <% end %>
+    <div class="col-sm-1"></div>
+  </div>
 </div>
