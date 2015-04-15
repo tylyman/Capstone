@@ -1,6 +1,6 @@
 class AnswersController < ApplicationController
   before_action :set_answer, only: [:show, :edit, :update, :destroy]
-  before_action :set_question
+  before_action :set_question, except: [:create, :update]
   before_action :set_user
   before_action :authenticate_user!, except: [:show, :index]
 
@@ -15,7 +15,7 @@ class AnswersController < ApplicationController
     @answer = Answer.new(answer_params)
     if @answer.save
       flash[:success] = "Answer created successfully."
-      redirect_to @question
+      redirect_to @answer.question
     else
       flash[:danger] = "Error-Answer was not created."
       render :new
@@ -25,7 +25,7 @@ class AnswersController < ApplicationController
   def edit
     if current_user != @answer.user
       flash[:danger] = "You are not authorized to edit this answer."
-      redirect_to @question
+      redirect_to @answer.question
     end
   end
 
