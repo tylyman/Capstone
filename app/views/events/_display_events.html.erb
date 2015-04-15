@@ -1,6 +1,6 @@
-<%= link_to event_path(event) do %>
 <div class="block-update-card status">
     <div class="update-card-body">
+    <%= link_to event_path(event) do %>
         <h3><%= event.title %></h4>
         <% end %>
         <p><%= event.description %></p>
@@ -13,5 +13,5 @@
         <button><%= link_to "Edit", edit_event_path(event)%></button>
     </div>
 </div>
-<div>
+
 
