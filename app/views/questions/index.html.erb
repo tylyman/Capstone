@@ -1,21 +1,31 @@
 <div class = "container">
-	<%= link_to 'Ask a question', new_question_path, class: 'btn' %>
-		<table class = 'table'>
-			<thead>
-		    <tr>
-		    	<th>Questions</th>
-		      <th>Answers</th>
-		      <th></th>
-		    </tr>
-		  </thead>
-		  <tbody>
-			  <% @questions.each do |question| %>
-				  <tr>
-					  <td><%= question.title %></td>
-					  <td style="width:100px"><%= question.answers.count %></td>
-						<td style="width:100px"><%= link_to 'View', question_path(question), class: "btn" %></td>
-					</tr>
-				<% end %>
-		  </tbody>
-		</table>
+	<%= link_to 'Ask a question', new_question_path, class: 'btn btn-default forum-btn' %>
+	<div role="tabpanel">
+	  <!-- Nav tabs -->
+	  <ul class="nav nav-tabs" role="tablist">
+	    <li role="presentation" class="active"><a href="#general" aria-controls="home" role="tab" data-toggle="tab">General</a></li>
+	    <li role="presentation"><a href="#dayCamp" aria-controls="Day Camp" role="tab" data-toggle="tab">Day Camp</a></li>
+	    <li role="presentation"><a href="#ruby" aria-controls="Ruby" role="tab" data-toggle="tab">Ruby</a></li>
+	    <li role="presentation"><a href="#otherCoding" aria-controls="Other Coding" role="tab" data-toggle="tab">Other Coding</a></li>
+	  </ul>
+	  <!-- Tab panes -->
+	  <div class="tab-content">
+	    <div role="tabpanel" class="tab-pane active" id="general">
+	    	<%= render partial: 'display_all_questions', locals: { :category => 'General' }%>
+	    </div>
+	    <div role="tabpanel" class="tab-pane" id="dayCamp">
+	    	<%= render partial: 'display_all_questions', locals: { :category => 'Day Camp' }%>
+	    </div>
+	    <div role="tabpanel" class="tab-pane" id="ruby">
+	    	<%= render partial: 'display_all_questions', locals: { :category => 'Ruby' }%>
+	    </div>
+	    <div role="tabpanel" class="tab-pane" id="otherCoding">
+	    	<%= render partial: 'display_all_questions', locals: { :category => 'Other Coding' }%>
+	    </div>
+	  </div>
+	</div>
 </div>
+
+
+
+

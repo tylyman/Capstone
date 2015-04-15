@@ -1,7 +1,6 @@
 /*
  *= require_tree .
  *= require_self
- *= require bootstrap
  */
 
 @import "bootstrap-sprockets";
@@ -10,4 +9,12 @@
 #footer {
   margin-bottom: -10px;
   margin-top: 20px;
+}
+
+/*
+FORUM 
+*/
+
+.forum-btn {
+	margin-bottom: 10px;
 }

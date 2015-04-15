@@ -1,0 +1,28 @@
+<table class = 'table'>
+	<thead>
+    <tr>
+    	<th>Post</th>
+      <th>Responses</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+	  <% @questions.each do |question| %>
+	  	<% if question.category == category %>				
+		  <tr>
+			  <td><%= question.title %></td>
+			  <td style="width:100px"><%= question.answers.count %></td>
+				<td style="width:150px">
+					<div class="btn-group btn-group-xs">
+						<%= link_to 'View', question_path(question), class: 'btn btn-default forum-btn' %>
+						<% if question.user == current_user %>
+							<%= link_to "Edit", edit_question_path(question), class: 'btn btn-warning forum-btn'  %>
+							<%= link_to "Delete", question_path(question), class: 'btn btn-danger forum-btn', method: :delete if current_user == question.user %>
+						<% end %>
+					</div>
+				</td>
+			</tr>
+			<% end %>
+		<% end %>
+  </tbody>
+</table>
