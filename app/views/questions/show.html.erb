@@ -1,11 +1,15 @@
 <div class = "container">
 	<%= link_to 'Answer this question', new_answer_path(:question_id => @question.id) %>
-	<h4><%= @question.title %></h4><p>Asked by:<%= @question.user.user_name %></p>
+	<h4><%= @question.title %></h4><p>Author:<%= @question.user.user_name %></p>
 	</p><%= @question.content %></p>
 </div>
 <div class = "container">
 	<% @question.answers.each do |answer| %>
 	<p><%= answer.content %></p>
-	<p>Answered by:<%= answer.user.user_name %></p>
+	<p>Author:<%= answer.user.user_name %></p>
+	user:<%= answer.user_id %>
+	question:<%= answer.question_id %>
+	<%= link_to "Edit", edit_answer_path(answer) %>
+	<%= link_to "Delete", answer_path(answer), method: :delete if current_user == answer.user %>
 	<% end %>
 </div>
