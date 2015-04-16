@@ -27,6 +27,7 @@
   margin-top: 100px;
   padding-top: 30px;
   height: 508px;
+  width: 30%;
 }
 
 .signin_form {
@@ -34,10 +35,10 @@
   margin-left: 60%;
 }
 
-@media screen and (max-width: 600px) {
-     .signin_form {
+@media screen and (max-width: 750px) {
+     #signin_background {
       float: left;
       margin-left: 25%;
-      margin-right:40%
+      width: auto;
   }
 }
