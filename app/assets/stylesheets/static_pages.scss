@@ -2,20 +2,40 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
-  // background: image-url('Agoge.png') fixed;
-  // background-size: 100%;
-  // margin-top: -200px;
+
+
+/****** Static Pages Home ******/
+
+#signedouthero {
+  background: image-url('Hero.png');
+  background-color: #354052;
+  background-position: center top;
+  background-repeat: no-repeat;
+  margin-bottom: 10px;
+  height: 700px;
+}
+
+.signedinhero {
+  width: 100%;
 }
 
 
-#signin_form {
+
+#signin_background {
+  background-image: image-url('SignUpBkg.png');
+  background-repeat: no-repeat;
+  margin-top: 100px;
+  padding-top: 30px;
+  height: 508px;
+}
+
+.signin_form {
   float: left;
-  margin-left: 75%;
+  margin-left: 60%;
 }
 
 @media screen and (max-width: 600px) {
-     #signin_form {
+     .signin_form {
       float: left;
       margin-left: 25%;
       margin-right:40%
