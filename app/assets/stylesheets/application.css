@@ -6,20 +6,23 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-#footer {
-  margin-bottom: -10px;
-  margin-top: 20px;
+/****** Body ******/
+
+body { 
+  padding-top: 100px; 
 }
 
-/*
-FORUM 
-*/
+/* FORUM */
 
 .forum-btn {
-	margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 /**** nav *****/
+
+#headspace {
+
+}
 
 .navbar {
   background-color: #354052;
@@ -32,4 +35,5 @@ FORUM
   height: 38px;
 }
 
-/****** Body ******/
+
+

@@ -6,17 +6,20 @@
 
 /****** Static Pages Home ******/
 
-#hero {
+#signedouthero {
   background: image-url('Hero.png');
   background-color: #354052;
   background-position: center top;
   background-repeat: no-repeat;
-  margin-top: 100px;
   margin-bottom: 10px;
   height: 700px;
-
-
 }
+
+.signedinhero {
+  width: 100%;
+}
+
+
 
 #signin_background {
   background-image: image-url('SignUpBkg.png');
