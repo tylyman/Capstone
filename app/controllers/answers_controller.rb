@@ -13,11 +13,17 @@ class AnswersController < ApplicationController
 
   def create
     @answer = @question.answers.build(answer_params)
-    if @answer.save
-      flash[:success] = "Answer created successfully."
-      redirect_to @answer.question
+
+    if !Obscenity.profane?(@answer.content)
+      if @answer.save
+        flash[:success] = "Answer created successfully."
+        redirect_to @answer.question
+      else
+        flash[:danger] = "Error-Answer was not created."
+        render :new
+      end
     else
-      flash[:danger] = "Error-Answer was not created."
+      flash[:danger] = "Explicit content detected, no foul language please!"
       render :new
     end
   end
@@ -30,11 +36,16 @@ class AnswersController < ApplicationController
   end
 
   def update
-    if @answer.update(answer_params)
-      flash[:success] = "Answer updated successfully."
-      redirect_to @answer.question
+    if !Obscenity.profane?(@answer.content)
+      if @answer.update(answer_params)
+        flash[:success] = "Answer updated successfully."
+        redirect_to @answer.question
+      else
+        flash[:danger] = "Answer was not updated."
+        render :edit
+      end
     else
-      flash[:danger] = "Answer was not updated."
+      flash[:danger] = "Explicit content detected, no foul language please!"
       render :edit
     end
   end

@@ -16,20 +16,26 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(question_params)
-    if @question.save
-      flash[:success] = "Thank you for your question!  It will be reviewed by a moderator before being posted."
-      redirect_to @question
+
+    if !Obscenity.profane?(@question.content) && !Obscenity.profane?(@question.title)
+      if @question.save
+        flash[:success] = "Thank you for posting on the forum!"
+        redirect_to @question
+      else
+        flash[:danger] = "Error, please try again."
+        render :new
+      end
     else
-      flash[:danger] = "Error, please try again."
+      flash[:danger] = "Explicit content detected, no foul language please!"
       render :new
     end
   end
 
   def edit
-    if @question.posted = true
-      flash[:danger] = "This question has already been posted and cannot be edited."
-      redirect_to request.referrer
-    end
+    # if @question.posted = true
+    #   flash[:danger] = "This question has already been posted and cannot be edited."
+    #   redirect_to request.referrer
+    # end
     if current_user != @question.user
       flash[:danger] = "You are not authorized to edit this question."
       redirect_to request.referrer
@@ -37,11 +43,16 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    if @question.update(question_params)
-      flash[:success] = "Question updated successfully."
-      redirect_to @question
+    if !Obscenity.profane?(@question.content) && !Obscenity.profane?(@question.title)
+      if @question.update(question_params) 
+        flash[:success] = "Question updated successfully."
+        redirect_to @question
+      else
+        flash[:danger] = "Question was not updated."
+        render :edit
+      end
     else
-      flash[:danger] = "Question was not updated."
+      flash[:danger] = "Explicit content detected, no foul language please!"
       render :edit
     end
   end
