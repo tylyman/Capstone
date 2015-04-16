@@ -16,11 +16,17 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(question_params)
-    if @question.save
-      flash[:success] = "Thank you for your question!  It will be reviewed by a moderator before being posted."
-      redirect_to @question
+
+    if @question.approved? && @question.title_approved?
+      if @question.save
+        flash[:success] = "Thank you for posting on the forum!"
+        redirect_to @question
+      else
+        flash[:danger] = "Error, please try again."
+        render :new
+      end
     else
-      flash[:danger] = "Error, please try again."
+      flash[:danger] = "Explicit content detected, no fowl language please!"
       render :new
     end
   end
@@ -37,7 +43,7 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    if @question.update(question_params)
+    if @question.update(question_params) && @question.approved? 
       flash[:success] = "Question updated successfully."
       redirect_to @question
     else

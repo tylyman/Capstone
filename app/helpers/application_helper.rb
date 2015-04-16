@@ -15,4 +15,12 @@ module ApplicationHelper
   def set_event
     @event = Event.find(params[:id])
   end
+
+  def approved?(var)
+    Obscenity.profane?(var.content)
+  end
+
+  def title_approved?(var)
+    Obscenity.profane?(var.title)
+  end
 end
