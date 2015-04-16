@@ -43,11 +43,16 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    if @question.update(question_params) && @question.approved? 
-      flash[:success] = "Question updated successfully."
-      redirect_to @question
+    if @question.approved? && @question.title_approved?
+      if @question.update(question_params) && @question.approved? 
+        flash[:success] = "Question updated successfully."
+        redirect_to @question
+      else
+        flash[:danger] = "Question was not updated."
+        render :edit
+      end
     else
-      flash[:danger] = "Question was not updated."
+      flash[:danger] = "Explicit content detected, no fowl language please!"
       render :edit
     end
   end
