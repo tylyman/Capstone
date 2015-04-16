@@ -18,3 +18,18 @@ FORUM
 .forum-btn {
 	margin-bottom: 10px;
 }
+
+/**** nav *****/
+
+.navbar {
+  background-color: #354052;
+  height: 100px;
+  border: none;
+}
+
+#nav_logo {
+  margin-top: 22px;
+  height: 38px;
+}
+
+/****** Body ******/
