@@ -16,11 +16,11 @@ module ApplicationHelper
     @event = Event.find(params[:id])
   end
 
-  def approved?(var)
+  def check_for_language(var)
     Obscenity.profane?(var.content)
   end
 
-  def title_approved?(var)
+  def check_title_for_language_obscene(var)
     Obscenity.profane?(var.title)
   end
 end

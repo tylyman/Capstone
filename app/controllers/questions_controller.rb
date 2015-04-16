@@ -17,7 +17,7 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
 
-    if @question.approved? && @question.title_approved?
+    if !Obscenity.profane?(@question.content) && !Obscenity.profane?(@question.title)
       if @question.save
         flash[:success] = "Thank you for posting on the forum!"
         redirect_to @question
@@ -26,7 +26,7 @@ class QuestionsController < ApplicationController
         render :new
       end
     else
-      flash[:danger] = "Explicit content detected, no fowl language please!"
+      flash[:danger] = "Explicit content detected, no foul language please!"
       render :new
     end
   end
@@ -43,8 +43,8 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    if @question.approved? && @question.title_approved?
-      if @question.update(question_params) && @question.approved? 
+    if !Obscenity.profane?(@question.content) && !Obscenity.profane?(@question.title)
+      if @question.update(question_params) 
         flash[:success] = "Question updated successfully."
         redirect_to @question
       else
@@ -52,7 +52,7 @@ class QuestionsController < ApplicationController
         render :edit
       end
     else
-      flash[:danger] = "Explicit content detected, no fowl language please!"
+      flash[:danger] = "Explicit content detected, no foul language please!"
       render :edit
     end
   end
