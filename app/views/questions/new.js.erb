@@ -1,3 +1,4 @@
 console.log('Its working');
 $('#questionModalBody').html('<%= j render partial: "question_form", locals: { :question => Question.new } %>');
+$('#gridSystemModalLabel').html('New Post');
 $('#questionModal').modal('show');

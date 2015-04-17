@@ -1,12 +1,10 @@
-<div class = "container">	
-	<div class= "form-group">
-		<%= form_for [@question, @answer] do |f| %>
-			<%= f.label :content  %>
-			<%= f.text_area :content, class: 'form-control'  %>
+<div class= "form-group">
+	<%= form_for [@question, @answer] do |f| %>
+		<%= f.label :content  %>
+		<%= f.text_area :content, class: 'form-control'  %>
 
-			<%= f.hidden_field :user_id, value: current_user.id, class: 'form-control'  %>
+		<%= f.hidden_field :user_id, value: current_user.id, class: 'form-control'  %>
 
-			<%= f.submit "Submit", class: "btn submit-btn"  %>
-		<% end %>
-	</div>
+		<%= f.submit "Submit", class: "btn btn-default forum-btn"  %>
+	<% end %>
 </div>

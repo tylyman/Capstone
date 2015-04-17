@@ -1,0 +1,4 @@
+console.log('Its working');
+$('#questionModalBody').html('<%= j render partial: "answer_form", locals: { :answer => Answer.new } %>');
+$('#gridSystemModalLabel').html('New Response');
+$('#questionModal').modal('show');
