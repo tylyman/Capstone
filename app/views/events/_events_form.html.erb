@@ -20,11 +20,8 @@
         <%= f.text_field :cost, class: 'form-control'  %>
 
         <%= f.label :total_spots %>
-          <%= f.select :total_spots, options_for_select(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20']), class: 'form-control' %>
-
-        <%= f.label :vacancies %>
-          <%= f.select :vacancies, options_for_select(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20']), class: 'form-control' %> <br>
-
+          
+          <%= f.number_field :total_spots, class: 'form-control'   %>
 
         <%= f.submit "Submit", class: "btn btn-primary sign_up_button", id: "events-btn-space"  %>
       <% end %>
