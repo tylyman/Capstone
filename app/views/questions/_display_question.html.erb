@@ -13,7 +13,7 @@
 	  	<p>Author: <%= question.user.user_name  %></p>
 	  	<% if question.user == current_user %>
 	  		<div class = "btn-group btn-group-xs">
-					<%= link_to "Edit", edit_question_path(question), class: 'btn btn-warning'  %>
+					<%= link_to "Edit", edit_question_path(question), remote: true, class: 'btn btn-warning'  %>
 					<%= link_to "Delete", question_path(question), class: 'btn btn-danger', method: :delete if current_user == question.user %>
 				</div>
 			<% end %>
@@ -21,7 +21,4 @@
 	</div>
 </div>
 
-
- 
- 
- 
+<%= render partial:'modal_partial' %>

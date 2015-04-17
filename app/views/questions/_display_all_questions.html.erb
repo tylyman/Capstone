@@ -16,7 +16,7 @@
 					<div class="btn-group btn-group-xs">
 						<%= link_to 'View', question_path(question), class: 'btn btn-default forum-btn' %>
 						<% if question.user == current_user %>
-							<%= link_to "Edit", edit_question_path(question), class: 'btn btn-warning forum-btn'  %>
+							<%= link_to "Edit", edit_question_path(question), remote: true, class: 'btn btn-warning forum-btn'  %>
 							<%= link_to "Delete", question_path(question), class: 'btn btn-danger forum-btn', method: :delete if current_user == question.user %>
 						<% end %>
 					</div>
