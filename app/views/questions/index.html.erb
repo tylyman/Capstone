@@ -7,6 +7,9 @@
 	    <li role="presentation"><a href="#dayCamp" aria-controls="Day Camp" role="tab" data-toggle="tab">Day Camp</a></li>
 	    <li role="presentation"><a href="#ruby" aria-controls="Ruby" role="tab" data-toggle="tab">Ruby</a></li>
 	    <li role="presentation"><a href="#otherCoding" aria-controls="Other Coding" role="tab" data-toggle="tab">Other Coding</a></li>
+	  	<% if user_signed_in? %>
+	  		<li role="presentation"><a href="#yourPosts" aria-controls="Your Posts" role="tab" data-toggle="tab">Your Posts</a></li>
+	  	<% end %>
 	  </ul>
 	  <!-- Tab panes -->
 	  <div class="tab-content">
@@ -22,6 +25,11 @@
 	    <div role="tabpanel" class="tab-pane" id="otherCoding">
 	    	<%= render partial: 'display_all_questions', locals: { :category => 'Other Coding' }%>
 	    </div>
+	    <% if user_signed_in? %>
+		    <div role="tabpanel" class="tab-pane" id="yourPosts">
+			    	<%= render partial: 'display_users_questions', locals: { :user => @current_user }%>
+			  </div>
+		  <% end %>
 	  </div>
 	</div>
 </div>
