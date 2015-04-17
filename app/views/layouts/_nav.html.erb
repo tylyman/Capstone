@@ -23,6 +23,8 @@
         <li class="active"><span class="sr-only">(current)</span></li>
         <li class="nav_text nav_logo"><%= link_to "About Us", about_path %></li>
         <li class="nav_text nav_logo"><%= link_to "Questions", questions_path %></li>
+        <li><%= link_to "About Us", about_path %></li>
+        <li><%= link_to "Forum", questions_path %></li>
         <% if user_signed_in? %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle nav_text nav_logo" data-toggle="dropdown">
