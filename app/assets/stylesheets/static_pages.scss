@@ -30,11 +30,6 @@
   width: 30%;
 }
 
-.signin_form {
-  float: left;
-  margin-left: 60%;
-}
-
 @media screen and (max-width: 750px) {
      #signin_background {
       float: left;
@@ -42,3 +37,9 @@
       width: auto;
   }
 }
+
+.signin_form {
+  float: left;
+  margin-left: 60%;
+}
+

@@ -30,10 +30,13 @@ body {
   border: none;
 }
 
-#nav_logo {
+.nav_logo {
   margin-top: 22px;
   height: 38px;
 }
 
+.nav_text {
+  font-size: 25px;
+}
 
 

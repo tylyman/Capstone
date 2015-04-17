@@ -11,7 +11,7 @@
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="/">
-            <img alt="Brand" src="assets/agogelogo.png" id="nav_logo">
+            <%= image_tag('agogelogo.png', alt: 'Brand', class: 'nav_logo') %>
           </a>
         </div>
       </div>
@@ -21,11 +21,11 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li class="active"><span class="sr-only">(current)</span></li>
-        <li><%= link_to "About Us", about_path %></li>
-        <li><%= link_to "Questions", questions_path %></li>
+        <li class="nav_text nav_logo"><%= link_to "About Us", about_path %></li>
+        <li class="nav_text nav_logo"><%= link_to "Questions", questions_path %></li>
         <% if user_signed_in? %>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <a href="#" class="dropdown-toggle nav_text nav_logo" data-toggle="dropdown">
                                             Account <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
@@ -35,13 +35,13 @@
               <li class="divider"></li>
               <li><%= link_to "Events", events_path %>
               <li class="divider"></li>
-              <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+              <li><%= link_to('Sign out', destroy_user_session_path, method: :delete) %></li>
             </ul>
           </li>
         <% else %>
 
           <!-- Button trigger modal -->
-            <li data-toggle="modal" data-target="#myModal"><a>Sign In</a></li>
+            <li data-toggle="modal" data-target="#myModal" class="nav_text nav_logo"><a>Sign In</a></li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
