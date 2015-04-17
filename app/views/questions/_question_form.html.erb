@@ -1,5 +1,8 @@
 <div class= "form-group">
-	<%= form_for question do |f| %>
+	<% flash.each do |message_type, message| %>
+  	<%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+  <% end %>
+	<%= form_for question, remote: true do |f| %>
 		<%= f.label :title	 %> 
 	  <%= f.text_field :title, class: 'form-control' %>
 

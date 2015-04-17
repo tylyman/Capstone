@@ -21,11 +21,11 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(question_params)
-
     if !Obscenity.profane?(@question.content) && !Obscenity.profane?(@question.title)
       if @question.save
         flash[:success] = "Thank you for posting on the forum!"
-        redirect_to @question
+        
+        render :js => "window.location = '#{request.referrer}'"
       else
         flash[:danger] = "Error, please try again."
         render :new
@@ -51,7 +51,7 @@ class QuestionsController < ApplicationController
   def update
     if @question.update(question_params) && !Obscenity.profane?(@question.content) && !Obscenity.profane?(@question.title)
       flash[:success] = "Question updated successfully."
-      redirect_to @question
+      render :js => "window.location = '#{request.referrer}'"
     else
       if Obscenity.profane?(@question.content) || Obscenity.profane?(@question.title)
         flash[:danger] = "Explicit content detected, no foul language please!"
