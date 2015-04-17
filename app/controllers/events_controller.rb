@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :update, :edit, :destroy]
+  before_action :set_event, only: [:show, :update, :edit, :destroy, :enroll]
   before_action :set_user
 
   def new
@@ -48,9 +48,15 @@ class EventsController < ApplicationController
     @events = Event.all
   end
 
+  def enroll
+   @event.users << @user
+   redirect_to root_path
+   flash[:success] = "You are enrolled in #{@event.title}"
+  end
+
   private
   def event_params
-    params.require(:event).permit(:title, :description, :datetime, :city, :state, :cost, :vacancies, :user_id)
+    params.require(:event).permit(:title, :description, :datetime, :city, :state, :cost, :vacancies, :user_id, :total_spots)
   end
 
   def set_event

@@ -1,7 +1,10 @@
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  New Event
-</button>
+
+<div class="container">
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-lg forum-btn" data-toggle="modal" data-target="#myModal">
+    New Event
+  </button>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -18,7 +21,8 @@
   </div>
 </div>
    
-
-<% @events.each do |event| %>
-<%= render partial: 'display_events', locals: {:event => event} %> 
-<% end %>
+<div class="container">
+  <% @events.each do |event| %>
+  <%= render partial: 'display_events', locals: {:event => event} %> 
+  <% end %>
+</div>

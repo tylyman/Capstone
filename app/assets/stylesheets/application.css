@@ -19,6 +19,11 @@ body {
   margin-top: 10px;
 }
 
+.alert_style {
+  float: left;
+  font-size: 20px;
+}
+
 /**** nav *****/
 
 #headspace {
@@ -31,10 +36,13 @@ body {
   border: none;
 }
 
-#nav_logo {
+.nav_logo {
   margin-top: 22px;
   height: 38px;
 }
 
+.nav_text {
+  font-size: 25px;
+}
 
 

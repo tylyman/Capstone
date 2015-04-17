@@ -19,10 +19,15 @@
         <%= f.label :cost %>
         <%= f.text_field :cost, class: 'form-control'  %>
 
-        <%= f.label :vacancies %>
-        <%= f.text_field :vacancies, class: 'form-control'  %>
+        <%= f.label :total_spots %>
+          
+          <%= f.number_field :total_spots, class: 'form-control'   %>
 
         <%= f.submit "Submit", class: "btn btn-primary sign_up_button", id: "events-btn-space"  %>
       <% end %>
   </div>
 </div>
+
+
+
+
