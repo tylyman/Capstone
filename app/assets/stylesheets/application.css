@@ -18,6 +18,11 @@ body {
   margin-bottom: 10px;
 }
 
+.alert_style {
+  float: left;
+  font-size: 20px;
+}
+
 /**** nav *****/
 
 #headspace {

@@ -9,6 +9,7 @@
         <p><%= event.state %></p>
         <p><%= event.cost %></p>
         <p><%= event.vacancies %></p>
+        <p><%= event.total_spots %></p>
         <button><%= link_to "Delete", event_path(event), method: :delete %></button>
         <button><%= link_to "Edit", edit_event_path(event)%></button>
     </div>
