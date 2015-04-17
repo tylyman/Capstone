@@ -1,5 +1,9 @@
 <div class = "container">
-	<%= link_to 'Ask a question', new_question_path, class: 'btn btn-default forum-btn' %>
+	<% if user_signed_in? %>
+		<%= link_to "Add a post", new_question_path, remote: true, class: "btn btn-default forum-btn" %>
+	<% else %>
+		<span data-toggle="modal" data-target="#myModal" class="btn btn-default forum-btn" >Sign in to post</span>
+	<% end %>
 	<div role="tabpanel">
 	  <!-- Nav tabs -->
 	  <ul class="nav nav-tabs" role="tablist">
@@ -8,7 +12,7 @@
 	    <li role="presentation"><a href="#ruby" aria-controls="Ruby" role="tab" data-toggle="tab">Ruby</a></li>
 	    <li role="presentation"><a href="#otherCoding" aria-controls="Other Coding" role="tab" data-toggle="tab">Other Coding</a></li>
 	  	<% if user_signed_in? %>
-	  		<li role="presentation"><a href="#yourPosts" aria-controls="Your Posts" role="tab" data-toggle="tab">Your Posts</a></li>
+	  		<li role="presentation" class="tabpane-right"><a href="#yourPosts" aria-controls="Your Posts" role="tab" data-toggle="tab">Your Posts</a></li>
 	  	<% end %>
 	  </ul>
 	  <!-- Tab panes -->
@@ -27,13 +31,11 @@
 	    </div>
 	    <% if user_signed_in? %>
 		    <div role="tabpanel" class="tab-pane" id="yourPosts">
-			    	<%= render partial: 'display_users_questions', locals: { :user => @current_user }%>
+			    <%= render partial: 'display_users_questions', locals: { :user => @current_user }%>
 			  </div>
 		  <% end %>
 	  </div>
 	</div>
 </div>
 
-
-
-
+<%= render partial:'modal_partial' %>

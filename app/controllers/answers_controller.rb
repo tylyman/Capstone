@@ -9,6 +9,11 @@ class AnswersController < ApplicationController
 
   def new
     @answer = @question.answers.build
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create
@@ -17,7 +22,7 @@ class AnswersController < ApplicationController
     if !Obscenity.profane?(@answer.content)
       if @answer.save
         flash[:success] = "Answer created successfully."
-        redirect_to @answer.question
+        render :js => "window.location = '#{request.referrer}'"
       else
         flash[:danger] = "Error-Answer was not created."
         render :new
@@ -31,7 +36,12 @@ class AnswersController < ApplicationController
   def edit
     if current_user != @answer.user
       flash[:danger] = "You are not authorized to edit this answer."
-      redirect_to @answer.question
+      render :js => "window.location = '#{request.referrer}'"
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 
