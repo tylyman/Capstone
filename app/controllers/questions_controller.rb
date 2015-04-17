@@ -42,10 +42,10 @@ class QuestionsController < ApplicationController
       redirect_to request.referrer
     end
 
-    # respond_to do |format|
-    #   format.html
-    #   format.js
-    # end
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def update
