@@ -12,6 +12,11 @@ class QuestionsController < ApplicationController
 
   def new
     @question = Question.new
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create
@@ -32,14 +37,15 @@ class QuestionsController < ApplicationController
   end
 
   def edit
-    # if @question.posted = true
-    #   flash[:danger] = "This question has already been posted and cannot be edited."
-    #   redirect_to request.referrer
-    # end
     if current_user != @question.user
       flash[:danger] = "You are not authorized to edit this question."
       redirect_to request.referrer
     end
+
+    # respond_to do |format|
+    #   format.html
+    #   format.js
+    # end
   end
 
   def update

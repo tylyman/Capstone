@@ -13,7 +13,8 @@
 			  	<% if answer.user == current_user %>
 				  	<div class = "btn-group btn-group-xs">
 				  		<%= link_to "Edit", edit_question_answer_path(question, answer), class: 'btn btn-warning' %>
-							<%= link_to "Delete", question_answer_path(question, answer), class: 'btn btn-danger', method: :delete if current_user == answer.user %>
+							<%= link_to "Delete", question_answer_path(question, answer), class: 'btn btn-danger', 
+							method: :delete if current_user == answer.user %>
 						</div>
 					<% end %>
 			  </div>

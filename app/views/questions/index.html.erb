@@ -1,5 +1,12 @@
 <div class = "container">
 	<%= link_to 'Ask a question', new_question_path, class: 'btn btn-default forum-btn' %>
+	<% if user_signed_in? %>
+	<button type="button" class="btn" data-toggle="modal" data-target="#projectModal">
+		New Post
+	</button>
+	<% else %>
+		<span data-toggle="modal" data-target="#myModal"><a>Sign in to post</a></span>
+	<% end %>
 	<div role="tabpanel">
 	  <!-- Nav tabs -->
 	  <ul class="nav nav-tabs" role="tablist">
@@ -8,7 +15,7 @@
 	    <li role="presentation"><a href="#ruby" aria-controls="Ruby" role="tab" data-toggle="tab">Ruby</a></li>
 	    <li role="presentation"><a href="#otherCoding" aria-controls="Other Coding" role="tab" data-toggle="tab">Other Coding</a></li>
 	  	<% if user_signed_in? %>
-	  		<li role="presentation"><a href="#yourPosts" aria-controls="Your Posts" role="tab" data-toggle="tab">Your Posts</a></li>
+	  		<li role="presentation" class="tabpane-right"><a href="#yourPosts" aria-controls="Your Posts" role="tab" data-toggle="tab">Your Posts</a></li>
 	  	<% end %>
 	  </ul>
 	  <!-- Tab panes -->
@@ -34,6 +41,23 @@
 	</div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="questionsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="gridSystemModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body" id="linkModalBody">
+        This shouldn't show
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
