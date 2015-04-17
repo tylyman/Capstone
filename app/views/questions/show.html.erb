@@ -1,8 +1,3 @@
-
 <%= render partial: 'display_question', locals: { :question => @question } %>
-
-<div class = "container">
-	<%= link_to 'Answer this question', new_question_answer_path(@question), class: 'btn btn-default forum-btn' %>
-</div>
 
 <%= render partial: 'display_answers', locals: { :question => @question } %>
