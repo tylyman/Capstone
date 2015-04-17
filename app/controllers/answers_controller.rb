@@ -9,6 +9,11 @@ class AnswersController < ApplicationController
 
   def new
     @answer = @question.answers.build
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create
@@ -32,6 +37,11 @@ class AnswersController < ApplicationController
     if current_user != @answer.user
       flash[:danger] = "You are not authorized to edit this answer."
       redirect_to @answer.question
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 
