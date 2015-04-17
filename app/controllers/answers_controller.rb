@@ -36,17 +36,17 @@ class AnswersController < ApplicationController
   end
 
   def update
-    if !Obscenity.profane?(@answer.content)
-      if @answer.update(answer_params)
-        flash[:success] = "Answer updated successfully."
-        redirect_to @answer.question
+    if @answer.update(answer_params) && !Obscenity.profane?(@answer.content)
+      flash[:success] = "Answer updated successfully."
+      redirect_to @answer.question
+    else
+      if Obscenity.profane?(@answer.content)
+        flash[:danger] = "Explicit content detected, no foul language please!"
+        render :edit
       else
         flash[:danger] = "Answer was not updated."
         render :edit
       end
-    else
-      flash[:danger] = "Explicit content detected, no foul language please!"
-      render :edit
     end
   end
 
