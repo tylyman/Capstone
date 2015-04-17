@@ -1,11 +1,8 @@
 <div class = "container">
-	<%= link_to 'Ask a question', new_question_path, class: 'btn btn-default forum-btn' %>
 	<% if user_signed_in? %>
-	<button type="button" class="btn" data-toggle="modal" data-target="#projectModal">
-		New Post
-	</button>
+		<%= link_to "Add a post", new_question_path, remote: true, class: "btn btn-default forum-btn" %>
 	<% else %>
-		<span data-toggle="modal" data-target="#myModal"><a>Sign in to post</a></span>
+		<span data-toggle="modal" data-target="#myModal" class="btn btn-default forum-btn" >Sign in to post</span>
 	<% end %>
 	<div role="tabpanel">
 	  <!-- Nav tabs -->
@@ -42,14 +39,14 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="questionsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="questionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="gridSystemModalLabel">Modal title</h4>
       </div>
-      <div class="modal-body" id="linkModalBody">
+      <div class="modal-body" id="questionModalBody">
         This shouldn't show
       </div>
       <div class="modal-footer">

@@ -1,18 +1,16 @@
-<div class = "container">	
-	<div class= "form-group">
-		<%= form_for question do |f| %>
-			<%= f.label :title	 %> 
-		  <%= f.text_field :title, class: 'form-control' %>
+<div class= "form-group">
+	<%= form_for question do |f| %>
+		<%= f.label :title	 %> 
+	  <%= f.text_field :title, class: 'form-control' %>
 
-			<%= f.label :content %> 
-		  <%= f.text_area :content, class: 'form-control'  %>
+		<%= f.label :content %> 
+	  <%= f.text_area :content, class: 'form-control'  %>
 
-		  <%= f.label :category %>
-		  <%= f.select :category, options_for_select(['General', 'Day Camp', 'Ruby', 'Other Coding']), class: 'form-control' %>	
+	  <%= f.label :category %>
+	  <%= f.select :category, options_for_select(['General', 'Day Camp', 'Ruby', 'Other Coding']), class: 'form-control' %>	
 
-			<%= f.hidden_field :user_id, value: current_user.id, class: 'form-control'  %>	  
-			
-		  <%= f.submit "Submit", class: "btn submit-btn"  %>
-		<% end %>
-	</div>
+		<%= f.hidden_field :user_id, value: current_user.id, class: 'form-control'  %>	  
+		
+	  <%= f.submit "Submit", class: "btn btn-default forum-btn"  %>
+	<% end %>
 </div>
