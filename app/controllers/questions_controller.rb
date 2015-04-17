@@ -43,17 +43,17 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    if !Obscenity.profane?(@question.content) && !Obscenity.profane?(@question.title)
-      if @question.update(question_params) 
-        flash[:success] = "Question updated successfully."
-        redirect_to @question
+    if @question.update(question_params) && !Obscenity.profane?(@question.content) && !Obscenity.profane?(@question.title)
+      flash[:success] = "Question updated successfully."
+      redirect_to @question
+    else
+      if Obscenity.profane?(@question.content) || Obscenity.profane?(@question.title)
+        flash[:danger] = "Explicit content detected, no foul language please!"
+        render :edit
       else
         flash[:danger] = "Question was not updated."
         render :edit
       end
-    else
-      flash[:danger] = "Explicit content detected, no foul language please!"
-      render :edit
     end
   end
 
