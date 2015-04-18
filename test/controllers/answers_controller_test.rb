@@ -28,7 +28,7 @@ class AnswersControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
-    get :edit, id: @answer.id, question_id: @question.id
+    xhr :get, :edit, id: @answer.id, question_id: @question.id
     put :update, id: @answer.id, answer: {content: 'Content updated'}, question_id: @question.id
     @answer.reload
     assert_redirected_to @question
