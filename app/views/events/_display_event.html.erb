@@ -5,7 +5,7 @@
 <p>Spots taken: <%= event.users.count if event.users %></p> 
 <p><%= event.total_spots %></p>
 <% if event.users.exclude?(current_user) && current_user != event.owner %>
-  <button class="btn btn-default"><%= link_to "enroll", enroll_path(event), method: :put %></button>
+  <button class="btn btn-default"><%= link_to "enroll", new_charge_path(event_id: event.id) %></button>
 <% end %> 
 <% if event.users.include?(current_user) %>
   <span class="btn btn-default">You are enrolled in this event!</span>
