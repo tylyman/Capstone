@@ -3,3 +3,7 @@ one:
  last_name: Last
  email: test@test.com
 
+two:
+ first_name: Second
+ last_name: User
+ email: second@test.com

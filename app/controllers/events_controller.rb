@@ -7,8 +7,8 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = @user.events.build(event_params)
-    @event.users << @user
+    @event = Event.new(event_params)
+    @event.owner = events_owner
     if @event.save
       redirect_to events_path
     else
@@ -31,10 +31,10 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    if @event.users.include? current_user
+    if @event.owner == current_user
       @event.destroy
       flash[:success] = "The Event was destroyed"
-      redirect_to events_path
+      redirect_to root_path
     else
       flash[:danger] = "You are not authorized to delete this event."
       redirect_to @event
@@ -49,9 +49,15 @@ class EventsController < ApplicationController
   end
 
   def enroll
-   @event.users << @user
-   redirect_to root_path
-   flash[:success] = "You are enrolled in #{@event.title}"
+    @event.users << @user
+    if @event.valid?
+      redirect_to root_path
+      flash[:success] = "You are enrolled in #{@event.title}"
+    else
+      @event.users.delete @user
+      redirect_to root_path
+      flash[:danger] = @event.errors.full_messages
+    end
   end
 
   private
@@ -65,5 +71,9 @@ class EventsController < ApplicationController
 
   def set_user
     @user = current_user
+  end
+
+  def events_owner
+    @events_owner = current_user
   end
 end

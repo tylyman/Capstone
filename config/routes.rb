@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   root 'static_pages#home'
 
-  get '/enroll/:id', to: 'events#enroll', as: :enroll
+  put '/enroll/:id', to: 'events#enroll', as: :enroll
 
   get '/about', to: 'static_pages#about', as: :about
   
