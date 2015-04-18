@@ -11,7 +11,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', 			'~> 2.0'
 gem 'devise'
-gem 'sdoc', 					'~> 0.4.0', group: :doc
+gem 'sdoc', 					'~> 0.4.0'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'dotenv-rails'
 
