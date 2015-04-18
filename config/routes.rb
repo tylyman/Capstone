@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   get '/about', to: 'static_pages#about', as: :about
   
   get '/contact', to: 'static_pages#contact', as: :contact
+  
+  resources :charges
+
+  get '/learn', to: 'static_pages#learn', as: :learn
 
   devise_for :users, :controllers => { registrations: 'registrations' }
   
