@@ -3,5 +3,5 @@
 <%= @user.last_name %>
 <%= @user.email %>
 <% @transactions.each do |transaction| %>
-Transaction amount<%= transaction.amount %>
+Transaction amount: $<%= transaction.amount / 100 %>
 <% end %>
