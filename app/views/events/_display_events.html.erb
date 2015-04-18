@@ -10,9 +10,15 @@
         <p><%= event.cost %></p>
         <p>enrolled: <%= event.users.count if event.users %></p> 
         <p><%= event.total_spots %></p>
-        <button><%= link_to "Delete", event_path(event), method: :delete %></button>
-        <button><%= link_to "Edit", edit_event_path(event)%></button>
-        <%= link_to "enroll", enroll_path(event) %>
+        <% if event.users.exclude?(current_user) && current_user != event.owner %>
+          <%= link_to "enroll", enroll_path(event), method: :put %>
+        <% end %>  
+        <% if current_user == event.owner %>
+          <button><%= link_to "Delete", event_path(event), method: :delete %></button>
+          <button><%= link_to "Edit", edit_event_path(event)%></button>
+        <% end %>
+        
+        
     </div>
 </div>
 

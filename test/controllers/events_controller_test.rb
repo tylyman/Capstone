@@ -16,8 +16,7 @@ class EventsControllerTest < ActionController::TestCase
     post :create, event: {title: 'Simple Title'}
     event_created = assigns(:event)
     assert_redirected_to events_path
-    @user.reload
-    assert_includes event_created.users, @user
+    assert_equal event_created.owner, @user
   end
 
   test "should get update" do
@@ -36,7 +35,7 @@ class EventsControllerTest < ActionController::TestCase
   test "should destroy event" do
     @event.users << users(:one)
     delete :destroy, id: @event.id
-    assert_redirected_to events_path
+    assert_redirected_to @events
   end
 
   test "should get show" do
@@ -49,4 +48,24 @@ class EventsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "Should enroll the user to the event" do
+    @second_user = users(:two)
+    sign_in @second_user
+    @event.owner = @user
+    @event.save
+    put :enroll, {id: @event}
+    assert_redirected_to root_path
+    @event.reload
+    assert_includes @event.users, @second_user
+  end
+
+  test "Should not enroll the owner to its own event" do
+    @event.owner = @user
+    @event.save
+    put :enroll, {id: @event}
+    assert_redirected_to root_path
+    # assert the flash says, you can't add yourself as a participant
+    @event.reload
+    assert @event.valid?
+  end
 end
