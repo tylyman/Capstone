@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   
   get '/contact', to: 'static_pages#contact', as: :contact
 
+  get '/learn', to: 'static_pages#learn', as: :learn
+
   devise_for :users, :controllers => { registrations: 'registrations' }
   
   resources :users, only: [:index, :show]

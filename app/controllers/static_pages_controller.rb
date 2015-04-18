@@ -9,4 +9,7 @@ class StaticPagesController < ApplicationController
 
   def contact
   end
+
+  def learn
+	end
 end
