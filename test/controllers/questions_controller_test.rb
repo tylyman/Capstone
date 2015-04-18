@@ -17,6 +17,6 @@ class QuestionsControllerTest < ActionController::TestCase
       post :create, question: { :title => 'Test', :content => 'Test description', :user_id => 1}
     end
     question = assigns(:question)
-    assert_redirected_to question_path(question.id)
+    assert_response :success
   end
 end
