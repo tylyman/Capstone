@@ -25,6 +25,7 @@ class ChargesController < ApplicationController
 	  @charge.save
 
 	  redirect_to enroll_path(@event)
+	  # <!-- enroll_path(event), method: :put  -->
 
 	rescue Stripe::CardError => e
 	  flash[:error] = e.message
