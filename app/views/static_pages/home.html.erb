@@ -1,22 +1,20 @@
 <% if user_signed_in? %>
   <img src="assets/agogesigninhero.jpg" class="img-responsive signedinhero" alt="Responsive image">
-
-        <% else %>
-
-          <div class="col-md-6 signin_form" id="signin_background">
-            <%= render'devise/registrations/signup_form' %>
-          </div>
-        <div id="signedouthero"></div>
-      <% end %>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-1"></div>
-      <% @events.each do |event| %>
-        <div class="col-sm-5">
-          <%= render partial: 'events/display_events', locals: {:event => event} %> 
-        </div>
-      <% end %>
-      <div class="col-sm-1"></div>
-    </div>
+<% else %>
+  <div class="col-md-6 signin_form" id="signin_background">
+    <%= render'devise/registrations/signup_form' %>
   </div>
+  <div id="signedouthero"></div>
+<% end %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <% @events.each do |event| %>
+      <div class="col-sm-5">
+        <%= render partial: 'events/display_events', locals: {:event => event} %> 
+      </div>
+    <% end %>
+    <div class="col-sm-1"></div>
+  </div>
+</div>
