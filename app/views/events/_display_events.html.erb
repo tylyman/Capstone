@@ -12,7 +12,7 @@
         <p><%= event.total_spots %></p>
         <button><%= link_to "Delete", event_path(event), method: :delete %></button>
         <button><%= link_to "Edit", edit_event_path(event)%></button>
-        <%= link_to "enroll", enroll_path(event) %>
+        <button><%= link_to "Enroll", new_charge_path(event_id: event.id) %></button>
     </div>
 </div>
 
