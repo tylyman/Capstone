@@ -1,6 +1,6 @@
 <div class="block-update-card status">
     <div class="update-card-body">
-      <%= link_to event_path(event) do %>
+      <%= link_to event_path(event), remote: true do %>
         <h3><%= event.title %></h4>
       <% end %>
       <p><%= event.description %></p>
@@ -19,5 +19,3 @@
       <% end %>
     </div>
 </div>
-
-

@@ -1,0 +1,12 @@
+<p><%= event.description %></p>
+<p>When: <%= event.datetime %></p> 
+<p>Where: <%= event.city %>, <%= event.state %></p>
+<p>Cost: $<%= event.cost %></p>
+<p>Spots taken: <%= event.users.count if event.users %></p> 
+<p><%= event.total_spots %></p>
+<% if event.users.exclude?(current_user) && current_user != event.owner %>
+  <button class="btn btn-default"><%= link_to "enroll", enroll_path(event), method: :put %></button>
+<% end %> 
+<% if event.users.include?(current_user) %>
+  <span class="btn btn-default">You are enrolled in this event!</span>
+<% end %>

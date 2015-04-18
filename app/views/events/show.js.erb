@@ -1,0 +1,4 @@
+console.log('Its working');
+$('#eventModalLabel').html('<%= j @event.title %>');
+$('#eventModalBody').html('<%= j render partial: "display_event", locals: { event: @event} %>');
+$('#eventModal').modal('show');
