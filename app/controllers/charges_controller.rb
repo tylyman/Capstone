@@ -3,8 +3,9 @@ class ChargesController < ApplicationController
 	end
 
 	def create
+		@event = Event.find[:id]
 	  # Amount in cents
-	  @amount = 500
+	  @amount = @event.price
 
 	  customer = Stripe::Customer.create(
 	    :email => 'example@stripe.com',
@@ -18,7 +19,7 @@ class ChargesController < ApplicationController
 	    :currency    => 'usd'
 	  )
 
-	  @charge = Transaction.new(stripe_id: charge['id'], user_id: current_user, amount: charge['amount'], paid: charge['paid'], course_id: event.id]
+	  @charge = Transaction.new(stripe_id: charge['id'], user_id: current_user, amount: charge['amount'], paid: charge['paid'], course_id: @event.id)
 
 	rescue Stripe::CardError => e
 	  flash[:error] = e.message
