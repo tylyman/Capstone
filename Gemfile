@@ -13,6 +13,7 @@ gem 'jbuilder', 			'~> 2.0'
 gem 'devise'
 gem 'sdoc', 					'~> 0.4.0', group: :doc
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'byebug'
