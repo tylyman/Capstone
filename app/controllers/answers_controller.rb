@@ -37,11 +37,11 @@ class AnswersController < ApplicationController
     if current_user != @answer.user
       flash[:danger] = "You are not authorized to edit this answer."
       render :js => "window.location = '#{request.referrer}'"
-    end
-
-    respond_to do |format|
-      format.html
-      format.js
+    else
+      respond_to do |format|
+        format.html
+        format.js
+      end
     end
   end
 

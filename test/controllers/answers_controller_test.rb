@@ -17,7 +17,7 @@ class AnswersControllerTest < ActionController::TestCase
     post :create, question_id: @question.id, answer: { :content => 'Test' }
     answer = assigns(:answer)
     assert answer.content, "Test"
-    assert_redirected_to answer.question
+    assert_response :success
   end
 
   test "should put update" do
@@ -28,7 +28,7 @@ class AnswersControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
-    get :edit, id: @answer.id, question_id: @question.id
+    xhr :get, :edit, id: @answer.id, question_id: @question.id
     put :update, id: @answer.id, answer: {content: 'Content updated'}, question_id: @question.id
     @answer.reload
     assert_redirected_to @question
