@@ -72,9 +72,9 @@ class AnswersController < ApplicationController
   end
 
   def vote
-    if params[:vote] = "up"
+    if params[:vote] == "up"
       @answer.upvote
-    elsif params[:vote] = "down"
+    elsif params[:vote] == "down"
       @answer.downvote
     end  
      redirect_to @answer
