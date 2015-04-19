@@ -6,6 +6,7 @@
 		<div class = 'col-sm-6'>
 			<div class="panel panel-default">
 				<div class='panel-header'>
+					<span id="voteBadge-<%= answer.id %>"><% vote_path(answer) %></span>
 					<%= link_to "UPVOTE", vote_path(answer, vote: 'up'), class: "btn btn-success", remote: true %>
 			    <%= link_to "DOWNVOTE", vote_path(answer, vote: 'down'), class: "btn btn-danger", remote: true %>
 				</div>
