@@ -30,7 +30,7 @@
     <%= f.submit "Sign up" %>
 
     <%- if controller_name != 'sessions' %>
-      <%= link_to "Log in", new_session_path(resource_name) %><br />
+      <%= link_to "Log In", "#signInModal", "data-toggle" => "modal" %><br />
     <% end -%>
   
   </div>
