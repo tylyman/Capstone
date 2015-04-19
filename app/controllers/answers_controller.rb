@@ -1,6 +1,6 @@
 class AnswersController < ApplicationController
   before_action :set_answer, only: [:show, :edit, :update, :destroy, :vote]
-  before_action :set_question
+  before_action :set_question, except: :vote
   before_action :set_user
   before_action :authenticate_user!, except: [:show, :index]
 
@@ -77,8 +77,6 @@ class AnswersController < ApplicationController
     elsif params[:vote] == "down"
       @answer.downvote
     end  
-     
-    redirect_to @answer
 
     respond_to do |format|
       format.html { redirect_to @answer }

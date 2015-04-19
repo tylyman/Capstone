@@ -1,5 +1,5 @@
 module AnswersHelper
-  def vote_badge(link)
+  def vote_badge(answer)
     if answer.helpful >= 0
       content_tag :span, answer.helpful, class: ['label','label-info'] 
     else  
