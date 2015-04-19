@@ -1,23 +1,21 @@
 <div class="block-update-card status">
     <div class="update-card-body">
-    <%= link_to event_path(event) do %>
+      <%= link_to event_path(event), remote: true do %>
         <h3><%= event.title %></h4>
-        <% end %>
-        <p><%= event.description %></p>
-        <p><%= event.datetime %></p> 
-        <p><%= event.city %></p>
-        <p><%= event.state %></p>
-        <p><%= event.cost %></p>
-        <p>enrolled: <%= event.users.count if event.users %></p> 
-        <p><%= event.total_spots %></p>
-        <% if event.users.exclude?(current_user) && current_user != event.owner %>
-          <button><%= link_to "enroll", new_charge_path(event_id: event.id) %></button>
-        <% end %>  
-        <% if current_user == event.owner %>
-          <button><%= link_to "Delete", event_path(event), method: :delete %></button>
-          <button><%= link_to "Edit", edit_event_path(event)%></button>
-        <% end %>
+      <% end %>
+      <p><%= event.description %></p>
+      <p><%= event.datetime %></p> 
+      <p><%= event.city %></p>
+      <p><%= event.state %></p>
+      <p><%= event.cost %></p>
+      <p>enrolled: <%= event.users.count if event.users %></p> 
+      <p><%= event.total_spots %></p>
+      <% if event.users.exclude?(current_user) && current_user != event.owner %>
+        <%= link_to "enroll", enroll_path(event), method: :put %>
+      <% end %>  
+      <% if current_user == event.owner %>
+        <button><%= link_to "Delete", event_path(event), method: :delete %></button>
+        <button><%= link_to "Edit", edit_event_path(event)%></button>
+      <% end %>
     </div>
 </div>
-
-
