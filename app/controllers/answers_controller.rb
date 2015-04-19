@@ -1,5 +1,5 @@
 class AnswersController < ApplicationController
-  before_action :set_answer, only: [:show, :edit, :update, :destroy]
+  before_action :set_answer, only: [:show, :edit, :update, :destroy, :vote]
   before_action :set_question
   before_action :set_user
   before_action :authenticate_user!, except: [:show, :index]
@@ -69,6 +69,15 @@ class AnswersController < ApplicationController
       flash[:danger] = "You are not authorized to delete this answer."
       redirect_to @answer.question
     end
+  end
+
+  def vote
+    if params[:vote] = "up"
+      @answer.upvote
+    elsif params[:vote] = "down"
+      @answer.downvote
+    end  
+     redirect_to @answer
   end
 
   private    
