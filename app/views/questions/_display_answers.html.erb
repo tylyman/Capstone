@@ -6,8 +6,8 @@
 		<div class = 'col-sm-6'>
 			<div class="panel panel-default">
 				<div class='panel-header'>
-					<%= link_to "UPVOTE", vote_path(answer, vote: 'up'), class: "btn btn-success" %>
-			    <%= link_to "DOWNVOTE", vote_path(answer, vote: 'down'), class: "btn btn-danger" %>
+					<%= link_to "UPVOTE", vote_path(answer, vote: 'up'), class: "btn btn-success", remote: true %>
+			    <%= link_to "DOWNVOTE", vote_path(answer, vote: 'down'), class: "btn btn-danger", remote: true %>
 				</div>
 			  <div class="panel-body">
 					<p><%= answer.content %></p>
