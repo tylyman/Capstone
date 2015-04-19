@@ -77,7 +77,13 @@ class AnswersController < ApplicationController
     elsif params[:vote] == "down"
       @answer.downvote
     end  
-     redirect_to @answer
+     
+    redirect_to @answer
+
+    respond_to do |format|
+      format.html { redirect_to @answer }
+      format.js 
+    end
   end
 
   private    
