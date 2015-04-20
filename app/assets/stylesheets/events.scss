@@ -13,9 +13,10 @@
   margin-left: 30%;
   height: 600px;
   width: 400px;
+  font: black;
 }
 
-.events_index  p {
+.events_index p {
   text-align: center;
 }
 
@@ -28,4 +29,17 @@
   height: 50px;
   width: 300px;
   margin-left: 11%;
+}
+
+.events_index a {
+  color: black;
+}
+
+.events_index a:hover {
+  color: black;
+}
+
+.events_index:hover, .events_index a:hover {
+  background-color: lightgray;
+  text-decoration: none;
 }
