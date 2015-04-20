@@ -32,10 +32,17 @@ class EventsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should destroy event" do
+  test "should not destroy event when not the owner" do
     @event.users << users(:one)
     delete :destroy, id: @event.id
-    assert_redirected_to @events
+    assert_redirected_to @event
+  end
+
+  test "should destroy event when user is owner" do
+    @event.owner = users(:one)
+    @event.save
+    delete :destroy, id: @event.id
+    assert_redirected_to events_path
   end
 
   test "should get show" do
