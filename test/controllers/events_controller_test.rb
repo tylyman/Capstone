@@ -62,8 +62,10 @@ class EventsControllerTest < ActionController::TestCase
     @event.save
     put :enroll, {id: @event}
     assert_redirected_to root_path
+    assert @event.total_spots - 1, @event.spots_left
     @event.reload
     assert_includes @event.users, @second_user
+
   end
 
   test "Should not enroll the owner to its own event" do

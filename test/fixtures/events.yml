@@ -8,6 +8,7 @@ one:
   state: MyString
   cost: 1
   vacancies: 1
+  total_spots: 10
 
 two:
   title: MyString
