@@ -19,8 +19,6 @@
   width: 100%;
 }
 
-
-
 #signin_background {
   background-image: image-url('SignUpBkg.png');
   background-repeat: no-repeat;
@@ -28,10 +26,7 @@
   padding-top: 30px;
   height: 508px;
   width: 30%;
-}
-
-@media screen and (max-width: 750px) {
-     #signin_background {
+    @media screen and (max-width: 750px) {
       float: left;
       margin-left: 25%;
       width: auto;
@@ -42,4 +37,28 @@
   float: left;
   margin-left: 60%;
 }
+
+
+.home_paragraph {
+  background-color: #fff;
+  height: 350px;
+  float: left;
+  padding-top: 130px;
+  padding-left: 20px;
+    p {
+      font-size: 20px;
+  }
+}
+
+.title_home_paragraph {
+  width: 300px;
+  padding-left: 100px;
+  padding-top: 112px;
+    h3 {
+      font-size: 30px;
+  }
+}
+
+
+
 

@@ -1,18 +1,11 @@
 <div class="block-update-card status">
     <div class="update-card-body">
-      <%= link_to event_path(event), remote: true do %>
-        <h3><%= event.title %></h4>
-      <% end %>
-      <p><%= event.description %></p>
-      <p><%= event.datetime %></p> 
-      <p><%= event.city %></p>
-      <p><%= event.state %></p>
-      <p><%= event.cost %></p>
+      <h3><%= event.title %></h4>
       <p>enrolled: <%= event.users.count if event.users %></p> 
       <p><%= event.total_spots %></p>
-      <% if event.users.exclude?(current_user) && current_user != event.owner %>
-        <%= link_to "enroll", enroll_path(event), method: :put %>
-      <% end %>  
+
+      <button><%= link_to "enroll", enroll_path(event), method: :put %></button>
+ 
       <% if current_user == event.owner %>
         <button><%= link_to "Delete", event_path(event), method: :delete %></button>
         <button><%= link_to "Edit", edit_event_path(event)%></button>
