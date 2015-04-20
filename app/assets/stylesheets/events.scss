@@ -5,3 +5,27 @@
 #events-btn-space {
   margin-top: 10px;
 }
+
+.events_index {
+  background-image: url('event1.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin-left: 30%;
+  height: 600px;
+  width: 400px;
+}
+
+.events_index  p {
+  text-align: center;
+}
+
+.events_index h3 {
+  padding-top: 50%;
+  text-align: center;
+}
+
+.events_index button {
+  height: 50px;
+  width: 300px;
+  margin-left: 11%;
+}
