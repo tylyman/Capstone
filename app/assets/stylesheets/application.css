@@ -23,6 +23,29 @@ body {
   float: left;
 }
 
+.voting-box {
+
+  margin-right: -50px;
+}
+
+.up-vote {
+  display: block;
+  height: 40px;
+}
+
+.vote-count {
+  display: block;
+  height: 30px;
+}
+
+.fa-chevron-up {
+  color: #354052;
+}
+
+.fa-chevron-down {
+  color: #354052;
+}
+
 /**** nav *****/
 
 #headspace {
