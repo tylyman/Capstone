@@ -47,6 +47,10 @@ body {
   color: #354052;
 }
 
+.forum-hr {
+  margin-bottom: 5px;
+}
+
 /**** nav *****/
 
 #headspace {

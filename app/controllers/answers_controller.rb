@@ -48,7 +48,7 @@ class AnswersController < ApplicationController
   def update
     if @answer.update(answer_params) && !Obscenity.profane?(@answer.content)
       flash[:success] = "Answer updated successfully."
-      redirect_to @answer.question
+      render :js => "window.location = '#{request.referrer}'"
     else
       if Obscenity.profane?(@answer.content)
         flash[:danger] = "Explicit content detected, no foul language please!"
