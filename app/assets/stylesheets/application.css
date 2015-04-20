@@ -136,12 +136,16 @@ width: 100%;
 /* Footer */
 
 #footer {
-     position:absolute; 
-     bottom: 0; 
-     clear: both; 
-     height: 150px; 
-     width: 100%;
-     text-align: center;
-     color: black;
-   }
+  position:absolute; 
+  bottom: 0; 
+  clear: both; 
+  height: 150px; 
+  width: 100%;
+  text-align: center;
+  color: black;
+}
+
+.footer_links {
+  color:gray;
+}
 
