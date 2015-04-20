@@ -6,9 +6,21 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/****** HTML ******/
+
+html {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
 /****** Body ******/
 
 body { 
+  padding-bottom: 150px;
+  min-height: 100%;
+  min-width: 100%;
+  position: relative;
   padding-top: 100px; 
 }
 
@@ -118,6 +130,30 @@ width: 100%;
 .events_style:hover, .events_style a:hover {
   background-color: lightgray;
   text-decoration: none;
+}
+
+/* Footer */
+
+#footer {
+  position:absolute; 
+  bottom: 0; 
+  clear: both; 
+  height: 150px; 
+  width: 100%;
+  text-align: center;
+  color: black;
+}
+
+.fa-facebook-square {
+  color: #354052;
+}
+
+.fa-twitter-square {
+  color: #354052;
+}
+
+.fa-github-square {
+  color: #354052;
 }
 
 
