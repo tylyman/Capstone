@@ -8,7 +8,7 @@
 		</div>
 	  <div class="panel-body">
 			<p><%= question.content %><p>
-			<hr>
+			<hr class='forum-hr'>
 	  	<h6 class='pull-left'>Author: <%= question.user.user_name  %></h6>
 	  	<% if question.user == current_user %>
 	  		<div class = "btn-group btn-group-xs pull-right">
