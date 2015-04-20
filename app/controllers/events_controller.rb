@@ -12,6 +12,7 @@ class EventsController < ApplicationController
     if @event.save
       redirect_to events_path
     else
+      flash[:danger] = "You did not create this event"
       redirect_to :new
     end
   end
