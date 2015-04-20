@@ -14,7 +14,6 @@ body {
 
 .alert {
   float: left;
-  z-index: 99;
 }
 
 /* FORUM */
@@ -71,13 +70,13 @@ body {
 
 /**** Style for every event *****/
 
-.link_decoration {
+.events_style:hover, .events_style a:hover {
+  background-color: lightgray;
   text-decoration: none;
 }
 
-.events_style:hover {
-  background-color: lightgray;
-  text-decoration: none;
+.events_style a:hover {
+  color: black;
 }
 
 .events_style {
