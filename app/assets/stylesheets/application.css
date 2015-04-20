@@ -80,22 +80,15 @@ width: 100%;
 
 /**** Style for every event *****/
 
-.events_style:hover, .events_style a:hover {
-  background-color: lightgray;
-  text-decoration: none;
-}
-
-.events_style a:hover {
-  color: black;
-}
-
 .events_style {
   background-image: url('event1.png');
   background-size: 100%;
   background-repeat: no-repeat;
   height: 450px;
   width: 400px;
+  font: black;
 }
+
 .events_style p {
   text-align: center;
 }
@@ -110,4 +103,18 @@ width: 100%;
   width: 300px;
   margin-left: 11%;
 }
+
+.events_style a {
+  color: black;
+}
+
+.events_style a:hover {
+  color: black;
+}
+
+.events_style:hover, .events_style a:hover {
+  background-color: lightgray;
+  text-decoration: none;
+}
+
 
