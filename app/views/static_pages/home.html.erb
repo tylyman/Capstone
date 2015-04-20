@@ -7,28 +7,25 @@
   <div id="signedouthero"></div>
 <% end %>
 
-<div class="home_paragraph title_home_paragraph">
+<div class="title_home_paragraph">
   <h3>Learn a skill</h3>
 </div>
 <div class="home_paragraph">
   <p>Agoge, Orinally known as the school for teaching the <br>
      brightest minds in the Roman empire! Now comes to you <br>
-     in the form of the best coding day camp for children <br>
+     in the form of the best coding day camp for children 
      to ever exhist in the would!
   </p>
 </div>
 
-<div class="container">
+
   <div class="row">
-    <div class="col-sm-1"></div>
-    <% @events.each do |event| %>
-      <div class="col-sm-5">
-        <%= render partial: 'events/display_events', locals: {:event => event} %> 
+    <% @events.each do |event| %> 
+      <div class="col-md-4 col-xs-offset-1">
+        <%= render partial: 'events/display_events_home', locals: {:event => event} %> 
       </div>
     <% end %>
-    <div class="col-sm-1"></div>
   </div>
-</div>
 
 
 <%= render partial: 'events/events_modal'%>

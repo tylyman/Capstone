@@ -12,6 +12,11 @@ body {
   padding-top: 100px; 
 }
 
+.alert {
+  float: left;
+  z-index: 99;
+}
+
 /* FORUM */
 
 .forum-btn {
@@ -19,9 +24,6 @@ body {
   margin-top: 10px;
 }
 
-.alert_style {
-  float: left;
-}
 
 .voting-box {
 
@@ -65,5 +67,38 @@ body {
 
 .nav_text {
   font-size: 25px;
+}
+
+/**** Style for every event *****/
+
+.link_decoration {
+  text-decoration: none;
+}
+
+.events_style:hover {
+  background-color: lightgray;
+  text-decoration: none;
+}
+
+.events_style {
+  background-image: url('event1.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 450px;
+  width: 400px;
+}
+.events_style p {
+  text-align: center;
+}
+
+.events_style h3 {
+  padding-top: 50%;
+  text-align: center;
+}
+
+.events_style button {
+  height: 50px;
+  width: 300px;
+  margin-left: 11%;
 }
 

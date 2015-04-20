@@ -1,14 +1,42 @@
-<%= form_tag charges_path do %>
-  <article>
-    <label class="amount">
-      <span>Amount: <%= @event.cost  %></span>
-    </label>
-  </article>
-<%= hidden_field_tag :event_id, params[:event_id] %>
+<div class='container'>
+	<div class='panel panel-default"'
+		<div class="panel-header">
+			<h3>Enroll in <%= @event.title %></h3>
+		</div>
+		<div class="panel-body">
+			<p>Please take a moment to review the following information:</p>
+			<br>
+			<h5>Personal Information</h5>
+			<p>First Name: <%= current_user.first_name %></p>
+			<p>Last Name: <%= current_user.last_name %></p>
+			<p>Email Address: <%= current_user.email %></p>
+			<%= link_to "Update This Information", edit_user_registration_path, class: 'btn btn-default forum-btn' %>
+			<br>
+			<br>
+			<h5>Event Details</h5>
+			<P>Location: <%= @event.city %>, <%= @event.state %><p>
+			<p><%= @event.datetime %><p>
 
-
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="<%= @event.title %>"
-          data-amount="<%= @event.cost * 100 %>"></script>
-<% end %>
+			<%= form_tag charges_path do %>
+			  <article>
+			    <label class="Amount">
+			      <span>Cost per attendee: $<%= @event.cost  %></span>
+			    </label>
+			  </article>
+			<%= hidden_field_tag :event_id, params[:event_id] %>
+			<%= link_to "Choose a Different Event", events_path, class: 'btn btn-default forum-btn' %>
+			<br>
+			<br>
+			<p>If the above information is correct, please complete your enrollment and reserve your spot today!</p>
+			<br>
+			  <script src="https://checkout.stripe.com/checkout.js" 
+						  	class="stripe-button"
+			          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+			          data-name="Agoge"
+			          data-description="<%= @event.title %>"
+			          data-amount="<%= @event.cost * 100 %>">
+			  </script>
+			<% end %>
+		</div>
+	</div>
+</div>

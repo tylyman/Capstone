@@ -43,22 +43,28 @@
   background-color: #fff;
   height: 350px;
   float: left;
-  padding-top: 130px;
-  padding-left: 20px;
+  padding-top: 9%; 
+  width: 75%;
     p {
       font-size: 20px;
+      text-align: left;
   }
 }
 
 .title_home_paragraph {
-  width: 300px;
+  background-color: #fff;
+  height: 350px;
+  float: left;
+  width: 20%;
+  padding-top: 8%;
   padding-left: 100px;
-  padding-top: 112px;
     h3 {
       font-size: 30px;
   }
 }
 
-
-
+a:-webkit-any-link {
+  color: black;
+  text-decoration: none;;
+}
 

@@ -16,7 +16,7 @@
 //= require turbolinks
 //= require_tree .
 
-// $(".alert-message").alert();
-// window.setTimeout(function() { $(".alert-message").alert('close'); }, 3500);
+ $(".alert-message").alert();
+ window.setTimeout(function() { $(".alert-message").alert('close'); }, 3500);
 
 // document.getElementById(".alert-message").style.zIndex = "99";
