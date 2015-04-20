@@ -1,28 +1,41 @@
 <div class = "container">
 	<%= link_to 'Answer this question', new_question_answer_path(@question), remote: true, class: 'btn btn-default forum-btn' %>
 </div>
-<% question.answers.each do |answer| %>
+<% question.answers.order("helpful desc").each do |answer| %>
 	<div class = "container">
-		<div class = 'col-sm-6'>
-			<div class="panel panel-default">
-				<div class='panel-header'>
-					<span id="voteBadge-<%= answer.id %>"><%= vote_badge(answer) %></span>
-					<%= link_to "UPVOTE", vote_path(answer, vote: 'up'), class: "btn btn-success", remote: true %>
-			    <%= link_to "DOWNVOTE", vote_path(answer, vote: 'down'), class: "btn btn-danger", remote: true %>
-				</div>
-			  <div class="panel-body">
-					<p><%= answer.content %></p>
-			  </div>
-			  <div class="panel-footer">
-			  	<p>Author: <%= answer.user.user_name %></p>
-			  	<% if answer.user == current_user %>
-				  	<div class = "btn-group btn-group-xs">
-				  		<%= link_to "Edit", edit_question_answer_path(question, answer), remote: true, class: 'btn btn-warning' %>
-							<%= link_to "Delete", question_answer_path(question, answer), class: 'btn btn-danger', 
-							method: :delete if current_user == answer.user %>
-						</div>
+		
+		<div class = 'row'>
+			<div class= 'voting-box col-sm-1'>
+				<span class='up-vote'>
+					<%= link_to vote_path(answer, vote: 'up'), remote: true do %>
+						<i class="fa fa-chevron-up fa-2x" data-toggle="tooltip" data-placement="left" title="Vote up if this answer was helpful!"></i>
 					<% end %>
-			  </div>
+				</span>
+				<span class='vote-count'>
+					<div id="voteBadge-<%= answer.id %>"><%= vote_badge(answer) %></div>
+				</span>
+				<span class='down-vote'>
+					<%= link_to vote_path(answer, vote: 'down'), remote: true do %>
+						<i class="fa fa-chevron-down fa-2x" data-toggle="tooltip" data-placement="left" title="Vote down if this answer was not helpful!"></i>
+					<% end %>
+				</span>
+			</div>
+			<div class='col-sm-6'>
+				<div class="panel panel-default">
+				  <div class="panel-body">
+						<p><%= answer.content %></p>
+				  </div>
+				  <div class="panel-footer">
+				  	<p>Author: <%= answer.user.user_name %></p>
+				  	<% if answer.user == current_user %>
+					  	<div class = "btn-group btn-group-xs">
+					  		<%= link_to "Edit", edit_question_answer_path(question, answer), remote: true, class: 'btn btn-warning' %>
+								<%= link_to "Delete", question_answer_path(question, answer), class: 'btn btn-danger', 
+								method: :delete if current_user == answer.user %>
+							</div>
+						<% end %>
+				  </div>
+				</div>
 			</div>
 		</div>
 	</div>
