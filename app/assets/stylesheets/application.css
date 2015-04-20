@@ -16,7 +16,7 @@ body {
   margin-right: 0;
 }
 
-.alert {
+.main-alert {
 position: absolute;
 width: 100%;
 }
@@ -102,7 +102,7 @@ width: 100%;
   text-align: center;
 }
 
-.events_style button {
+.learn-more-button {
   height: 50px;
   width: 300px;
   margin-left: 11%;
