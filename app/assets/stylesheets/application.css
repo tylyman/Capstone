@@ -12,6 +12,10 @@ body {
   padding-top: 100px; 
 }
 
+.row {
+  margin-right: 0;
+}
+
 .alert {
 position: absolute;
 width: 100%;
