@@ -23,7 +23,7 @@ class AnswersControllerTest < ActionController::TestCase
   test "should put update" do
     put :update, id: @answer.id, answer: {content: 'Content updated'}, question_id: @question.id
     @answer.reload
-    assert_redirected_to @question
+    assert_response :success
     assert_equal  'Content updated', @answer.content
   end
 
@@ -31,7 +31,7 @@ class AnswersControllerTest < ActionController::TestCase
     xhr :get, :edit, id: @answer.id, question_id: @question.id
     put :update, id: @answer.id, answer: {content: 'Content updated'}, question_id: @question.id
     @answer.reload
-    assert_redirected_to @question
+    assert_response :success
     assert_equal  'Content updated', @answer.content
   end
 
