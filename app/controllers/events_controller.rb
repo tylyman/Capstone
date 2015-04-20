@@ -34,7 +34,7 @@ class EventsController < ApplicationController
     if @event.owner == current_user
       @event.destroy
       flash[:success] = "The Event was destroyed"
-      redirect_to root_path
+      redirect_to events_path
     else
       flash[:danger] = "You are not authorized to delete this event."
       redirect_to @event

@@ -13,8 +13,10 @@ body {
 }
 
 .alert {
-  float: left;
+position: absolute;
+width: 100%;
 }
+
 
 /* FORUM */
 
