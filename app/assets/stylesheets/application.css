@@ -145,7 +145,15 @@ width: 100%;
   color: black;
 }
 
-.footer_links {
-  color:gray;
+.fa-facebook-square {
+  color: #354052;
+}
+
+.fa-twitter-square {
+  color: #354052;
+}
+
+.fa-github-square {
+  color: #354052;
 }
 
