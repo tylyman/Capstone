@@ -7,21 +7,20 @@
   <div id="signedouthero"></div>
 <% end %>
 
-<div class="title_home_paragraph">
-  <h3>Learn a skill</h3>
+<div class="home_paragraph_container">
+  <span class="title_home_paragraph">
+    <h3>Learn a skill</h3>
+    <p>Agoge, Orinally known as the school for teaching the <br>
+       brightest minds in the Roman empire! Now comes to you <br>
+       in the form of the best coding day camp for children 
+       to ever exhist in the world!
+    </p>
+  </span>
 </div>
-<div class="home_paragraph">
-  <p>Agoge, Orinally known as the school for teaching the <br>
-     brightest minds in the Roman empire! Now comes to you <br>
-     in the form of the best coding day camp for children 
-     to ever exhist in the would!
-  </p>
-</div>
-
 
   <div class="row">
     <% @events.each do |event| %> 
-      <div class="col-md-4 col-xs-offset-1">
+      <div class="col-md-4 col-md-offset-1">
         <%= render partial: 'events/display_events_home', locals: {:event => event} %> 
       </div>
     <% end %>

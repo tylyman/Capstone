@@ -1,5 +1,5 @@
 <%= link_to event_path(event), remote: true do %>
-  <div class="block-update-card status events_style">
+  <div class="block-update-card col-md-offset-3 status events_style">
     <div class="update-card-body">
       <h3><%= event.title %></h3>
       <p>Of many reasons I love you here is one
@@ -12,7 +12,7 @@
         everything will be alright</p>
       <p>enrolled: <%= event.users.count if event.users %></p> 
       <p><%= event.total_spots %></p>
-      <button><%= link_to "Learn More", new_charge_path(event_id: event.id) %></button>
+      <%= link_to "Learn More", new_charge_path(event_id: event.id), class: 'btn btn-default learn-more-button' %>
     </div>
   </div>
 <% end %>
