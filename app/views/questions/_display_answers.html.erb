@@ -1,11 +1,19 @@
 <div class = "container">
-	<%= link_to 'Answer this question', new_question_answer_path(@question), remote: true, class: 'btn btn-default forum-btn' %>
+	<% if @question.answers.count == 1 %>
+	<h3 class='pull-left'><%= @question.answers.count %> Response</h3>
+	<% else %>
+	<h3 class='pull-left'><%= @question.answers.count %> Responses</h3>
+	<% end %>
+	<%= link_to 'Respond to this post', new_question_answer_path(@question), remote: true, 
+							class: 'btn btn-default forum-btn pull-right respond-btn' %>
+</div>
+<div class="container">
+	<hr>
 </div>
 <% question.answers.order("helpful desc").each do |answer| %>
 	<div class = "container">
-		
 		<div class = 'row'>
-			<div class= 'voting-box col-sm-1'>
+			<div class= 'voting-box pull-left col-xs-1'>
 				<span class='up-vote'>
 					<%= link_to vote_path(answer, vote: 'up'), remote: true do %>
 						<i class="fa fa-chevron-up fa-2x" data-toggle="tooltip" data-placement="left" title="Vote up if this answer was helpful!"></i>
@@ -20,18 +28,22 @@
 					<% end %>
 				</span>
 			</div>
-			<div class='col-sm-6'>
-				<div class="panel panel-default">
+			<div class='col-lg-8 col-md-6 col-xs-8'>
+				<div class="panel panel-default answer-panel">
 				  <div class="panel-body">
 						<p><%= answer.content %></p>
 						<hr class='forum-hr'>
-				  	<h6 class='pull-left'>Author: <%= answer.user.user_name %></h6>
+				  	<h6 class='pull-left'><%= answer.user.user_name %> - <%= time_ago_in_words(answer.created_at)%> ago</h6>
 				  	<% if answer.user == current_user %>
-					  	<div class = "btn-group btn-group-xs pull-right">
-					  		<%= link_to "Edit", edit_question_answer_path(question, answer), remote: true, class: 'btn btn-warning' %>
-								<%= link_to "Delete", question_answer_path(question, answer), class: 'btn btn-danger', 
-								method: :delete if current_user == answer.user %>
-							</div>
+					  	<span class = "edit-delete pull-right">
+								<%= link_to edit_question_answer_path(question, answer), remote: true do %>
+					  			<i class="fa fa-pencil fa-lg" data-toggle="tooltip" title="Edit"></i>
+					  		<% end %>				
+								&nbsp;&nbsp;
+								<%= link_to question_answer_path(question, answer), method: :delete  do %>
+									<i class="fa fa-trash fa-lg" data-toggle="tooltip" title="Delete"></i>
+								<% end %>
+					  	</span>
 						<% end %>
 				  </div>
 				</div>

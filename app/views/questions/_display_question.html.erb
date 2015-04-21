@@ -4,17 +4,25 @@
 <div class = "container">
 	<div class="panel panel-default">
 		<div class="panel-heading">
+			<span class ='pull-right category-label category-label-large'>
+					<%= question.category %>
+			</span>
 			<h4><%= question.title %></h4>
 		</div>
 	  <div class="panel-body">
 			<p><%= question.content %><p>
 			<hr class='forum-hr'>
-	  	<h6 class='pull-left'>Author: <%= question.user.user_name  %></h6>
-	  	<% if question.user == current_user %>
-	  		<div class = "btn-group btn-group-xs pull-right">
-					<%= link_to "Edit", edit_question_path(question), remote: true, class: 'btn btn-warning'  %>
-					<%= link_to "Delete", question_path(question), class: 'btn btn-danger', method: :delete if current_user == question.user %>
-				</div>
+	  	<h6 class='pull-left'>Posted by <%= question.user.user_name %> <%= time_ago_in_words(question.created_at)%> ago</h6>
+			<% if question.user == current_user %>
+		  	<span class = "edit-delete pull-right">
+					<%= link_to edit_question_path(question), remote: true do %>
+		  			<i class="fa fa-pencil fa-lg" data-toggle="tooltip" title="Edit"></i>
+		  		<% end %>				
+					&nbsp;&nbsp;
+					<%= link_to question_path(question), method: :delete  do %>
+						<i class="fa fa-trash fa-lg" data-toggle="tooltip" title="Delete"></i>
+					<% end %>
+		  	</span>
 			<% end %>
 	  </div>
 	</div>

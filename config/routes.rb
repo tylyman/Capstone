@@ -14,13 +14,13 @@ Rails.application.routes.draw do
 
   get '/learn', to: 'static_pages#learn', as: :learn
 
-  devise_for :users, :controllers => { registrations: 'registrations' }
+  devise_for :users, :controllers => { registrations: 'registrations', omniauth_callbacks: "omniauth_callbacks" }
   
   resources :users, only: [:index, :show]
 
   resources :questions do
-	  resources :answers #only: [:index, :show, :new, :create, :edit, :update, :destroy]
-	end
+    resources :answers #only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  end
+  
   resources :events #only: [:index, :show, :new, :create, :edit, :update, :destroy]
-
 end

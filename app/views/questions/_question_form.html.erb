@@ -2,7 +2,10 @@
 	<% flash.each do |message_type, message| %>
   	<%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
   <% end %>
+  
 	<%= form_for question, remote: true do |f| %>
+		<%= render 'layouts/error_messages', object: f.object %>
+
 		<%= f.label :title	 %> 
 	  <%= f.text_field :title, class: 'form-control' %>
 
