@@ -14,7 +14,7 @@ class QuestionsControllerTest < ActionController::TestCase
 
   test "should create question" do
     assert_difference('Question.count', 1) do
-      post :create, question: { :title => 'Test', :content => 'Test description', :user_id => 1}
+      post :create, question: { :title => 'Test', :content => 'Test description', :user_id => 1, :category => 'General'}
     end
     question = assigns(:question)
     assert_response :success

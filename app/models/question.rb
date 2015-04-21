@@ -5,11 +5,11 @@ class Question < ActiveRecord::Base
   validates :title, :presence => true
   validates :content, :presence => true
   validates :category, :presence => true
-  
+
   validate :profane?
 
   def profane?
-  	errors.add(:content, "contains obscene content") if Obscenity.profane?(self.content)
   	errors.add(:title, "contains obscene content") if Obscenity.profane?(self.title)
+  	errors.add(:content, "contains obscene content") if Obscenity.profane?(self.content)
   end
 end
