@@ -32,6 +32,8 @@
     <%- if controller_name != 'sessions' %>
       <%= link_to "Log In", "#signInModal", "data-toggle" => "modal" %><br />
     <% end -%>
+
+    <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
   
   </div>
 <% end %>
