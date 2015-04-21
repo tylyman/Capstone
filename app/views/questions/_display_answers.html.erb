@@ -1,9 +1,12 @@
 <div class = "container">
-	<%= link_to 'Answer this question', new_question_answer_path(@question), remote: true, class: 'btn btn-default forum-btn' %>
+	<h3 class='pull-left'><%= @question.answers.count %> Respones</h3>
+	<%= link_to 'Respond to this post', new_question_answer_path(@question), remote: true, class: 'btn btn-default forum-btn pull-right' %>
+</div>
+<div class="container">
+	<hr>
 </div>
 <% question.answers.order("helpful desc").each do |answer| %>
 	<div class = "container">
-		
 		<div class = 'row'>
 			<div class= 'voting-box col-sm-1'>
 				<span class='up-vote'>
