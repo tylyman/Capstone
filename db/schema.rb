@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150421190830) do
+=======
+ActiveRecord::Schema.define(version: 20150421190350) do
+>>>>>>> 2407a352761fed0c9f75ff8e1ce18c50a8e93304
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +28,7 @@ ActiveRecord::Schema.define(version: 20150421190830) do
     t.datetime "updated_at",                  null: false
     t.boolean  "approved",    default: false
     t.integer  "helpful",     default: 0
+    t.integer  "voters",      default: [],                 array: true
   end
 
   create_table "events", force: :cascade do |t|
