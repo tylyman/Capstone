@@ -2,7 +2,7 @@
 	<% if user_signed_in? %>
 		<%= link_to "Add a post", new_question_path, remote: true, class: "btn btn-default forum-btn" %>
 	<% else %>
-		<span data-toggle="modal" data-target="#myModal" class="btn btn-default forum-btn" >Sign in to post</span>
+		<span data-toggle="modal" data-target="#myModal" class="btn btn-default forum-btn" >Sign in to post!</span>
 	<% end %>
 	<div role="tabpanel">
 	  <!-- Nav tabs -->

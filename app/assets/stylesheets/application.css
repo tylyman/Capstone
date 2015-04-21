@@ -88,6 +88,37 @@ width: 100%;
   margin-top: 10px;
 }
 
+.post-panel {
+  margin-bottom: 0px;
+  margin-top: 3px;
+  padding: 0px;
+}
+
+.post-panel-body {
+  padding : 8px;
+  height: 37px;
+}
+
+.forum-label {
+  width: 1150px;
+  padding-top: 10px;
+}
+
+.category-label {
+  border: 1px solid #354052;
+  color: #354052;
+  border-radius: 5px;
+  padding: 2px;
+  margin-right: 10px;
+  font-size: 12px;
+}
+
+.count-badge {
+  color: #354052;
+  padding: 2px;
+  width: 50px;
+  text-align: center;
+}
 /**** nav *****/
 
 #headspace {
