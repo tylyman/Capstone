@@ -72,6 +72,22 @@ width: 100%;
   margin-bottom: 5px;
 }
 
+.fa-pencil {
+  color: #354052;
+}
+
+.fa-trash {
+  color: silver;
+} 
+
+.fa-trash:hover {
+  color: tomato;
+}
+
+.edit-delete {
+  margin-top: 10px;
+}
+
 /**** nav *****/
 
 #headspace {
