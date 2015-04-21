@@ -23,8 +23,4 @@ Rails.application.routes.draw do
 	end
   resources :events #only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
-  devise_scope :user do
-    get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
-  end
-
 end
