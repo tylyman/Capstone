@@ -41,9 +41,9 @@
 .home_paragraph_container {
   width: 100%;
   height: 350px;
-  padding-top: 100px;
+  padding-top: 60px;
     @media screen and (max-width: 750px){
-      height: 600px
+      height: 500px
   } 
 }
 
@@ -51,6 +51,7 @@
   background-color: #fff;
   width: 20%;
   text-align: center;
+  font-family: proxima nova;
     h3 {
       font-size: 50px;
       } p {

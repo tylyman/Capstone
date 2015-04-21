@@ -1,7 +1,7 @@
 <%= link_to event_path(event), remote: true do %>
   <div class="block-update-card status events_index">
     <div class="update-card-body">
-      <h3><%= event.title %></h3>
+      <h3><%= event.title.capitalize %></h3>
       <p>Of many reasons I love you here is one
         the ways you write me from the gate at 
         the airport so I can tell you 
@@ -12,9 +12,8 @@
         everything will be alright</p>
       <p>enrolled: <%= event.users.count if event.users %></p> 
       <p><%= event.total_spots %></p>
-      <%= link_to "Learn More", new_charge_path(event_id: event.id), class: 'btn btn-default learn-more-button' %>
-      <%= link_to "Delete", event_path(event), method: :delete, class: 'btn btn-default learn-more-button' %>
-      <%= link_to "Edit", edit_event_path(event), class: 'btn btn-default learn-more-button' %>
+      <%= link_to "DELETE", event_path(event), method: :delete, class: 'btn btn-default learn-more-button' %>
+      <%= link_to "EDIT", edit_event_path(event), class: 'btn btn-default learn-more-button' %>
     </div>
   </div>
 <% end %>
