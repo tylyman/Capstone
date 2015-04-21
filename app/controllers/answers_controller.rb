@@ -19,23 +19,17 @@ class AnswersController < ApplicationController
   def create
     @answer = @question.answers.build(answer_params)
 
-    if !Obscenity.profane?(@answer.content)
-      if @answer.save
-        flash[:success] = "Answer created successfully."
-        render :js => "window.location = '#{request.referrer}'"
-      else
-        flash[:danger] = "Error-Answer was not created."
-        render :new
-      end
+    if @answer.save
+      flash[:success] = "Response posted successfully."
+      render :js => "window.location = '#{request.referrer}'"
     else
-      flash[:danger] = "Explicit content detected, no foul language please!"
       render :new
     end
   end
 
   def edit
     if current_user != @answer.user
-      flash[:danger] = "You are not authorized to edit this answer."
+      flash[:danger] = "You are not authorized to edit this response."
       render :js => "window.location = '#{request.referrer}'"
     else
       respond_to do |format|
@@ -46,27 +40,21 @@ class AnswersController < ApplicationController
   end
 
   def update
-    if @answer.update(answer_params) && !Obscenity.profane?(@answer.content)
-      flash[:success] = "Answer updated successfully."
+    if @answer.update(answer_params)      
+      flash[:success] = "Response updated successfully."
       render :js => "window.location = '#{request.referrer}'"
     else
-      if Obscenity.profane?(@answer.content)
-        flash[:danger] = "Explicit content detected, no foul language please!"
-        render :edit
-      else
-        flash[:danger] = "Answer was not updated."
-        render :edit
-      end
+      render :edit
     end
   end
 
   def destroy
     if current_user = @answer.user
       @answer.destroy
-      flash[:success] = "The selected answer has been destroyed"
+      flash[:success] = "The response has been destroyed"
       redirect_to @answer.question
     else
-      flash[:danger] = "You are not authorized to delete this answer."
+      flash[:danger] = "You are not authorized to delete this response."
       redirect_to @answer.question
     end
   end
