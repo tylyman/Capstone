@@ -18,11 +18,17 @@
 
 .events_index p {
   text-align: center;
+  color: black;
+}
+
+.events_index p:hover {
+  color: black; 
 }
 
 .events_index h3 {
   padding-top: 50%;
   text-align: center;
+  color: black;
 }
 
 .events_index button {
@@ -31,15 +37,6 @@
   margin-left: 11%;
 }
 
-.events_index a {
-  color: black;
-}
-
 .events_index a:hover {
-  color: black;
-}
-
-.events_index:hover, .events_index a:hover {
-  background-color: lightgray;
   text-decoration: none;
 }

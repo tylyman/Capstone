@@ -21,7 +21,7 @@ body {
   min-height: 100%;
   min-width: 100%;
   position: relative;
-  padding-top: 100px; 
+  padding-top: 90px; 
 }
 
 .row {
@@ -80,18 +80,33 @@ width: 100%;
 
 .navbar {
   background-color: #354052;
-  height: 100px;
+  height: 90px;
   border: none;
 }
 
 .nav_logo {
-  margin-top: 22px;
+  margin-top: 13px;
   height: 38px;
 }
 
 .nav_text {
   font-size: 25px;
 }
+
+/**** Style event page *****/
+
+
+.event-create-btn {
+  margin-top: 90px;
+  color: white;
+  background-color: #354052;
+}
+
+.event-create-btn:hover {
+  color: white;
+  background-color: #3f4c61;
+}
+
 
 /**** Style for every event *****/
 
@@ -106,29 +121,37 @@ width: 100%;
 
 .events_style p {
   text-align: center;
+  color: black;
+}
+
+.events_style p:hover {
+  color: black; 
 }
 
 .events_style h3 {
   padding-top: 50%;
   text-align: center;
+  color: black;
 }
 
 .learn-more-button {
+  background-color: #fb502e;
+  font-family: Proxima Nova;
+  font-size: 23px;
+  letter-spacing: -1px;
+  color: white;
   height: 50px;
   width: 300px;
   margin-left: 11%;
+  padding-top: 8px;
 }
 
-.events_style a {
-  color: black;
+.learn-more-button:hover {
+  background-color: #fc7a60;
+  color: white;
 }
 
 .events_style a:hover {
-  color: black;
-}
-
-.events_style:hover, .events_style a:hover {
-  background-color: lightgray;
   text-decoration: none;
 }
 
