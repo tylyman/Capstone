@@ -30,7 +30,7 @@
 					  	<div class = "btn-group btn-group-xs pull-right">
 					  		<%= link_to "Edit", edit_question_answer_path(question, answer), remote: true, class: 'btn btn-warning' %>
 								<%= link_to "Delete", question_answer_path(question, answer), class: 'btn btn-danger', 
-								method: :delete if current_user == answer.user %>
+										method: :delete if current_user == answer.user %>
 							</div>
 						<% end %>
 				  </div>

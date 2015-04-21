@@ -21,24 +21,18 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(question_params)
-    if !Obscenity.profane?(@question.content) && !Obscenity.profane?(@question.title)
-      if @question.save
-        flash[:success] = "Thank you for posting on the forum!"
-        
-        render :js => "window.location = '#{request.referrer}'"
-      else
-        flash[:danger] = "Error, please try again."
-        render :new
-      end
-    else
-      flash[:danger] = "Explicit content detected, no foul language please!"
+
+    if @question.save
+      flash[:success] = "Thank you for posting on the forum!"
+      render :js => "window.location = '#{request.referrer}'"
+    elsif Obscenity.profane?(@question.content) || Obscenity.profane?(@question.title)
       render :new
     end
   end
 
   def edit
     if current_user != @question.user
-      flash[:danger] = "You are not authorized to edit this question."
+      flash[:danger] = "You are not authorized to edit this post."
       redirect_to request.referrer
     end
 
@@ -49,27 +43,21 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    if @question.update(question_params) && !Obscenity.profane?(@question.content) && !Obscenity.profane?(@question.title)
-      flash[:success] = "Question updated successfully."
+    if @question.update(question_params)
+      flash[:success] = "Post updated successfully."
       render :js => "window.location = '#{request.referrer}'"
     else
-      if Obscenity.profane?(@question.content) || Obscenity.profane?(@question.title)
-        flash[:danger] = "Explicit content detected, no foul language please!"
-        render :edit
-      else
-        flash[:danger] = "Question was not updated."
-        render :edit
-      end
+      render :edit
     end
   end
 
   def destroy
     if current_user = @question.user
       @question.destroy
-      flash[:success] = "The question titled '#{@question.title}' has been destroyed"
+      flash[:success] = "The post titled '#{@question.title}' has been destroyed"
       redirect_to request.referrer
     else
-      flash[:danger] = "You are not authorized to delete this question."
+      flash[:danger] = "You are not authorized to delete this post."
       redirect_to @question
     end
   end
