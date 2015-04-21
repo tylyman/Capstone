@@ -33,6 +33,10 @@ position: absolute;
 width: 100%;
 }
 
+.alert-facebook{
+  color: white;
+}
+
 .dropdown-menu {
   min-width: 141px;
 }

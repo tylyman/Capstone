@@ -14,12 +14,14 @@ gem 'devise'
 gem 'sdoc', 					'~> 0.4.0', group: :doc
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'dotenv-rails'
+gem 'omniauth-facebook'
 
 group :development, :test do
   gem 'byebug'
   gem 'pry-byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem "better_errors"
 end
 
 group :test do
