@@ -44,10 +44,26 @@ width: 100%;
   margin-top: 10px;
 }
 
+.badge {
+  width: 35px;
+  text-align: center;
+  margin-left: -3px;
+  height: auto;
+}
+
+.respond-btn {
+  margin-top: 20px;
+}
+
+.answer-panel {
+ margin-left: -10px;
+}
 
 .voting-box {
-
-  margin-right: -50px;
+  display: block;
+  width: 55px;
+  padding-left: 10px;
+  padding-right: 10px; 
 }
 
 .up-vote {
