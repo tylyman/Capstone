@@ -25,17 +25,55 @@
   margin-top: 100px;
   padding-top: 30px;
   height: 508px;
-  width: 30%;
+  width: auto;
     @media screen and (max-width: 750px) {
       float: left;
-      margin-left: 25%;
+      margin-left: 5%;
       width: auto;
   }
+}
+
+#signup {
+  margin-top: 40px;
 }
 
 .signin_form {
   float: left;
   margin-left: 60%;
+}
+
+.signup_line {
+  margin-bottom: 20px;
+}
+
+.signup_field1,
+.signup_field2,
+.signup_field3,
+.signup_field4 {
+  height: 45px;
+  width: 381px;
+  margin-right: 5px;
+  font-size: 16px;
+}
+
+.signup_field1 {
+  margin-bottom: 15px;
+}
+
+.signup_field3 {
+  margin-top: -3px;
+  margin-bottom: 15px;
+}
+
+.signup_button {
+  width: 381px;
+  height: 55px;
+  margin-top: 50px;
+  background-color: #fb502e;
+  color: white;
+  font-family: proxima nova;
+  font-weight: 20;
+  font-size: 20px;
 }
 
 .home_paragraph_container {
