@@ -14,12 +14,11 @@ class User < ActiveRecord::Base
   	where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
     	user.email = auth.info.email
     	user.password = Devise.friendly_token[0,20]
-    	user.user_name = auth.info.user_name   # assuming the user model has a name
-    	#user.image = auth.info.image # assuming the user model has an image
+    	user.user_name = auth.info.user_name   
   	end
 	end
 
-	#copies the facebook email if available
+	# Copies the facebook email if available
 	def self.new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
