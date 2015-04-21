@@ -95,6 +95,7 @@ width: 100%;
 }
 
 .post-panel-body {
+  color: #354052;
   padding : 8px;
   height: 37px;
 }
@@ -106,11 +107,18 @@ width: 100%;
 
 .category-label {
   border: 1px solid #354052;
-  color: #354052;
+  color: white;
   border-radius: 5px;
   padding: 2px;
   margin-right: 10px;
   font-size: 12px;
+  background-color: #354052;
+}
+
+.category-label-large {
+  font-size: 14px;
+  padding: 5px;
+  margin: 0px;
 }
 
 .count-badge {

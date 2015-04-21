@@ -1,5 +1,9 @@
 <div class = "container">
-	<h3 class='pull-left'><%= @question.answers.count %> Respones</h3>
+	<% if @question.answers.count == 1 %>
+	<h3 class='pull-left'><%= @question.answers.count %> Response</h3>
+	<% else %>
+	<h3 class='pull-left'><%= @question.answers.count %> Responses</h3>
+	<% end %>
 	<%= link_to 'Respond to this post', new_question_answer_path(@question), remote: true, class: 'btn btn-default forum-btn pull-right' %>
 </div>
 <div class="container">
