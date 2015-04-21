@@ -60,10 +60,16 @@ class AnswersController < ApplicationController
   end
 
   def vote
-    if params[:vote] == "up"
-      @answer.upvote
-    elsif params[:vote] == "down"
-      @answer.downvote
+    if @answer.voters.include?(current_user.id)
+      flash[:danger] = "You can only vote once."
+      redirect_to request.referrer
+    else
+      @answer.voters.push(current_user.id)
+      if params[:vote] == "up"
+        @answer.upvote
+      elsif params[:vote] == "down"
+        @answer.downvote
+      end
     end  
 
     respond_to do |format|

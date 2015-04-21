@@ -9,7 +9,7 @@ class Question < ActiveRecord::Base
   validate :profane?
 
   def profane?
-  	errors.add(:title, "contains obscene content") if Obscenity.profane?(self.title)
-  	errors.add(:content, "contains obscene content") if Obscenity.profane?(self.content)
+  	errors.add(:title, "contains obscene content.") if Obscenity.profane?(self.title)
+  	errors.add(:content, "contains obscene content.") if Obscenity.profane?(self.content)
   end
 end
