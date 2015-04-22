@@ -7,7 +7,6 @@ class Event < ActiveRecord::Base
   validates :city, :presence => true
   validates :state, :presence => true
   validates :cost, :presence => true
-  # validates :vacancies, :presence => true
   validates :total_spots, :presence => true
 
   validate :check_for_owner_enrollment, :on => :update

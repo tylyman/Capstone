@@ -14,12 +14,11 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.owner = events_owner
-    if @event.save
-      flash[:success] = "Event posted successfully."
-      render :js => "window.location = '#{request.referrer}'"
-      redirect_to events_path
-    else
-      render :new
+    @event.save
+    
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 

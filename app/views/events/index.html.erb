@@ -5,7 +5,7 @@
   </div> 
 </div>  
 
-<div class="container">
+<div id="events_index_div" class="container">
   <% @events.each do |event| %>
   <%= render partial: 'display_events', locals: {:event => event} %> 
   <% end %>
