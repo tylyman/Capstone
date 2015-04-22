@@ -15,7 +15,6 @@ class EventsControllerTest < ActionController::TestCase
   test "should create event for logged in user" do
     post :create, event: {title: 'Simple Title'}
     event_created = assigns(:event)
-    assert_redirected_to events_path
     assert_equal event_created.owner, @user
   end
 

@@ -2,14 +2,7 @@
   <div class="block-update-card col-md-offset-3 status events_style">
     <div class="update-card-body">
       <h3><%= event.title.capitalize %></h3>
-      <p>Of many reasons I love you here is one
-        the ways you write me from the gate at 
-        the airport so I can tell you 
-        everything will be alright
-        Of many reasons I love you here is one
-        the ways you write me from the gate at 
-        the airport so I can tell you 
-        everything will be alright</p>
+      <p><%= event.description %></p> 
       <p>enrolled: <%= event.users.count if event.users %></p> 
       <p><%= event.total_spots %></p>
       <%= link_to "LEARN MORE", new_charge_path(event_id: event.id), class: 'btn btn-default learn-more-button' %>

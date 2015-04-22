@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 #events-btn-space {
   margin-top: 10px;
 }
@@ -10,7 +11,13 @@
   background-image: url('event1.png');
   background-size: 100%;
   background-repeat: no-repeat;
-  margin-left: 30%;
+  background-color: white;
+  margin-left: 33%;
+  margin-right: 0;
+  outline: solid;
+  outline-width: 1px;
+  outline-color: #cdcdcd;
+  margin-bottom: 30px;
   height: 600px;
   width: 400px;
   font: black;

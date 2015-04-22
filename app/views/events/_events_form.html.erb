@@ -1,6 +1,13 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for event do |f| %>
+
+    <% flash.each do |message_type, message| %>
+    <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+    <% end %>
+
+    <%= form_for event, remote: true do |f| %>
+    <%= render 'layouts/error_messages', object: f.object %>
+
         <%= f.label :title %> 
         <%= f.text_field :title, class: 'form-control' %>
 
@@ -21,7 +28,7 @@
 
         <%= f.label :total_spots %>
           
-          <%= f.number_field :total_spots, class: 'form-control'   %>
+        <%= f.number_field :total_spots, class: 'form-control'   %>
 
         <%= f.submit "Submit", class: "btn btn-primary sign_up_button", id: "events-btn-space"  %>
       <% end %>
