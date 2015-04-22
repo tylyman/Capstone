@@ -4,10 +4,14 @@ one:
   content: Test1
   question: one
   user_id: 1
+  question_id: 1
   helpful: 0
+  id: 1
 
 two:
   content: Test2
   question: two
   user_id: 2
+  question_id: 1
   helpful: 0
+  id: 2

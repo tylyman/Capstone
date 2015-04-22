@@ -40,16 +40,21 @@ class AnswersController < ApplicationController
   end
 
   def update
-    if @answer.update(answer_params)      
-      flash[:success] = "Response updated successfully."
-      render :js => "window.location = '#{request.referrer}'"
+    if current_user == @answer.user
+      if @answer.update(answer_params)      
+        flash[:success] = "Response updated successfully."
+        render :js => "window.location = '#{request.referrer}'"
+      else
+        render :edit
+      end
     else
-      render :edit
+      flash[:danger] = "You are not authorized to edit this response."
+      render :js => "window.location = '#{request.referrer}'"
     end
   end
 
   def destroy
-    if current_user = @answer.user
+    if current_user == @answer.user
       @answer.destroy
       flash[:success] = "The response has been destroyed"
       redirect_to @answer.question
@@ -62,7 +67,7 @@ class AnswersController < ApplicationController
   def vote
     if @answer.voters.include?(current_user.id)
       flash[:danger] = "You can only vote once."
-      redirect_to request.referrer
+      redirect_to @answer.question
     else
       @answer.voters.push(current_user.id)
       if params[:vote] == "up"
@@ -70,12 +75,12 @@ class AnswersController < ApplicationController
       elsif params[:vote] == "down"
         @answer.downvote
       end
-    end  
 
-    respond_to do |format|
-      format.html { redirect_to @answer }
-      format.js 
-    end
+      respond_to do |format|
+        format.html { redirect_to @answer.question }
+        format.js 
+      end
+    end      
   end
 
   private    
