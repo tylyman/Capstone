@@ -25,7 +25,7 @@ class QuestionsController < ApplicationController
     if @question.save
       flash[:success] = "Thank you for posting on the forum!"
       render :js => "window.location = '#{request.referrer}'"
-    elsif Obscenity.profane?(@question.content) || Obscenity.profane?(@question.title)
+    else
       render :new
     end
   end
@@ -55,7 +55,7 @@ class QuestionsController < ApplicationController
     if current_user = @question.user
       @question.destroy
       flash[:success] = "The post titled '#{@question.title}' has been destroyed"
-      redirect_to request.referrer
+      redirect_to questions_path
     else
       flash[:danger] = "You are not authorized to delete this post."
       redirect_to @question
