@@ -1,0 +1,4 @@
+  console.log('Its working');
+$('#new-events-holder').html('<%= j render partial: "events_new_modal", locals: { :event => @event } %>');
+$('#eventNewTitle').html('New Event');
+$('#eventNewModal').modal('show');

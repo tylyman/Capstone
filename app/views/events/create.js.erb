@@ -1,0 +1,10 @@
+<% if @event.persisted? %>
+  $('#eventNewModal').modal('hide');
+  $('#new-events-holder').html('');
+  $('#events_index_div').append('<%= j render partial: 'display_events', locals: {:event => @event} %>');
+<% else %>
+  $('#eventNewModal').modal('hide');
+  $('#new-events-holder').html('');
+  $('#new-events-holder').html('<%= j render partial: "events_new_modal", locals: { :event => @event } %>');
+  $('#eventNewModal').modal('show');
+<% end %>

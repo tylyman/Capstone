@@ -4,22 +4,32 @@ class EventsController < ApplicationController
 
   def new
     @event = @user.events.build
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create
     @event = Event.new(event_params)
     @event.owner = events_owner
-    if @event.save
-      redirect_to events_path
-    else
-      flash[:danger] = "You did not create this event"
-      redirect_to :new
+    @event.save
+    
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 
   def edit
     unless @event.users.include?(current_user)
       redirect_to @event, notice: "You are not authorized to edit this event."
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 

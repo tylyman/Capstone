@@ -24,20 +24,6 @@ body {
   padding-top: 90px; 
 }
 
-.row {
-  margin-right: 0;
-}
-
-/****** Static pages home row start ******/
-
-.events_body_background {
-  background-color: #f2f2f2;
-  padding-top: 30px;
-  padding-bottom: 100px;
-}
-
-/****** Static pages home row end ******/
-
 .main-alert {
 position: absolute;
 width: 100%;
@@ -49,6 +35,27 @@ width: 100%;
 
 .dropdown-menu {
   min-width: 141px;
+}
+
+/**** nav *****/
+
+#headspace {
+
+}
+
+.navbar {
+  background-color: #354052;
+  height: 90px;
+  border: none;
+}
+
+.nav_logo {
+  margin-top: 13px;
+  height: 38px;
+}
+
+.nav_text {
+  font-size: 25px;
 }
 
 /* FORUM */
@@ -157,26 +164,6 @@ width: 100%;
   width: 50px;
   text-align: center;
 }
-/**** nav *****/
-
-#headspace {
-
-}
-
-.navbar {
-  background-color: #354052;
-  height: 90px;
-  border: none;
-}
-
-.nav_logo {
-  margin-top: 13px;
-  height: 38px;
-}
-
-.nav_text {
-  font-size: 25px;
-}
 
 /**** Style event page *****/
 
@@ -194,6 +181,13 @@ width: 100%;
 
 
 /**** Style for every event *****/
+
+.events_body_background {
+  background-color: #f2f2f2;
+  padding-top: 30px;
+  padding-bottom: 100px;
+  margin-right: 0;
+}
 
 .events_style {
   background-image: url('event1.png');
