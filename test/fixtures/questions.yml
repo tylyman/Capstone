@@ -5,11 +5,9 @@ one:
   content: MyText
   category: MyString
   user_id: 1
-  posted: false
-
+  
 two:
   title: MyString
   content: MyText
   category: MyString
   user_id: 1
-  posted: false

@@ -33,26 +33,31 @@ class QuestionsController < ApplicationController
   def edit
     if current_user != @question.user
       flash[:danger] = "You are not authorized to edit this post."
-      redirect_to request.referrer
-    end
-
-    respond_to do |format|
-      format.html
-      format.js
+      redirect_to @question
+    else
+      respond_to do |format|
+        format.html
+        format.js
+      end
     end
   end
 
   def update
-    if @question.update(question_params)
-      flash[:success] = "Post updated successfully."
-      render :js => "window.location = '#{request.referrer}'"
-    else
-      render :edit
+    if current_user == @question.user
+      if @question.update(question_params)
+        flash[:success] = "Post updated successfully."
+        render :js => "window.location = '#{request.referrer}'"
+      else
+        render :edit
+      end
+    else  
+      flash[:danger] = "You are not authorized to edit this post."
+      redirect_to @question
     end
   end
 
   def destroy
-    if current_user = @question.user
+    if current_user == @question.user
       @question.destroy
       flash[:success] = "The post titled '#{@question.title}' has been destroyed"
       redirect_to questions_path
