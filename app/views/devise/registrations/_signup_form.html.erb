@@ -29,9 +29,12 @@
   <div class="actions">
     <%= f.submit "SUBMIT", class: 'signup_button' %>
 
-    <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
-  
   </div>
+
+  <div class="actions signup_facbook_button">
+    <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+  </div>
+
 <% end %>
 
 
