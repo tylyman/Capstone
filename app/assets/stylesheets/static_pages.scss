@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-
 /****** Static Pages Home ******/
 
 #signedouthero {
@@ -68,12 +67,17 @@
 .signup_button {
   width: 381px;
   height: 55px;
-  margin-top: 50px;
+  margin-top: 30px;
   background-color: #fb502e;
   color: white;
   font-family: proxima nova;
   font-weight: 20;
   font-size: 20px;
+}
+
+.signup_facbook_button {
+  margin-top: 13px;
+  width: 190px;
 }
 
 .home_paragraph_container {
