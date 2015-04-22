@@ -58,6 +58,38 @@ width: 100%;
   font-size: 25px;
 }
 
+/**** SIGN IN *****/
+
+.signin {
+  margin-left: 135px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  height: 40px;
+  width: 300px;
+}
+    
+.rememberme {
+  margin-left: 135px;
+}
+
+.signupbtn {
+  margin-left: 135px;
+}
+
+.signin_button {
+  background-color: #fb502e;
+  font-family: Proxima Nova;
+  text-align: center;
+  font-size: 23px;
+  letter-spacing: -1px;
+  color: white;
+  height: 50px;
+  width: 300px;
+  margin-left: 135px;
+  padding-top: 8px;
+}
+
+
 /* FORUM */
 
 .forum-btn {
