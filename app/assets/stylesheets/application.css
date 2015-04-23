@@ -37,6 +37,9 @@ width: 100%;
   min-width: 141px;
 }
 
+.events-label {
+  text-align: center;
+}
 /**** nav *****/
 
 #headspace {
