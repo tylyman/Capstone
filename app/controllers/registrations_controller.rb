@@ -1,4 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
+<<<<<<< HEAD
 	def edit
     store_return_to
     render :edit

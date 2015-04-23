@@ -273,7 +273,7 @@ width: 100%;
   text-decoration: none;
 }
 
-/* Footer */
+/* FOOTER */
 
 #footer {
   position:absolute; 
@@ -301,4 +301,22 @@ width: 100%;
   color: #354052;
 }
 
+/* ABOUT */
+
+.about_title {
+  text-align: center;
+}
+
+#about_ben {
+  
+}
+
+#about_jake {
+ 
+}
+
+
+#about_tyler {
+
+}
 
