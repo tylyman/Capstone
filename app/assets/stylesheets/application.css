@@ -288,6 +288,11 @@ width: 100%;
 #footer_logo {
   height: auto;
   width:7%;
+  margin-bottom: 12px;
+}
+
+.footer_hr {
+  margin-top: 0;
 }
 
 .fa-facebook-square {
