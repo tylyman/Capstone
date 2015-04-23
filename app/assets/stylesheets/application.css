@@ -39,10 +39,6 @@ width: 100%;
 
 /**** nav *****/
 
-#headspace {
-
-}
-
 .navbar {
   background-color: #354052;
   height: 90px;
@@ -269,8 +265,51 @@ width: 100%;
   color: white;
 }
 
+.delete-button {
+  background-color: #fb502e;
+  font-family: Proxima Nova;
+  font-size: 23px;
+  letter-spacing: -1px;
+  color: white;
+  height: 50px;
+  width: 300px;
+  margin-left: 11%;
+  padding-top: 8px;
+}
+
+.delete-button:hover {
+  background-color: #f12c05;
+  color: white;
+}
+
+.edit-button {
+  background-color: #fb502e;
+  font-family: Proxima Nova;
+  font-size: 23px;
+  letter-spacing: -1px;
+  color: white;
+  height: 50px;
+  width: 300px;
+  margin-left: 11%;
+  padding-top: 8px;
+  margin-top: -30px;
+  position: relative;
+}
+
+.edit-button:hover {
+  background-color: #f12c05;
+  color: white;
+}
+
 .events_style a:hover {
   text-decoration: none;
+}
+
+#events-description {
+  height: 90px;
+  width: 300px;
+  margin-left: 11%;
+  overflow: scroll;
 }
 
 /* FOOTER */
