@@ -285,6 +285,16 @@ width: 100%;
   color: black;
 }
 
+#footer_logo {
+  height: auto;
+  width:7%;
+  margin-bottom: 12px;
+}
+
+.footer_hr {
+  margin-top: 0;
+}
+
 .fa-facebook-square {
   color: #354052;
 }
