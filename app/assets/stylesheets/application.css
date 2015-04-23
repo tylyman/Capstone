@@ -285,6 +285,11 @@ width: 100%;
   color: black;
 }
 
+#footer_logo {
+  height: auto;
+  width:7%;
+}
+
 .fa-facebook-square {
   color: #354052;
 }
