@@ -9,10 +9,9 @@
 </head>
 <body>
   <%= render 'layouts/nav' %>
-
-  <% flash.each do |message_type, message| %>
-    <%= content_tag(:div, message, class: "alert alert-#{message_type} alert-message main-alert") %>
-  <% end %>
+  <span id="flashPlace">
+    <%= render 'layouts/flash_messages' %>
+  </span>
 
   <%= yield %>
 
