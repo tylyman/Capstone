@@ -12,6 +12,7 @@
 				<p>Last Name: <%= current_user.last_name %></p>
 				<p>Email Address: <%= current_user.email %></p>
 				<%= link_to "Update This Information", edit_user_registration_path, class: 'btn btn-default forum-btn' %>
+				<%= link_to "Update This Information(Modal)", edit_user_registration_path, remote: true, class: "btn btn-default forum-btn" %>
 				<br>
 				<br>
 				<h5>Event Details</h5>
