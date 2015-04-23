@@ -273,7 +273,7 @@ width: 100%;
   text-decoration: none;
 }
 
-/* Footer */
+/* FOOTER */
 
 #footer {
   position:absolute; 
@@ -299,6 +299,12 @@ width: 100%;
 
 .fa-google-plus-square {
   color: #354052;
+}
+
+/* ABOUT */
+
+.about_title {
+  text-align: center;
 }
 
 
