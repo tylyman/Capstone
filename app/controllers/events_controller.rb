@@ -23,19 +23,24 @@ class EventsController < ApplicationController
   end
 
   def edit
-    unless @event.users.include?(current_user)
-      redirect_to @event, notice: "You are not authorized to edit this event."
-    end
+    if current_user != @event.owner
+      flash[:danger] = "You cannot edit this event"
+    else
 
     respond_to do |format|
       format.html
       format.js
+      end   
     end
   end
 
   def update
-    if @event.update(event_params)
-      redirect_to @event
+     if @event.update(event_params)
+        flash.now[:success] = "You have edited an event"
+        respond_to do |format|
+        format.html {redirect_to events_path}
+        format.js
+      end
     else
       render :edit
     end

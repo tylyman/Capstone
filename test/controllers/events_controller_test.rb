@@ -21,7 +21,7 @@ class EventsControllerTest < ActionController::TestCase
   test "should get update" do
     put :update, id: @event.id, event: {title: 'Title updated'}
     @event.reload
-    assert_redirected_to @event
+    assert_redirected_to events_path
     assert_equal  'Title updated', @event.title
   end
 
