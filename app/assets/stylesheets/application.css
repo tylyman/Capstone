@@ -324,7 +324,7 @@ width: 100%;
   color: black;
 }
 
-#footer_logo {
+.footer_logo {
   height: auto;
   width:7%;
   margin-bottom: 12px;
