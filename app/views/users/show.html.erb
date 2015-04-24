@@ -1,44 +1,67 @@
-<div class='container'>
+<div class='container col-md-8 col-md-offset-2'>
 <h3>Your Profile</h3>
 </div>
-<div class='container'>
+<div class='container col-md-8 col-md-offset-2'>
 	<!-- Tabs -->
-	<div class="col-md-3">
+	<div class="col-md-2">
 	  <ul class="nav nav-pills nav-stacked profile-pills">
 	    <li role="presentation" class="active"><a href="#info" aria-controls="home" role="tab" data-toggle="tab">Profile</a></li>
 	    <li role="presentation"><a href="#myEvents" aria-controls="My Events" role="tab" data-toggle="tab">Events</a></li>
-	    <li role="presentation"><a href="#transactions" aria-controls="My Events" role="tab" data-toggle="tab">Transactions</a></li>
+	    <li role="presentation"><a href="#transactions" aria-controls="Transactions" role="tab" data-toggle="tab">Transactions</a></li>
 	  </ul>
 	</div>
 	<!-- Tab panes -->
 	<div class="tab-content">
 	  <div role="tabpanel" class="tab-pane active" id="info">
-	  	<%= @user.user_name %>
-			<%= @user.first_name %>
-			<%= @user.last_name %>
-			<%= @user.email %>
+	  	<div class="panel panel-default col-md-10">
+		  	<div class="panel-body">
+			  	<p><%= @user.user_name %><p>
+					<p><%= @user.first_name %><p>
+					<p><%= @user.last_name %><p>
+					<p><%= @user.email %><p>
+				</div>
+			</div>
 	  </div>
+
 	  <div role="tabpanel" class="tab-pane" id="myEvents">
-	  	<% if @user.events.any? %>
-		  	<%= @user.events.each do |event| %>
-					<p>When: <%= event.datetime.strftime("%B %d, %Y - %I:%M %P") %></p>
-					<p>Where: <%= event.city %>, <%= event.state %></p>
-					<p>Cost: $<%= event.cost %></p>
-		  	<% end %>
-		  <% else %>
-		  	<p>You are not currently enrolled in any events.<p>
-		  <% end %>
-	  </div>
+	  	<div class="panel panel-default col-md-10">
+		  	<div class="panel-body">
+			  	<% if @user.events.any? %>
+				  	<% @user.events.each do |event| %>
+					  	<div class="panel panel-default">
+			  				<div class="panel-body">
+									<p><%= event.title %></p>
+									<p>When: <%= event.datetime.strftime("%B %d, %Y - %I:%M %P") %></p>
+									<p>Where: <%= event.city %>, <%= event.state %></p>
+									<p>Cost: $<%= event.cost %></p>
+									<p>Spots Taken: <%= event.users.count %>/<%= event.total_spots %>
+								</div>
+							</div>
+				  	<% end %>
+				  <% else %>
+				  	<p>You are not currently enrolled in any events.</p>
+				  <% end %>
+				</div>
+			</div>
+		</div>
+
 	  <div role="tabpanel" class="tab-pane" id="transactions">
-	  	<% if @transactions.any? %>
-		  	<%= @transactions.each do |transaction| %>
-					Transaction amount: $<%= transaction.amount / 100 %>
-				<% end %>
-			<% else %>
-				<p>You have not completed any transactions.<p>
-			<% end %>
+	  	<div class="panel panel-default col-md-10">
+		  	<div class="panel-body">
+		  		<div class="panel panel-default">
+			  		<div class="panel-body">
+					  	<% if @transactions.any? %>
+						  	<% @transactions.each do |transaction| %>
+						  		Event name: <%= transaction.event.title %>
+									Transaction amount: $<%= transaction.amount / 100 %>
+								<% end %>
+							<% else %>
+								<p>You have not completed any transactions.<p>
+							<% end %>
+						</div>
+					</div>
+				</div>
+			</div>
 	  </div>
 	</div>
 </div>
-
-
