@@ -8,15 +8,15 @@
 				<p>Please take a moment to review the following information:</p>
 				<br>
 				<h5>Personal Information</h5>
-				<p>First Name: <%= current_user.first_name %></p>
-				<p>Last Name: <%= current_user.last_name %></p>
-				<p>Email Address: <%= current_user.email %></p>
+				<p><b>First Name: </b><%= current_user.first_name %></p>
+				<p><b>Last Name: </b><%= current_user.last_name %></p>
+				<p><b>Email Address: </b><%= current_user.email %></p>
 
 				<%= link_to "Update This Information", edit_user_registration_path, remote: true, class: 'btn btn-default forum-btn'%>
 				<br>
 				<br>
 				<h5>Event Details</h5>
-				<P>Location: <%= @event.city %>, <%= @event.state %><p>
+				<P><b>Location: </b><%= @event.city %>, <%= @event.state %><p>
 				<p><%= @event.datetime %><p>
 
 				<%= form_tag charges_path do %>
@@ -44,17 +44,4 @@
 	</div>
 </div>
 
-  <!--Edit Profile Modal -->
-<div class="modal fade" id="editProfileModal" tabindex="-1" role="dialog" aria-labelledby="editProfileLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="editProfileModalTitle">nada</h4>
-        </div>
-        <div class="modal-body" id="editProfileModalBody">
-          nada
-        </div>
-      </div>
-    </div>
-  </div>
+<%= render "layouts/edit_profile_modal" %>
