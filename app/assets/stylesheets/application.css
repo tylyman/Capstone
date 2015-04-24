@@ -17,7 +17,7 @@ html {
 /****** Body ******/
 
 body { 
-  padding-bottom: 150px;
+  padding-bottom: 125px;
   min-height: 100%;
   min-width: 100%;
   position: relative;
@@ -318,7 +318,7 @@ width: 100%;
   position:absolute; 
   bottom: 0; 
   clear: both; 
-  height: 150px; 
+  height: 125px; 
   width: 100%;
   text-align: center;
   color: black;
