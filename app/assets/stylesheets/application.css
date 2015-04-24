@@ -325,11 +325,12 @@ width: 100%;
   width: 100%;
   text-align: center;
   color: black;
+  padding-top: 50px;
 }
 
 .footer_logo {
   height: auto;
-  width:7%;
+  width:100px;
   margin-bottom: 12px;
 }
 
@@ -352,6 +353,10 @@ width: 100%;
 
 .fa-google-plus-square {
   color: #354052;
+}
+
+.footer_links {
+  margin-right: 11px;
 }
 
 /* ABOUT */
