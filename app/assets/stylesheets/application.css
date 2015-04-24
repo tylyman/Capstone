@@ -40,6 +40,10 @@ width: 100%;
 .events-label {
   text-align: center;
 }
+
+.buffer {
+  height: 50px;
+}
 /**** nav *****/
 
 .navbar {
@@ -68,6 +72,11 @@ width: 100%;
 }
 .profile-pills > li.active > a {
     background-color: #354052;
+}
+
+.profile-panel {
+  background-color: #f2f2f2;
+  padding-top: 15px; 
 }
 
 /**** SIGN IN *****/

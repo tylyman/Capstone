@@ -1,5 +1,4 @@
-<div class='container col-md-8 col-md-offset-2'>
-<h3>Your Profile</h3>
+<div class='container buffer col-md-8 col-md-offset-2'>
 </div>
 <div class='container col-md-8 col-md-offset-2'>
 	<!-- Tabs -->
@@ -13,20 +12,24 @@
 	<!-- Tab panes -->
 	<div class="tab-content">
 	  <div role="tabpanel" class="tab-pane active" id="info">
-	  	<div class="panel panel-default col-md-10">
+	  	<div class="panel panel-default col-md-10 profile-panel">
 		  	<div class="panel-body">
-		  		<h4>Personal Information</h4>
-			  	<p><b>Username: </b><%= @user.user_name %></p>
-					<p><b>First Name: </b><%= @user.first_name %></p>
-					<p><b>Last Name: </b><%= @user.last_name %></p>
-					<p><b>Username: </b><%= @user.email %></p>
-					<%= link_to "Update This Information", edit_user_registration_path, remote: true, class: 'btn btn-default forum-btn'%>
+		  		<div class="panel panel-default">
+				  	<div class="panel-body">
+				  		<h4>Personal Information</h4>
+					  	<p><b>Username: </b><%= @user.user_name %></p>
+							<p><b>First Name: </b><%= @user.first_name %></p>
+							<p><b>Last Name: </b><%= @user.last_name %></p>
+							<p><b>Username: </b><%= @user.email %></p>
+							<%= link_to "Update This Information", edit_user_registration_path, remote: true, class: 'btn btn-default forum-btn'%>
+						</div>
+					</div>
 				</div>
 			</div>
 	  </div>
 
 	  <div role="tabpanel" class="tab-pane" id="myEvents">
-	  	<div class="panel panel-default col-md-10">
+	  	<div class="panel panel-default col-md-10 profile-panel">
 		  	<div class="panel-body">
 			  	<% if @user.events.any? %>
 				  	<% @user.events.each do |event| %>
@@ -52,7 +55,7 @@
 		</div>
 
 	  <div role="tabpanel" class="tab-pane" id="transactions">
-	  	<div class="panel panel-default col-md-10">
+	  	<div class="panel panel-default col-md-10 profile-panel">
 		  	<div class="panel-body">
 			  	<% if @transactions.any? %>
 				  	<% @transactions.each do |transaction| %>
