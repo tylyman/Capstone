@@ -39,7 +39,11 @@
 							</div>
 				  	<% end %>
 				  <% else %>
-				  	<p>You are not currently enrolled in any events.</p>
+				   	<div class="panel panel-default">
+		  				<div class="panel-body">
+			  				<p>You are not currently enrolled in any events.</p>
+			  			</div>
+						</div>
 				  <% end %>
 				</div>
 			</div>
@@ -48,18 +52,23 @@
 	  <div role="tabpanel" class="tab-pane" id="transactions">
 	  	<div class="panel panel-default col-md-10">
 		  	<div class="panel-body">
-		  		<div class="panel panel-default">
-			  		<div class="panel-body">
-					  	<% if @transactions.any? %>
-						  	<% @transactions.each do |transaction| %>
-						  		Event name: <%= transaction.event.title %>
-									Transaction amount: $<%= transaction.amount / 100 %>
-								<% end %>
-							<% else %>
-								<p>You have not completed any transactions.<p>
-							<% end %>
-						</div>
-					</div>
+			  	<% if @transactions.any? %>
+				  	<% @transactions.each do |transaction| %>
+				  		<div class="panel panel-default">
+					  		<div class="panel-body">
+					  			<p>Transaction Date: <%= transaction.created_at.strftime("%B %d, %Y - %I:%M %P") %> MDT</p>
+						  		<p>Event name: <%= transaction.event.title %></p>
+									<p>Transaction amount: $<%= transaction.amount / 100 %><p>
+								</div>
+							</div>
+						<% end %>
+					<% else %>
+							<div class="panel panel-default">
+					  		<div class="panel-body">
+									<p>You have not completed any transactions.<p>
+								</div>
+							</div>
+					<% end %>
 				</div>
 			</div>
 	  </div>
