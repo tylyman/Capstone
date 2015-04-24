@@ -4,6 +4,7 @@
 <p>Cost: $<%= event.cost %></p>
 <p>Spots taken: <%= event.users.count if event.users %></p> 
 <p><%= event.total_spots %></p>
+
 <% if event.users.exclude?(current_user) && current_user != event.owner %>
   <button class="btn btn-default"><%= link_to "Enroll", new_charge_path(event_id: event.id) %></button>
 <% end %> 

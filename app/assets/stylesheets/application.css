@@ -372,3 +372,16 @@ width: 100%;
 #about_tyler {
 
 }
+
+/* FACEBOOK TWITTER LIKE/SHARE */
+
+.fb-like {
+  margin-left: 10px;
+  margin-top: 118px;
+}
+
+.tweet {
+  margin-left: 108px;
+  margin-top: -20px;
+}
+
