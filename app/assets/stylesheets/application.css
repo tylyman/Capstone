@@ -57,6 +57,19 @@ width: 100%;
   font-size: 25px;
 }
 
+/**** Profile Page ****/
+
+.profile-pills > li > a {
+  color: #354052;
+}
+
+.profile-pills > li.active > a:focus {
+  background-color: #354052; 
+}
+.profile-pills > li.active > a {
+    background-color: #354052;
+}
+
 /**** SIGN IN *****/
 
 .signin {
@@ -90,6 +103,20 @@ width: 100%;
 
 
 /* FORUM */
+
+.forum-tabs > li > a {
+  color: #354052;
+}
+
+.forum-tabs > li.active > a:focus {
+  background-color: #354052;
+  color: white; 
+}
+
+.forum-tabs > li.active > a {
+  background-color: #354052;
+  color: white;
+}
 
 .forum-btn {
   margin-bottom: 10px;
