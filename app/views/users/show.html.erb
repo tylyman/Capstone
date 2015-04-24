@@ -15,10 +15,12 @@
 	  <div role="tabpanel" class="tab-pane active" id="info">
 	  	<div class="panel panel-default col-md-10">
 		  	<div class="panel-body">
-			  	<p><%= @user.user_name %><p>
-					<p><%= @user.first_name %><p>
-					<p><%= @user.last_name %><p>
-					<p><%= @user.email %><p>
+		  		<h4>Personal Information</h4>
+			  	<p><b>Username: </b><%= @user.user_name %></p>
+					<p><b>First Name: </b><%= @user.first_name %></p>
+					<p><b>Last Name: </b><%= @user.last_name %></p>
+					<p><b>Username: </b><%= @user.email %></p>
+					<%= link_to "Update This Information", edit_user_registration_path, remote: true, class: 'btn btn-default forum-btn'%>
 				</div>
 			</div>
 	  </div>
@@ -30,11 +32,11 @@
 				  	<% @user.events.each do |event| %>
 					  	<div class="panel panel-default">
 			  				<div class="panel-body">
-									<p><%= event.title %></p>
-									<p>When: <%= event.datetime.strftime("%B %d, %Y - %I:%M %P") %></p>
-									<p>Where: <%= event.city %>, <%= event.state %></p>
-									<p>Cost: $<%= event.cost %></p>
-									<p>Spots Taken: <%= event.users.count %>/<%= event.total_spots %>
+									<h4>Event: <%= event.title %></h4>
+									<p><b>Date: </b><%= event.datetime.strftime("%B %d, %Y - %I:%M %P") %></p>
+									<p><b>Location: </b><%= event.city %>, <%= event.state %></p>
+									<p><b>Cost: </b>$<%= event.cost %></p>
+									<p><b>Spots Taken: </b><%= event.users.count %>/<%= event.total_spots %>
 								</div>
 							</div>
 				  	<% end %>
@@ -56,9 +58,9 @@
 				  	<% @transactions.each do |transaction| %>
 				  		<div class="panel panel-default">
 					  		<div class="panel-body">
-					  			<p>Transaction Date: <%= transaction.created_at.strftime("%B %d, %Y - %I:%M %P") %> MDT</p>
-						  		<p>Event name: <%= transaction.event.title %></p>
-									<p>Transaction amount: $<%= transaction.amount / 100 %><p>
+					  			<p><b>Date: </b><%= transaction.created_at.strftime("%B %d, %Y - %I:%M %P") %> MDT</p>
+						  		<p><b>Event Name: </b><%= transaction.event.title %></p>
+									<p><b>Transaction Amount: </b>$<%= transaction.amount / 100 %>.00</p>
 								</div>
 							</div>
 						<% end %>
@@ -74,3 +76,5 @@
 	  </div>
 	</div>
 </div>
+
+<%= render "layouts/edit_profile_modal" %>
