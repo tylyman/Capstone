@@ -12,7 +12,7 @@
 	  <div class="panel-body">
 			<p><%= question.content %><p>
 			<hr class='forum-hr'>
-	  	<h6 class='pull-left'>Posted by <%= question.user.user_name %> <%= time_ago_in_words(question.created_at)%> ago</h6>
+	  	<h6 class='pull-left'>Posted by <%= question.user.user_name || "Anonymous" %> <%= time_ago_in_words(question.created_at)%> ago</h6>
 			<% if question.user == current_user %>
 		  	<span class = "edit-delete pull-right">
 					<%= link_to edit_question_path(question), remote: true do %>
