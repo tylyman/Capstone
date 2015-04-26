@@ -15,6 +15,7 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'dotenv-rails'
 gem 'omniauth-facebook'
 gem 'gmaps4rails'
+gem 'underscore-rails'
 
 group :development, :test do
   gem 'byebug'
