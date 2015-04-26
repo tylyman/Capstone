@@ -1,17 +1,39 @@
-<p><%= event.description %></p>
-<p>When: <%= event.datetime.strftime("%B %d, %Y - %I:%M %P") %></p>
-<p>Where: <%= event.city %>, <%= event.state %></p>
-<p>Cost: $<%= event.cost %></p>
-<p>Spots taken: <%= event.users.count if event.users %></p> 
-<p><%= event.total_spots %></p>
+<div class="row">
+	<div class="col-md-5">
+		<p><%= event.description %></p>
+		<p>When: <%= event.datetime.strftime("%B %d, %Y - %I:%M %P") %></p>
+		<p>Where: <%= event.city %>, <%= event.state %></p>
+		<p>Cost: $<%= event.cost %></p>
+		<p>Spots taken: <%= event.users.count if event.users %></p> 
+		<p><%= event.total_spots %></p>
 
-<% if event.users.exclude?(current_user) && current_user != event.owner %>
-  <button class="btn btn-default"><%= link_to "Enroll", new_charge_path(event_id: event.id) %></button>
-<% end %> 
-<% if event.users.include?(current_user) %>
-  <span class="btn btn-default">You are enrolled in this event!</span>
-<% end %>
-
-<div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
+		<% if event.users.exclude?(current_user) && current_user != event.owner %>
+		  <button class="btn btn-default"><%= link_to "Enroll", new_charge_path(event_id: event.id) %></button>
+		<% end %> 
+		<% if event.users.include?(current_user) %>
+		  <span class="btn btn-default">You are enrolled in this event!</span>
+		<% end %>
+	</div>
+	<div class="col-md-4">
+	  <div id="map" style='width: 250px; height: 207px;'></div>
+	</div>
 </div>
+<script type="text/javascript">
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers([
+      {
+        "lat": 0,
+        "lng": 0,
+        "picture": {
+          "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
+          "width":  36,
+          "height": 36
+        },
+        "infowindow": "hello!"
+      }
+    ]);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  });
+</script>
