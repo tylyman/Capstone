@@ -14,6 +14,8 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require_tree .
+//= require underscore
+//= require gmaps/google
 
  $(".alert-message").alert();
  window.setTimeout(function() { $(".alert-message").alert('close'); }, 3000);
