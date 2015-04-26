@@ -16,6 +16,7 @@ gem 'dotenv-rails'
 gem 'omniauth-facebook'
 gem 'gmaps4rails'
 gem 'underscore-rails'
+gem 'geocoder'
 
 group :development, :test do
   gem 'byebug'

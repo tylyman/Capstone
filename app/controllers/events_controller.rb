@@ -58,6 +58,10 @@ class EventsController < ApplicationController
   end
 
   def show 
+    @hash = Gmaps4rails.build_markers(@event) do |event, marker|
+      marker.lat event.latitude
+      marker.lng event.longitude
+    end
     respond_to do |format|
       format.html
       format.js
