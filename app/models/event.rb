@@ -4,8 +4,7 @@ class Event < ActiveRecord::Base
 
   validates :title, :presence => true
   validates :description, :presence => true
-  validates :city, :presence => true
-  validates :state, :presence => true
+  validates :address, :presence => true
   validates :cost, :presence => true
   validates :total_spots, :presence => true
 
