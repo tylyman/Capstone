@@ -32,6 +32,6 @@
     handler.fitMapToBounds(); 
     handler.getMap().setZoom(13);
     google.maps.event.trigger(map, 'resize');
-    handler.map.centerOn({ lat: <%= @mylat %>, lng: <%= @mylong %> });
+    handler.map.centerOn({ lat: <%= event.latitude %>, lng: <%= event.longitude %> });
   });
 </script>
