@@ -5,6 +5,10 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@font-face {
+  font-family: 'Proxima Nova';    
+  src: url('/assets/fonts/Proxima Nova');
+}
 
 /****** HTML ******/
 
@@ -418,18 +422,9 @@ width: 100%;
   width: 80%;
 }
 
-.fa-facebook-square {
-  color: #354052;
-}
-
-.fa-twitter-square {
-  color: #354052;
-}
-
-.fa-github-square {
-  color: #354052;
-}
-
+.fa-facebook-square,
+.fa-twitter-square,
+.fa-github-square,
 .fa-google-plus-square {
   color: #354052;
 }
