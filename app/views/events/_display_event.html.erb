@@ -1,26 +1,20 @@
 <div class="row">
-	<div class="col-md-5">
-		
+	<div class="col-md-5">	
 		<p><b>When: </b><%= event.datetime.strftime("%B %d, %Y - %I:%M %P") %></p>
-		<p><b>Where: </b><%= event.city %>, <%= event.state %></p>
+		<p><b>Where: </b><%= event.address %><p>
 		<p><b>Cost: </b>$<%= event.cost %></p>
-		<p><b>Spots taken: </b><%= event.users.count if event.users %></p> 
-		<p><%= event.total_spots %></p>
+		<p><b>Spots taken: </b><%= event.users.count if event.users %>/<%= event.total_spots %></p> 
 			<b>Description:</b>	
 		<p><%= event.description %></p>
 		<% if event.users.exclude?(current_user) && current_user != event.owner %>
-		  <button class="btn btn-default"><%= link_to "Enroll", new_charge_path(event_id: event.id) %></button>
+		  <button class="btn btn-default forum-btn"><%= link_to "Enroll", new_charge_path(event_id: event.id) %></button>
 		<% end %> 
 		<% if event.users.include?(current_user) %>
-		  <span class="btn btn-default">You are enrolled in this event!</span>
+		  <span class="btn btn-default forum-btn">You are enrolled in this event!</span>
 		<% end %>
 	</div>
-	<div class="col-md-6">
+	<div class="col-md-5">
 	  <div id="map" ></div>
-	</div>
-</div>
-<div class="row">
-	<div class="col-md-8">
 	</div>
 </div>
 

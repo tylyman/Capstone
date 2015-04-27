@@ -4,8 +4,7 @@ one:
   title: MyString
   description: MyText
   datetime: 2015-04-08 15:23:31
-  city: MyString
-  state: MyString
+  address: my place
   cost: 1
   vacancies: 1
   total_spots: 10
@@ -14,7 +13,6 @@ two:
   title: MyString
   description: MyText
   datetime: 2015-04-08 15:23:31
-  city: MyString
-  state: MyString
+  address: cool place
   cost: 1
   vacancies: 1

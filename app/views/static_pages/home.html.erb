@@ -21,7 +21,7 @@
   <div id="EventsArea" >
     <section id="EventsIndex">
       <div class="row events_body_background">
-        <h3 class="container events-label">Upcoming Events</h3>
+        <div class="container events-label"></div>
         <% @events.each do |event| %> 
           <div class="col-md-4 col-md-offset-1">
             <%= render partial: 'events/display_events_home', locals: {:event => event} %> 
