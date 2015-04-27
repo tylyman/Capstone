@@ -213,7 +213,7 @@ width: 100%;
 
 .post-panel-body {
   color: #354052;
-  padding : 8px;
+  padding: 8px;
   height: 37px;
 }
 
@@ -309,7 +309,7 @@ width: 100%;
   color: white;
   height: 50px;
   width: 300px;
-  margin-left: 11%;
+  margin-left: 13%;
   padding-top: 8px;
 }
 
@@ -326,7 +326,7 @@ width: 100%;
   color: white;
   height: 50px;
   width: 300px;
-  margin-left: 11%;
+  margin-left: 13%;
   padding-top: 8px;
 }
 
@@ -343,7 +343,7 @@ width: 100%;
   color: white;
   height: 50px;
   width: 300px;
-  margin-left: 11%;
+  margin-left: 13%;
   padding-top: 8px;
   margin-top: -30px;
   position: relative;
@@ -361,14 +361,14 @@ width: 100%;
 #events-description {
   height: 90px;
   width: 300px;
-  margin-left: 11%;
+  margin-left: 13%;
   overflow: scroll;
 }
 
 #events-home-description {
   height: 125px;
   width: 300px;
-  margin-left: 11%;
+  margin-left: 13%;
   overflow: scroll;
 }
 
