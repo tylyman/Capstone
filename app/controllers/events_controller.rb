@@ -62,6 +62,10 @@ class EventsController < ApplicationController
       marker.lat event.latitude
       marker.lng event.longitude
     end
+
+    @mylat = @event.latitude
+    @mylong = @event.longitude
+    
     respond_to do |format|
       format.html
       format.js

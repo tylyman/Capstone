@@ -1,12 +1,13 @@
 <div class="row">
 	<div class="col-md-5">
-		<p><%= event.description %></p>
-		<p>When: <%= event.datetime.strftime("%B %d, %Y - %I:%M %P") %></p>
-		<p>Where: <%= event.city %>, <%= event.state %></p>
-		<p>Cost: $<%= event.cost %></p>
-		<p>Spots taken: <%= event.users.count if event.users %></p> 
+		
+		<p><b>When: </b><%= event.datetime.strftime("%B %d, %Y - %I:%M %P") %></p>
+		<p><b>Where: </b><%= event.city %>, <%= event.state %></p>
+		<p><b>Cost: </b>$<%= event.cost %></p>
+		<p><b>Spots taken: </b><%= event.users.count if event.users %></p> 
 		<p><%= event.total_spots %></p>
-
+			<b>Description:</b>	
+		<p><%= event.description %></p>
 		<% if event.users.exclude?(current_user) && current_user != event.owner %>
 		  <button class="btn btn-default"><%= link_to "Enroll", new_charge_path(event_id: event.id) %></button>
 		<% end %> 
@@ -14,15 +15,23 @@
 		  <span class="btn btn-default">You are enrolled in this event!</span>
 		<% end %>
 	</div>
-	<div class="col-md-4">
-	  <div id="map" style='width: 300px; height: 207px;'></div>
+	<div class="col-md-6">
+	  <div id="map" ></div>
 	</div>
 </div>
+<div class="row">
+	<div class="col-md-8">
+	</div>
+</div>
+
 <script type="text/javascript">
   handler = Gmaps.build('Google');
   handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
     markers = handler.addMarkers(<%=raw @hash.to_json %>);
     handler.bounds.extendWith(markers);
-    handler.fitMapToBounds();
+    handler.fitMapToBounds(); 
+    handler.getMap().setZoom(13);
+    google.maps.event.trigger(map, 'resize');
+    handler.map.centerOn({ lat: <%= @mylat %>, lng: <%= @mylong %> });
   });
 </script>

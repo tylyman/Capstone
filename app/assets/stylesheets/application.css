@@ -249,6 +249,11 @@ width: 100%;
 
 /**** Style for every event *****/
 
+#map {
+  width: 300px;
+  height: 207px;
+}
+
 .events_body_background {
   background-color: #f2f2f2;
   padding-top: 30px;
