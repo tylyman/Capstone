@@ -7,11 +7,12 @@ one:
   paid: false
   course_id: 1
   event_id: 1
+  user_id: 1
 
 two:
   stripe_id: 1
   user_id: 1
-  amount: 1
+  amount: 2
   paid: false
   course_id: 1
   event_id: 1
