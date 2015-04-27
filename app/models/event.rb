@@ -18,9 +18,9 @@ class Event < ActiveRecord::Base
   end
 
   private
-  def check_for_owner_enrollment
-    if self.users.include? self.owner
-      errors.add(:users, "can't enroll owner")
+    def check_for_owner_enrollment
+      if self.users.include? self.owner
+        errors.add(:users, "can't enroll owner")
+      end
     end
-  end
 end
