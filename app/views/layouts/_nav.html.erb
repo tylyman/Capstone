@@ -21,15 +21,15 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li class="active"><span class="sr-only">(current)</span></li>
-        <li><a href="/#EventsArea" class="nav_text nav_logo">Events</a></li>
-        <li><%= link_to "Learn", learn_path, class: "nav_text nav_logo" %></li>
-        <li><%= link_to "Forum", questions_path, class: "nav_text nav_logo" %></li>
+        <li><a href="/#EventsArea" class="nav_text">Events</a></li>
+        <li><%= link_to "Learn", learn_path, class: "nav_text" %></li>
+        <li><%= link_to "Forum", questions_path, class: "nav_text" %></li>
         <% if user_signed_in? %>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle nav_text nav_logo" data-toggle="dropdown">
+            <a href="#" class="dropdown-toggle nav_text" data-toggle="dropdown">
                                             Account <b class="caret"></b>
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu nav_drop">
               <li><%= link_to "Profile", user_path(current_user.id) %></li>
               <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
               <li><%= link_to "Settings", "#" %></li>
@@ -41,7 +41,7 @@
           </li>
         <% else %>
           <!-- Button trigger modal -->
-          <li><%= link_to "Sign In", "#signInModal", class: "nav_text nav_logo", "data-toggle" => "modal" %></li>
+          <li><%= link_to "Sign In", "#signInModal", class: "nav_text", "data-toggle" => "modal" %></li>
           <!-- <li data-toggle="modal" data-target="#signInModal" class="nav_text nav_logo"><a>Sign In</a></li> -->
         <% end %>
       </ul>
