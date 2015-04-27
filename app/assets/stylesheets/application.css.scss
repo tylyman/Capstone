@@ -20,6 +20,10 @@ html {
 
 /****** Body ******/
 
+.events-label {
+  height: 45px;
+}
+
 body { 
   padding-bottom: 125px;
   min-height: 100%;
@@ -50,6 +54,7 @@ width: 100%;
 .buffer {
   height: 50px;
 }
+
 /**** nav *****/
 
 
@@ -285,7 +290,7 @@ width: 100%;
 
 #map {
   width: 300px;
-  height: 207px;
+  height: 350px;
 }
 
 .events_body_background {
