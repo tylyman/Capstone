@@ -365,6 +365,13 @@ width: 100%;
   overflow: scroll;
 }
 
+#events-home-description {
+  height: 125px;
+  width: 300px;
+  margin-left: 11%;
+  overflow: scroll;
+}
+
 /* FOOTER */
 
 #footer {
@@ -430,9 +437,15 @@ width: 100%;
 
 /* FACEBOOK TWITTER LIKE/SHARE */
 
+/*
 .fb-like {
   margin-left: 10px;
   margin-top: 118px;
+}*/
+
+.fb-like {
+  margin-left: 10px;
+  margin-top: 20px;
 }
 
 .tweet {
