@@ -16,6 +16,10 @@ html {
 
 /****** Body ******/
 
+.events-label {
+  height: 45px;
+}
+
 body { 
   padding-bottom: 125px;
   min-height: 100%;
