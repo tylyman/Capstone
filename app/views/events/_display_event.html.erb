@@ -4,8 +4,7 @@
 		<p><b>When: </b><%= event.datetime.strftime("%B %d, %Y - %I:%M %P") %></p>
 		<p><b>Where: </b><%= event.city %>, <%= event.state %></p>
 		<p><b>Cost: </b>$<%= event.cost %></p>
-		<p><b>Spots taken: </b><%= event.users.count if event.users %></p> 
-		<p><%= event.total_spots %></p>
+		<p><b>Spots taken: </b><%= event.users.count if event.users %>/<%= event.total_spots %></p> 
 			<b>Description:</b>	
 		<p><%= event.description %></p>
 		<% if event.users.exclude?(current_user) && current_user != event.owner %>
