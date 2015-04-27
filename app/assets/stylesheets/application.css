@@ -33,20 +33,11 @@ width: 100%;
   color: white;
 }
 
-.dropdown-menu {
-  min-width: 121px;
-  margin-right: 5px;
-  color: black;
-}
-
 .signedinhero {
   margin-top: -100px;
   width: 100%;
 }
 
-.navbar-default .navbar-nav > li > a {
-  color: white;
-}
 
 .events-label {
   text-align: center;
@@ -56,6 +47,24 @@ width: 100%;
   height: 50px;
 }
 /**** nav *****/
+
+
+.dropdown-menu {
+  min-width: 121px;
+  margin-right: 5px;
+  color: black;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: white;
+  -webkit-transition: background-color .7s;
+    transition: background-color .7s;
+}
+
+.navbar-default .navbar-nav > li:hover > a:hover {
+  background-color: #fb502e;
+  color: white;
+}
 
 .navbar {
   background-color: #354052;
@@ -72,6 +81,14 @@ width: 100%;
   margin-top: 10px;
   margin-right: 5px;
   font-size: 20px;
+}
+
+.navbar-collapse {
+  border-top: none;
+}
+
+.nav_drop {
+  background-color: #354052;
 }
 
 /**** Profile Page ****/
