@@ -11,6 +11,9 @@ class Event < ActiveRecord::Base
 
   validate :check_for_owner_enrollment, :on => :update
 
+  geocoded_by :address
+  after_validation :geocode
+
   def spots_left
     self.total_spots - self.users.count
   end

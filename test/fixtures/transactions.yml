@@ -4,12 +4,13 @@ one:
   stripe_id: 1
   user_id: 1
   amount: 1
-  paid: false
-  course_id: 1
+  paid: false 
+  event: one
+  user: one 
 
 two:
-  stripe_id: 1
-  user_id: 1
-  amount: 1
+  stripe_id: 
+  user: two
+  amount: 2
   paid: false
-  course_id: 1
+  event: one
