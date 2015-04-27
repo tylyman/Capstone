@@ -19,7 +19,7 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right nav_drop">
         <li class="active"><span class="sr-only">(current)</span></li>
         <li><a href="/#EventsArea" class="nav_text">Events</a></li>
         <li><%= link_to "Learn", learn_path, class: "nav_text" %></li>
@@ -29,7 +29,7 @@
             <a href="#" class="dropdown-toggle nav_text" data-toggle="dropdown">
                                             Account <b class="caret"></b>
             </a>
-            <ul class="dropdown-menu nav_drop">
+            <ul class="dropdown-menu">
               <li><%= link_to "Profile", user_path(current_user.id) %></li>
               <li class="divider"></li>
               <li><%= link_to "Events", events_path %>
