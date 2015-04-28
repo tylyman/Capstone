@@ -26,11 +26,11 @@ class UsersController < ApplicationController
   			redirect_to admin_path(:id => @user.id)
   			flash[:success] = "You are now a site administrator."
   		else
-	  		redirect_to root_url
+	  		redirect_to user_path(:id => @user.id)
 	  		flash[:danger] = "The code you entered was incorrect."
   		end
   	else
-			redirect_to edit_admin_path
+			redirect_to user_path(:id => @user.id)
 			flash[:danger] = "Error: Please try agian."
   	end
   end
