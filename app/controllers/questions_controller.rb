@@ -31,14 +31,14 @@ class QuestionsController < ApplicationController
   end
 
   def edit
-    if current_user != @question.user && !current_user.admin?
-      flash[:danger] = "You are not authorized to edit this post."
-      redirect_to @question
-    else
+    if current_user == @question.user || current_user.admin?
       respond_to do |format|
         format.html
         format.js
       end
+    else
+      flash[:danger] = "You are not authorized to edit this post."
+      redirect_to @question
     end
   end
 

@@ -3,13 +3,14 @@
 	<div class="panel-body">
 		<div class="row">
 			<div class="col-md-5">
-				<h3><%= event.title.capitalize %></h3>
+				<h4><%= event.title.capitalize %></h4>
 			  <p>When: <%= event.datetime.strftime("%B %d, %Y - %I:%M %P") %></p> 
 			  <p>Where: <%= event.city %>, <%= event.state %></p>
 			  <p>Cost: $<%= event.cost %></p>
 			  <p>Spots taken: <%= event.users.count %>/<%= event.total_spots %></p>
 			</div>
 			<div class="col-md-5">
+				<h4></h4>
 			  <p><%= event.description %></p>
 			</div>
 		</div>

@@ -23,14 +23,13 @@ class EventsController < ApplicationController
   end
 
   def edit
-    if current_user != @event.owner && !current_user.admin?
-      flash[:danger] = "You cannot edit this event"
-    else
-
-    respond_to do |format|
-      format.html
-      format.js
+    if current_user == @event.owner || current_user.admin?
+      respond_to do |format|
+        format.html
+        format.js
       end   
+    else
+      flash[:danger] = "You cannot edit this event"
     end
   end
 
