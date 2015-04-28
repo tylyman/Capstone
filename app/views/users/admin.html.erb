@@ -37,7 +37,7 @@
 	  <div role="tabpanel" class="tab-pane" id="adminForum">
 	  	<div class="panel panel-default col-md-10 profile-panel">
 		  	<div class="panel-body">
-		  		
+		  			<!--Inner panel-->
 			  		<div class="panel panel-default">
 					  	<div class="panel-body">
 					  		<h4>Forum Statistics</h4>
@@ -47,13 +47,12 @@
 					  		<p><b>Answers per user: </b><%= ((@answers.count) / (@users.count)).to_f %></p>
 							</div>
 						</div>
-
+						<!--End of inner panel-->
 				</div>
 			</div>
 	  </div>
-
-	</div>
 	</div>
 </div>
+
 
 <%= render 'events/events_modal' %>
