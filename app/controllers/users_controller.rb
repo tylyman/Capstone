@@ -7,13 +7,13 @@ class UsersController < ApplicationController
   end
 
   # Edits the admin state of the user, not the user registration.
-  def edit_adm
+  def admin_edit
   	@user = User.find(params[:id])
 
   end
 
-  # Checks to see if the user is authorized to become an Admin.
-  def update_adm
+  # Checks to see if the user is authorized to become an Admin and updates user admin column.
+  def admin_upd
 
   end
 
