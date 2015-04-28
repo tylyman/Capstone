@@ -28,7 +28,7 @@ class AnswersController < ApplicationController
   end
 
   def edit
-    if current_user != @answer.user
+    if current_user != @answer.user && !current_user.admin?
       flash[:danger] = "You are not authorized to edit this response."
       render :js => "window.location = '#{request.referrer}'"
     else
@@ -40,7 +40,7 @@ class AnswersController < ApplicationController
   end
 
   def update
-    if current_user == @answer.user
+    if current_user == @answer.user || current_user.admin?
       if @answer.update(answer_params)      
         flash[:success] = "Response updated successfully."
         render :js => "window.location = '#{request.referrer}'"
@@ -54,7 +54,7 @@ class AnswersController < ApplicationController
   end
 
   def destroy
-    if current_user == @answer.user
+    if current_user == @answer.user || current_user.admin?
       @answer.destroy
       flash[:success] = "The response has been destroyed"
       redirect_to @answer.question
