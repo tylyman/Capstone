@@ -7,7 +7,6 @@
 	<div class="col-md-2">
 	  <ul class="nav nav-pills nav-stacked profile-pills">
 	    <li role="presentation" class="active"><a href="#adminUsers" aria-controls="home" role="tab" data-toggle="tab">Users</a></li>
-	    <li role="presentation"><a href="#adminEvents" aria-controls="Admin Events" role="tab" data-toggle="tab">Events</a></li>
 	    <li role="presentation"><a href="#adminForum" aria-controls="Admin Forum" role="tab" data-toggle="tab">Forum</a></li>
 	  </ul>
 	</div>
@@ -18,28 +17,21 @@
 	  <div role="tabpanel" class="tab-pane active" id="adminUsers">
 	  	<div class="panel panel-default col-md-10 profile-panel">
 		  	<div class="panel-body">
+		  		<div class="panel panel-default">
+						<div class="panel-body">
+							<div class="col-md-5">
+								<p><b>Total Users: </b><%= @users.count %> - Admins displayed first.</p>
+							</div>
+						</div>
+					</div>
 		  		<!--Individual user panels-->
-		  		<% @users.each do |user| %>
+		  		<% @users.order("admin desc").each do |user| %>
 		  			<%= render 'admin_user', :user => user %>
 					<% end %>
 					<!--End of users panels-->
 				</div>
 			</div>
 	  </div>
-
-	  <!--Events pane-->
-	  <div role="tabpanel" class="tab-pane" id="adminEvents">
-	  	<div class="panel panel-default col-md-10 profile-panel">
-		  	<div class="panel-body">
-	  				<!--Individual event panels-->
-
-	  				<% @events.each do |event|%>
-		  				<%= render 'events/admin_event',  :event => event %>
-		  			<% end %>
-						<!--End of event panels-->
-				</div>
-			</div>
-		</div>
 
 		<!--Forum pane-->
 	  <div role="tabpanel" class="tab-pane" id="adminForum">
@@ -48,7 +40,11 @@
 		  		
 			  		<div class="panel panel-default">
 					  	<div class="panel-body">
-
+					  		<h4>Forum Statistics</h4>
+					  		<p><b>Total Posts: </b><%= @questions.count %></p>
+					  		<p><b>Posts per user: </b><%= ((@questions.count) / (@users.count)).to_f %></p>
+					  		<p><b>Total Answers: </b><%= @answers.count %></p>
+					  		<p><b>Answers per user: </b><%= ((@answers.count) / (@users.count)).to_f %></p>
 							</div>
 						</div>
 

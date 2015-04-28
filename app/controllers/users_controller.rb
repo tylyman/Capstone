@@ -40,6 +40,8 @@ class UsersController < ApplicationController
   	@user = User.find(params[:id])
   	@users = User.all
   	@events = Event.all
+  	@questions = Question.all
+  	@answers = Answer.all
   	if !current_user.admin?
 			flash[:danger] = "You are not authorized to view this page."
  	  	redirect_to root_url

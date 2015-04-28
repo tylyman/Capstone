@@ -1,14 +1,15 @@
 <div class="panel panel-default">
 	<div class="panel-body">
 		<div class="col-md-5">
-  			<% if user.admin? %>
-  				<h4>Admin</h4>
-  			<% else %>
-  				<h4>User</h4>
-  			<% end %>
+			<p><b>Username: </b><%= user.user_name %></p>
   		<p><b>Name: </b><%= user.first_name %> <%= user.last_name %></p>
-  		<p><b>Username: </b><%= user.user_name %></p>
   		<p><b>Email: </b><%= user.email %></p>
+  		<p><b>Permissions: </b>
+  		<% if user.admin? %>
+				Admin</p>
+			<% else %>
+				User</p>
+			<% end %>
 		</div>
 		<div class="col-md-3">
   		<h4>Forum</h4>
