@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   
   resources :users, only: [:index, :show]
 
+  get '/admin', to: 'users#admin', as: :admin
+
   resources :questions do
     resources :answers #only: [:index, :show, :new, :create, :edit, :update, :destroy]
   end
