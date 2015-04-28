@@ -31,8 +31,11 @@
             </a>
             <ul class="dropdown-menu">
               <li><%= link_to "Profile", user_path(current_user.id) %></li>
+              <% if current_user.admin? %>
               <li class="divider"></li>
-              <li><%= link_to "Events", events_path %>
+              <li><%= link_to "Events", events_path %></li>
+              <li><%= link_to "Admin", admin_path(:id => current_user.id) %></li>
+              <% end %>
               <li class="divider"></li>
               <li><%= link_to('Sign out', destroy_user_session_path, method: :delete) %></li>
             </ul>
