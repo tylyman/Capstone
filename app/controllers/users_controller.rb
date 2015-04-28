@@ -16,8 +16,9 @@ class UsersController < ApplicationController
   	@user = User.find(params[:id])
   	if @user.update(admin_params)
   		if @user.code == ENV['ADMIN_CODE']
-  			@user.toggle_admin
-  			redirect_to users_admin_path
+  			@user.admin = true
+  			@user.save
+  			redirect_to admin_path(:id => @user.id)
   			flash[:success] = "You are now a site administrator."
   		else
 	  		redirect_to root_url
