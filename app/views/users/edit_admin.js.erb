@@ -1,0 +1,4 @@
+console.log('Its working');
+$('#adminModalBody').html('<%= j render partial: 'admin_form', locals: { :user => @user } %>');
+$('#adminModalTitle').html('Gain Administrative Access');
+$('#adminModal').modal('show');

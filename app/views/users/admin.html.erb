@@ -1,0 +1,58 @@
+<div class='container buffer col-md-8 col-md-offset-2'>
+
+</div>
+
+<div class='container col-md-8 col-md-offset-2'>
+	<!-- Tabs -->
+	<div class="col-md-2">
+	  <ul class="nav nav-pills nav-stacked profile-pills">
+	    <li role="presentation" class="active"><a href="#adminUsers" aria-controls="home" role="tab" data-toggle="tab">Users</a></li>
+	    <li role="presentation"><a href="#adminForum" aria-controls="Admin Forum" role="tab" data-toggle="tab">Forum</a></li>
+	  </ul>
+	</div>
+	<!-- Tab panes -->
+	<div class="tab-content">
+
+	  <!--Users pane-->
+	  <div role="tabpanel" class="tab-pane active" id="adminUsers">
+	  	<div class="panel panel-default col-md-10 profile-panel">
+		  	<div class="panel-body">
+		  		<div class="panel panel-default">
+						<div class="panel-body">
+							<div class="col-md-5">
+								<p><b>Total Users: </b><%= @users.count %> - Admins displayed first.</p>
+							</div>
+						</div>
+					</div>
+		  		<!--Individual user panels-->
+		  		<% @users.order("admin desc").each do |user| %>
+		  			<%= render 'admin_user', :user => user %>
+					<% end %>
+					<!--End of users panels-->
+				</div>
+			</div>
+	  </div>
+
+		<!--Forum pane-->
+	  <div role="tabpanel" class="tab-pane" id="adminForum">
+	  	<div class="panel panel-default col-md-10 profile-panel">
+		  	<div class="panel-body">
+		  			<!--Inner panel-->
+			  		<div class="panel panel-default">
+					  	<div class="panel-body">
+					  		<h4>Forum Statistics</h4>
+					  		<p><b>Total Posts: </b><%= @questions.count %></p>
+					  		<p><b>Posts per user: </b><%= ((@questions.count) / (@users.count)).to_f %></p>
+					  		<p><b>Total Answers: </b><%= @answers.count %></p>
+					  		<p><b>Answers per user: </b><%= ((@answers.count) / (@users.count)).to_f %></p>
+							</div>
+						</div>
+						<!--End of inner panel-->
+				</div>
+			</div>
+	  </div>
+	</div>
+</div>
+
+
+<%= render 'events/events_modal' %>

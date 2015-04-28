@@ -23,14 +23,13 @@ class EventsController < ApplicationController
   end
 
   def edit
-    if current_user != @event.owner
-      flash[:danger] = "You cannot edit this event"
-    else
-
-    respond_to do |format|
-      format.html
-      format.js
+    if current_user == @event.owner || current_user.admin?
+      respond_to do |format|
+        format.html
+        format.js
       end   
+    else
+      flash[:danger] = "You cannot edit this event"
     end
   end
 
@@ -47,7 +46,7 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    if @event.owner == current_user
+    if @event.owner == current_user || current_user.admin?
       @event.destroy
       flash[:success] = "The Event was destroyed"
       redirect_to events_path

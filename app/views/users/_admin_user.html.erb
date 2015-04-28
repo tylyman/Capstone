@@ -1,0 +1,25 @@
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="col-md-5">
+			<p><b>Username: </b><%= user.user_name %></p>
+  		<p><b>Name: </b><%= user.first_name %> <%= user.last_name %></p>
+  		<p><b>Email: </b><%= user.email %></p>
+  		<p><b>Permissions: </b>
+  		<% if user.admin? %>
+				Admin</p>
+			<% else %>
+				User</p>
+			<% end %>
+		</div>
+		<div class="col-md-3">
+  		<h4>Forum</h4>
+  		<p><b>Posts: </b><%= user.questions.count %></p>
+  		<p><b>Answers: </b><%= user.answers.count %></p>
+		</div>
+		<div class="col-md-3">
+			<p><h4>Events</h4>
+			<p><b>Joined: </b><%= user.events.count %></p>
+			<p><b>Created: </b><%= user.owned_events.count %></p>
+		</div>
+	</div>
+</div>
