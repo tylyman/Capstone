@@ -16,11 +16,9 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { registrations: 'registrations', omniauth_callbacks: "omniauth_callbacks" }
   
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show, :edit, :update]
 
   get '/admin', to: 'users#admin', as: :admin
-
-  get '/permission', to: 'users#permission', as: :permission
 
   resources :questions do
     resources :answers #only: [:index, :show, :new, :create, :edit, :update, :destroy]
