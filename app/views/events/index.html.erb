@@ -1,6 +1,7 @@
 <div class="container">
   <!-- Button trigger modal -->  
   <%= link_to "New Event", new_event_path, remote: true, class: "btn event-create-btn btn-lg forum-btn" %>
+  <h3>Total Events: <%= @events.count %></h3>
   <div id="new-events-holder" class="modal-body" >
   </div> 
 </div>
