@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   get '/admin', to: 'users#admin', as: :admin
 
+  get '/permission', to: 'users#permission', as: :permission
+
   resources :questions do
     resources :answers #only: [:index, :show, :new, :create, :edit, :update, :destroy]
   end

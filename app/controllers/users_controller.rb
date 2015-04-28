@@ -6,6 +6,11 @@ class UsersController < ApplicationController
     @transactions = @user.transactions
   end
 
+  def permission
+  	@user = User.find(params[:id])
+  	
+  end
+
   def admin
   	@user = User.find(params[:id])
   	@users = User.all
