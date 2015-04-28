@@ -11,7 +11,7 @@
   <%= f.label :description %>
   <%= f.text_area :description, class: 'form-control'  %>
 
-  <%= f.label :Date %> 
+  <%= f.label :Date, class: 'date-space' %> 
   <%= f.datetime_select :datetime, class: 'form-control'  %><br>
 
   <%= f.label :address %>
@@ -21,8 +21,7 @@
   <%= f.text_field :cost, class: 'form-control'  %>
 
   <%= f.label :total_spots %>
-  
   <%= f.number_field :total_spots, class: 'form-control'   %>
 
-  <%= f.submit "Submit", class: "btn btn-primary sign_up_button forum-btn", id: "events-btn-space"  %>
+  <%= f.submit "Submit", class: "btn btn-primary event-submit-btn", id: "events-btn-space"  %>
 <% end %>
