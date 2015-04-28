@@ -1,6 +1,8 @@
 <div class='container buffer col-md-8 col-md-offset-2'>
 </div>
-<%= link_to "Change Admin permissions", edit_admin_path(:id => @user.id), class: 'btn btn-default forum-btn' %>
+<div class="container col-md-8 col-md-offset-2">
+	<%= link_to "Change Admin permissions", edit_admin_path(:id => @user.id), remote: true, class: 'btn btn-default forum-btn pull-right' %>
+</div>
 <div class='container col-md-8 col-md-offset-2'>
 	<!-- Tabs -->
 	<div class="col-md-2">
@@ -82,3 +84,4 @@
 </div>
 
 <%= render "layouts/edit_profile_modal" %>
+<%= render "admin_modal" %>
