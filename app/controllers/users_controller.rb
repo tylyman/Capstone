@@ -6,11 +6,18 @@ class UsersController < ApplicationController
     @transactions = @user.transactions
   end
 
-  def permission
+  # Edits the admin state of the user, not the user registration.
+  def edit
   	@user = User.find(params[:id])
-  	
+
   end
 
+  # Checks to see if the user is authorized to become an Admin.
+  def update
+
+  end
+
+  # Admin portal.
   def admin
   	@user = User.find(params[:id])
   	@users = User.all
