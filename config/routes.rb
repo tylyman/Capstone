@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   get '/edit_admin', to: 'users#edit_admin', as: :edit_admin
 
-  get '/upd_admin', to: 'users#upd_admin', as: :upd_admin
+  patch '/upd_admin', to: 'users#upd_admin', as: :upd_admin
 
   get '/admin', to: 'users#admin', as: :admin
 
