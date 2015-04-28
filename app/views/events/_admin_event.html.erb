@@ -1,0 +1,25 @@
+<div class="panel panel-default">
+	<div class="panel-body">
+		<%= link_to event_path(event), remote: true do %>
+		<div class="col-md-5">
+			<h3><%= event.title.capitalize %></h3>
+		  <p>When: <%= event.datetime.strftime("%B %d, %Y - %I:%M %P") %></p> 
+		  <p>Where: <%= event.city %>, <%= event.state %></p>
+		  <p>Cost: $<%= event.cost %></p>
+		  <p>Spots taken: <%= event.users.count %>/<%= event.total_spots %></p>
+		</div>
+		<div class="col-md-5">
+		  <p><%= event.description %></p>
+		</div>
+		  <span class = "edit-delete pull-right">
+				<%= link_to edit_event_path(event), remote: true do %>
+					<i class="fa fa-pencil fa-lg" data-toggle="tooltip" title="Edit"></i>
+				<% end %>				
+				&nbsp;&nbsp;
+				<%= link_to event_path(event), method: :delete  do %>
+					<i class="fa fa-trash fa-lg" data-toggle="tooltip" title="Delete"></i>
+				<% end %>
+			</span>
+		<% end %>
+	</div>
+</div>

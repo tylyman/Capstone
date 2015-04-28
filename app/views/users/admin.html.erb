@@ -1,0 +1,65 @@
+<div class='container buffer col-md-8 col-md-offset-2'>
+
+</div>
+
+<div class='container col-md-8 col-md-offset-2'>
+	<!-- Tabs -->
+	<div class="col-md-2">
+	  <ul class="nav nav-pills nav-stacked profile-pills">
+	    <li role="presentation" class="active"><a href="#adminUsers" aria-controls="home" role="tab" data-toggle="tab">Users</a></li>
+	    <li role="presentation"><a href="#adminEvents" aria-controls="Admin Events" role="tab" data-toggle="tab">Events</a></li>
+	    <li role="presentation"><a href="#adminForum" aria-controls="Admin Forum" role="tab" data-toggle="tab">Forum</a></li>
+	  </ul>
+	</div>
+	<!-- Tab panes -->
+	<div class="tab-content">
+
+	  <!--Users pane-->
+	  <div role="tabpanel" class="tab-pane active" id="adminUsers">
+	  	<div class="panel panel-default col-md-10 profile-panel">
+		  	<div class="panel-body">
+		  		<!--Individual user panels-->
+		  		<% @users.each do |user| %>
+		  			<%= render 'admin_user', :user => user %>
+					<% end %>
+					<!--End of users panels-->
+				</div>
+			</div>
+	  </div>
+
+	  <!--Events pane-->
+	  <div role="tabpanel" class="tab-pane" id="adminEvents">
+	  	<div class="panel panel-default col-md-10 profile-panel">
+		  	<div class="panel-body">
+	  				<!--Individual event panels-->
+
+	  				<% @events.each do |event|%>
+		  				<%= render 'events/admin_event',  :event => event %>
+		  					</div>
+		  				</div>
+		  			<% end %>
+						<!--End of event panels-->
+				</div>
+			</div>
+		</div>
+
+		<!--Forum pane-->
+	  <div role="tabpanel" class="tab-pane" id="adminForum">
+	  	<div class="panel panel-default col-md-10 profile-panel">
+		  	<div class="panel-body">
+		  		
+			  		<div class="panel panel-default">
+					  	<div class="panel-body">
+
+							</div>
+						</div>
+
+				</div>
+			</div>
+	  </div>
+
+	</div>
+	</div>
+</div>
+
+<%= render 'events/events_modal' %>
