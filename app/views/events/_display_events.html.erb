@@ -6,13 +6,12 @@
         <p><%= event.description %></p>
       </div>
       <p>When: <%= event.datetime.strftime("%B %d, %Y - %I:%M %P") %></p> 
-      <p>Where: <%= event.city %>, <%= event.state %></p>
       <p>Cost: $<%= event.cost %></p>
       <p>Spots taken: <%= event.users.count %> 
       <p><%= event.total_spots %></p>
-      <%= link_to "DELETE", event_path(event), method: :delete, class: 'btn btn-default delete-button' %> 
+      <%= link_to "DELETE", event_path(event), method: :delete, class: 'btn btn-default delete-button' %>
        <div id="edit-events-holder" class="modal-body"></div>
-        <%= link_to "EDIT", edit_event_path(event), remote: true , class: "btn btn-default edit-button" %>
+        <%= link_to "EDIT", edit_event_path(event), remote: true , class: 'btn btn-default edit-button' %>
     </div>
   </div>
 <% end %>
