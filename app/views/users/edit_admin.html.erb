@@ -5,10 +5,10 @@
 	<% else %>
 		<h5>Please enter your admin code below to gain access to the adminsatrative features of this site.</h5>
 		<div class="col-md-4">
-		<%= form_for @user, :url => {:action => "upd_admin", :id => @user.id, :code => :code} do |f| %>
+		<%= form_for @user, :url => {:action => "upd_admin", :id => @user.id, :admin_code => :admin_code} do |f| %>
 
 			<%= f.label :code %>
-	  	<%= f.text_field :code, class: 'form-control'  %>
+	  	<%= f.text_field :admin_code, class: 'form-control'  %>
 
 	  	<%= f.submit "Submit", class: "btn btn-default forum-btn" %>
 	  <% end %>
