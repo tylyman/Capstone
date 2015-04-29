@@ -1,7 +1,11 @@
 class Event < ActiveRecord::Base
   has_and_belongs_to_many :users, -> { uniq }
+  has_attached_file :image, styles: { med: "400x200" }
+  validates_attachment :image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
+
   belongs_to :owner, class_name: "User", foreign_key: "events_owner_id"
 
+  validates :image, :attachment_presence => true
   validates :title, :presence => true
   validates :description, :presence => true
   validates :address, :presence => true

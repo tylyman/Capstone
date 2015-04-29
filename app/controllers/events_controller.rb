@@ -18,7 +18,7 @@ class EventsController < ApplicationController
     @event.save
     
     respond_to do |format|
-      format.html
+      format.html {redirect_to events_path}
       format.js
     end
   end
@@ -91,7 +91,7 @@ class EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:title, :description, :datetime, :city, :state, :cost, :vacancies, :user_id, :total_spots, :address, :latitude, :longitude)
+    params.require(:event).permit(:title, :description, :datetime, :city, :state, :cost, :vacancies, :user_id, :total_spots, :address, :latitude, :longitude, :image )
   end
 
   def set_event

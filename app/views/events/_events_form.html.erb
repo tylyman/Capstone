@@ -4,6 +4,10 @@
 
 <%= form_for event, remote: true do |f| %>
   <%= render 'layouts/error_messages', object: f.object %>
+  <%= token_tag nil %>
+
+  <%= f.label :image %>
+  <%= f.file_field :image %>
 
   <%= f.label :title %> 
   <%= f.text_field :title, :maxlength => 32, class: 'form-control' %>
@@ -25,3 +29,5 @@
 
   <%= f.submit "Submit", class: "btn btn-primary event-submit-btn", id: "events-btn-space"  %>
 <% end %>
+
+
