@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   def upd_admin
   	@user = User.find(params[:id])
   	if @user.update(admin_params)
-  		if @user.code == ENV['ADMIN_CODE']
+  		if @user.admin_code == ENV['ADMIN_CODE']
   			@user.admin = true
   			@user.save
   			redirect_to admin_path(:id => @user.id)

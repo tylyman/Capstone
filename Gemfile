@@ -19,6 +19,8 @@ gem 'gmaps4rails'
 gem 'underscore-rails'
 gem 'geocoder'
 gem 'asset_sync'
+gem 'paperclip'
+gem 'aws-sdk'
 
 group :development, :test do
   gem 'byebug'
