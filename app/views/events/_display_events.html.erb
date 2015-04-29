@@ -5,13 +5,14 @@
       <div id="events-description">
         <p><%= event.description %></p>
       </div>
-      <p>When: <%= event.datetime.strftime("%B %d, %Y - %I:%M %P") %></p> 
-      <p>Cost: $<%= event.cost %></p>
-      <p>Spots taken: <%= event.users.count %> 
-      <p><%= event.total_spots %></p>
+      <p><b>Created by: </b><%= event.owner.user_name %></p>
+      <p><b>When: </b><%= event.datetime.strftime("%B %d, %Y - %I:%M %P") %></p>
+      <p><b>Where: </b><%= event.address %></p> 
+      <p><b>Spots taken: </b><%= event.users.count %>/<%= event.total_spots %></p> 
+      <p><b>Cost: </b>$<%= event.cost %></p>
       <%= link_to "DELETE", event_path(event), method: :delete, class: 'btn btn-default delete-button' %>
-       <div id="edit-events-holder" class="modal-body"></div>
-        <%= link_to "EDIT", edit_event_path(event), remote: true , class: 'btn btn-default edit-button' %>
+      <div id="edit-events-holder" class="modal-body"></div>
+      <%= link_to "EDIT", edit_event_path(event), remote: true , class: 'btn btn-default edit-button' %>
     </div>
   </div>
 <% end %>
