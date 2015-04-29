@@ -49,9 +49,16 @@ class EventsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get index" do
+  test "admin can view index" do
+    @user.admin ='true'
+    @user.save
     get :index
     assert_response :success
+  end
+
+  test "user cannot view index" do
+    get :index
+    assert_redirected_to root_path
   end
 
   test "Should enroll the user to the event" do

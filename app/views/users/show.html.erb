@@ -1,7 +1,6 @@
 <div class='container buffer col-md-8 col-md-offset-2'>
 </div>
 <div class="container col-md-8 col-md-offset-2">
-	<%= link_to "Change Admin permissions", edit_admin_path(:id => @user.id), remote: true, class: 'btn btn-default forum-btn pull-right' %>
 </div>
 <div class='container col-md-8 col-md-offset-2'>
 	<!-- Tabs -->
@@ -13,24 +12,32 @@
 	  </ul>
 	</div>
 	<!-- Tab panes -->
-	<div class="tab-content">
-	  <div role="tabpanel" class="tab-pane active" id="info">
-	  	<div class="panel panel-default col-md-10 profile-panel">
-		  	<div class="panel-body">
-		  		<div class="panel panel-default">
+	<div class="tab-content"> 
+	  <div role="tabpanel" class="tab-pane active" id="info">	  	
+	  	<div class="panel panel-default col-md-10 profile-panel">		  	
+		  	<div class="panel-body">	  		
+		  		<div class="panel panel-default">		  	
 				  	<div class="panel-body">
-				  		<h4>Personal Information</h4>
-					  	<p><b>Username: </b><%= @user.user_name %></p>
-							<p><b>First Name: </b><%= @user.first_name %></p>
-							<p><b>Last Name: </b><%= @user.last_name %></p>
-							<p><b>Username: </b><%= @user.email %></p>
-							<%= link_to "Update This Information", edit_user_registration_path, remote: true, class: 'btn btn-default forum-btn'%>
-						</div>
+					  	<div class="col-md-5">
+					  		<h4>Personal Information</h4>
+						  	<p><b>Username: </b><%= @user.user_name %></p>
+								<p><b>First Name: </b><%= @user.first_name %></p>
+								<p><b>Last Name: </b><%= @user.last_name %></p>
+								<p><b>Username: </b><%= @user.email %></p>
+								<%= link_to "Edit your profile", edit_user_registration_path, remote: true, class: 'btn btn-default forum-btn'%>
+							</div>
+							<div class="col-md-5">
+								<h4></h4>
+								<h5>Unhappy with Agoge?</h5>
+								<%= button_to "Cancel your account", registration_path(resource_name), class: 'btn btn-default forum-btn', data: { confirm: "Are you sure?" }, method: :delete %>
+								<h5>Have you been invited to become a site administrator?</h5>
+								<%= link_to "Change Admin permissions", edit_admin_path(:id => @user.id), remote: true, class: 'btn btn-default forum-btn' %>
+							</div>
+				  	</div>
 					</div>
 				</div>
 			</div>
-	  </div>
-
+		</div>
 	  <div role="tabpanel" class="tab-pane" id="myEvents">
 	  	<div class="panel panel-default col-md-10 profile-panel">
 		  	<div class="panel-body">
