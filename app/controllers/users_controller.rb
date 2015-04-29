@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   def upd_admin
   	@user = User.find(params[:id])
   	if @user.update(admin_params)
-  		if @user.code == ENV['ADMIN_CODE']
+  		if @user.admin_code == ENV['ADMIN_CODE']
   			@user.admin = true
   			@user.save
   			redirect_to admin_path(:id => @user.id)
@@ -42,6 +42,7 @@ class UsersController < ApplicationController
   	@events = Event.all
   	@questions = Question.all
   	@answers = Answer.all
+
   	if !current_user.admin?
 			flash[:danger] = "You are not authorized to view this page."
  	  	redirect_to root_url

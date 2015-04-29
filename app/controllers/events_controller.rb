@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :update, :edit, :destroy, :enroll]
   before_action :set_user
+  before_action :authenticate_user!
 
   def new
     @event = @user.events.build
@@ -69,6 +70,11 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+
+    if !current_user.admin?
+      redirect_to root_url
+      flash[:danger] = "You are not authorized to view this page."
+    end
   end
 
   def enroll

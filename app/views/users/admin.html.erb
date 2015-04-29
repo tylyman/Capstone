@@ -42,9 +42,9 @@
 					  	<div class="panel-body">
 					  		<h4>Forum Statistics</h4>
 					  		<p><b>Total Posts: </b><%= @questions.count %></p>
-					  		<p><b>Posts per user: </b><%= ((@questions.count) / (@users.count)).to_f %></p>
-					  		<p><b>Total Answers: </b><%= @answers.count %></p>
-					  		<p><b>Answers per user: </b><%= ((@answers.count) / (@users.count)).to_f %></p>
+					  		<p><b>Avg. posts per user: </b><%= ((@questions.count).to_f / (@users.count).to_f) %></p>
+					  		<p><b>Total Replies: </b><%= @answers.count %></p>
+					  		<p><b>Avg. replies per user: </b><%= ((@answers.count).to_f / (@users.count).to_f) %></p>
 							</div>
 						</div>
 						<!--End of inner panel-->
@@ -54,5 +54,6 @@
 	</div>
 </div>
 
-
 <%= render 'events/events_modal' %>
+
+<br class='clear' />
