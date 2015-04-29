@@ -19,12 +19,19 @@
 		  	<div class="panel-body">
 		  		<div class="panel panel-default">
 				  	<div class="panel-body">
-				  		<h4>Personal Information</h4>
-					  	<p><b>Username: </b><%= @user.user_name %></p>
-							<p><b>First Name: </b><%= @user.first_name %></p>
-							<p><b>Last Name: </b><%= @user.last_name %></p>
-							<p><b>Username: </b><%= @user.email %></p>
-							<%= link_to "Update This Information", edit_user_registration_path, remote: true, class: 'btn btn-default forum-btn'%>
+				  		<div class='col-md-4'>
+					  		<h4>Personal Information</h4>
+						  	<p><b>Username: </b><%= @user.user_name %></p>
+								<p><b>First Name: </b><%= @user.first_name %></p>
+								<p><b>Last Name: </b><%= @user.last_name %></p>
+								<p><b>Username: </b><%= @user.email %></p>
+								<%= link_to "Edit your profile", edit_user_registration_path, remote: true, class: 'btn btn-default forum-btn'%>
+							</div>
+							<div class='col-md-4'>
+								<h4></h4>
+								<b>Unhappy with Agoge?</b><%= button_to "Cancel your account", registration_path(resource_name), 
+								class: 'btn btn-default forum-btn', data: { confirm: "Are you sure?" }, method: :delete %>
+							</div>
 						</div>
 					</div>
 				</div>
