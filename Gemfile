@@ -18,7 +18,6 @@ gem 'omniauth-facebook'
 gem 'gmaps4rails'
 gem 'underscore-rails'
 gem 'geocoder'
-gem 'asset_sync'
 
 group :development, :test do
   gem 'byebug'
