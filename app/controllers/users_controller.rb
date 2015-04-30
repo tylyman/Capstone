@@ -23,14 +23,14 @@ class UsersController < ApplicationController
   		if @user.admin_code == ENV['ADMIN_CODE']
   			@user.admin = true
   			@user.save
-  			redirect_to admin_path(:id => @user.id)
+  			redirect_to admin_path(@user)
   			flash[:success] = "You are now a site administrator."
   		else
-	  		redirect_to user_path(:id => @user.id)
+	  		redirect_to user_path(@user)
 	  		flash[:danger] = "The code you entered was incorrect."
   		end
   	else
-			redirect_to user_path(:id => @user.id)
+			redirect_to user_path(@user)
 			flash[:danger] = "Error: Please try agian."
   	end
   end

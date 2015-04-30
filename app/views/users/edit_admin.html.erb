@@ -1,13 +1,13 @@
 <div class="container">
 	<% if current_user.admin? %>
 		<h5>You already have access to the admin portal.<h5>
-		<%= link_to "Go there now!", admin_path(:id => @user.id), class: 'btn btn-default forum-btn' %>
+		<%= link_to "Go there now!", admin_path(@user), class: 'btn btn-default forum-btn' %>
 	<% else %>
 		<h5>Please enter your admin code below to gain access to the adminsatrative features of this site.</h5>
 		<div class="col-md-4">
 		<%= form_for @user, :url => {:action => "upd_admin", :id => @user.id, :admin_code => :admin_code} do |f| %>
 
-			<%= f.label :code %>
+			<%= f.label :admin_code, 'Code' %>
 	  	<%= f.text_field :admin_code, class: 'form-control'  %>
 
 	  	<%= f.submit "Submit", class: "btn btn-default forum-btn" %>
