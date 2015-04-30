@@ -8,7 +8,7 @@ one:
   cost: 1
   vacancies: 1
   total_spots: 10
-  user_id: 1
+
 two:
   title: MyString
   description: MyText
@@ -16,3 +16,4 @@ two:
   address: cool place
   cost: 1
   vacancies: 1
+  total_spots: 10

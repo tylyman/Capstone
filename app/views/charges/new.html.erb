@@ -7,7 +7,7 @@
 			<div class="panel-body">
 				<p>Please take a moment to review the following information:</p>
 				<br>
-				<h5>Personal Information</h5>
+				<h4>Personal Information</h4>
 				<p><b>First Name: </b><%= current_user.first_name %></p>
 				<p><b>Last Name: </b><%= current_user.last_name %></p>
 				<p><b>Email Address: </b><%= current_user.email %></p>
@@ -15,9 +15,9 @@
 				<%= link_to "Update This Information", edit_user_registration_path, remote: true, class: 'btn btn-default forum-btn'%>
 				<br>
 				<br>
-				<h5>Event Details</h5>
-				<P><b>Location: </b><%= @event.city %>, <%= @event.state %><p>
-				<p><%= @event.datetime %><p>
+				<h4>Event Details</h4>
+				<P><b>Location: </b><%= @event.address %><p>
+				<p><b>When: </b><%= event.datetime.strftime("%B %d, %Y - %I:%M %P") %></p>
 
 				<%= form_tag charges_path do %>
 				  <article>
