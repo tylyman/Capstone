@@ -55,6 +55,6 @@ class UsersController < ApplicationController
 
   private
 	  def admin_params
-	    params.permit(:admin_code)
+	    params.require(:user).permit(:admin_code)
 	  end
 end
