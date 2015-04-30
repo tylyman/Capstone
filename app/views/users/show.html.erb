@@ -67,12 +67,12 @@
 	  <div role="tabpanel" class="tab-pane" id="transactions">
 	  	<div class="panel panel-default col-md-10 profile-panel">
 		  	<div class="panel-body">
-			  	<% if @transactions.any? %>
-				  	<% @transactions.each do |transaction| %>
+			  	<% if @user.transactions.any? %>
+				  	<% @user.transactions.each do |transaction| %>
 				  		<div class="panel panel-default">
 					  		<div class="panel-body">
 					  			<p><b>Date: </b><%= transaction.created_at.strftime("%B %d, %Y - %I:%M %P") %> MDT</p>
-						  		<p><b>Event Name: </b><%= transaction.event.title %></p>
+						  		<p><b>Event Name: </b><%= transaction.event_name %></p>
 									<p><b>Transaction Amount: </b>$<%= transaction.amount / 100 %>.00</p>
 								</div>
 							</div>
