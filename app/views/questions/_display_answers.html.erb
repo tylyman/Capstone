@@ -4,8 +4,12 @@
 	<% else %>
 	<h3 class='pull-left'><%= @question.answers.count %> Responses</h3>
 	<% end %>
-	<%= link_to 'Respond to this post', new_question_answer_path(@question), remote: true, 
-							class: 'btn btn-default forum-btn pull-right respond-btn' %>
+	<% if user_signed_in? %>
+		<%= link_to 'Respond to this post', new_question_answer_path(@question), remote: true, 
+							  class: 'btn btn-default forum-btn pull-right respond-btn' %>
+	<% else %>
+		<h5 class="pull-right" >You must be signed in to respond</h5>
+	<% end %>
 </div>
 <div class="container">
 	<hr>

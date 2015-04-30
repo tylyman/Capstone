@@ -1,11 +1,11 @@
 <div class = "container">
-<%= link_to "Back to Forum", questions_path, class: 'btn btn-default forum-btn' %>
+	<%= link_to "Back to Forum", questions_path, class: 'btn btn-default forum-btn' %>
 </div>
 <div class = "container">
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<span class ='pull-right category-label category-label-large'>
-					<%= question.category %>
+				<%= question.category %>
 			</span>
 			<h4><%= question.title %></h4>
 		</div>
@@ -13,7 +13,7 @@
 			<p><%= question.content %><p>
 			<hr class='forum-hr'>
 	  	<h6 class='pull-left'>Posted by <%= question.user.user_name || "Anonymous" %> <%= time_ago_in_words(question.created_at)%> ago</h6>
-			<% if question.user == current_user || current_user.admin? %>
+			<% if user_signed_in? && (question.user == current_user || current_user.admin?) %>
 		  	<span class = "edit-delete pull-right">
 					<%= link_to edit_question_path(question), remote: true do %>
 		  			<i class="fa fa-pencil fa-lg" data-toggle="tooltip" title="Edit"></i>
