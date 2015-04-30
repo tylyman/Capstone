@@ -17,4 +17,21 @@ class UsersControllerTest < ActionController::TestCase
     get :index
     assert_response :success
   end
+
+  test "admin can view admin page" do
+    @user.admin ='true'
+    @user.save
+    get :admin, :id => @user
+    assert_response :success
+  end
+
+  test "non-admin cannot view admin page" do
+    get :admin, :id => @user
+    assert_redirected_to root_url
+  end
+
+  test "user can view edit admin page" do
+    get :edit_admin, :id => @user
+    assert_response :success
+  end
 end
