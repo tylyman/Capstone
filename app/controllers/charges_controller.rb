@@ -23,7 +23,7 @@ class ChargesController < ApplicationController
 	    :currency    => 'usd'
 	  )
 
-	  @charge = Transaction.new(stripe_id: charge['id'], user_id: current_user.id, amount: charge['amount'], paid: charge['paid'], event_id: @event.id)
+	  @charge = Transaction.new(stripe_id: charge['id'], user_id: current_user.id, amount: charge['amount'], paid: charge['paid'], event_id: @event.id, event_name: @event.title)
 	  @charge.save
 
 	  redirect_to enroll_path(@event)
