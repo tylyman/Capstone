@@ -63,12 +63,13 @@ Rails.application.configure do
   # config/environments/production.rb
   config.paperclip_defaults = {
    :storage => :s3,
+   :s3_host_name => 's3-us-west-2.amazonaws.com',
    :s3_credentials => {
-    :bucket => ENV['agogelabs'],
-    :access_key_id => ENV['AKIAIPFK4STYKRUW7BQQ'],
-    :secret_access_key => ENV['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']
-     Paperclip::Attachment.default_options[:url] = ':agogelabs.s3.amazonaws.com'
-     Paperclip::Attachment.default_options[:path] = '/:class/:attachment/:id_partition/:style/:filename'
+    :bucket => ENV['S3_BUCKET_NAME'],
+    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+     # Paperclip::Attachment.default_options[:url] = ':agogelabs.s3.amazonaws.com'
+     # Paperclip::Attachment.default_options[:path] = '/:class/:attachment/:id_partition/:style/:filename'
     }
   }
 
