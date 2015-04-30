@@ -71,7 +71,6 @@ class EventsControllerTest < ActionController::TestCase
     assert @event.total_spots - 1, @event.spots_left
     @event.reload
     assert_includes @event.users, @second_user
-
   end
 
   test "Should not enroll the owner to its own event" do
@@ -81,6 +80,6 @@ class EventsControllerTest < ActionController::TestCase
     assert_redirected_to root_path
     # assert the flash says, you can't add yourself as a participant
     @event.reload
-    assert @event.valid?
+    @event.valid?
   end
 end
