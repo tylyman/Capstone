@@ -19,7 +19,7 @@ gem 'gmaps4rails'
 gem 'underscore-rails'
 gem 'geocoder'
 gem 'paperclip'
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 
 
 group :development, :test do
