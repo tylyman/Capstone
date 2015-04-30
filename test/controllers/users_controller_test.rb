@@ -8,7 +8,6 @@ class UsersControllerTest < ActionController::TestCase
     sign_in @user
   end
   test "should get show" do
-
     @user.events << @event
     get :show, id: @user.id
     assert_response :success
