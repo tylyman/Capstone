@@ -6,12 +6,17 @@
   </div> 
 </div>
 
-<div id="events_index_div" class="container">
-  <% @events.each do |event| %>
-  <div id="event-<%= event.id %>">
-    <%= render partial: 'display_events', locals: {:event => event} %> 
+<div class="row events_body_background ">
+  <div class="col-md-10 col-md-offset-2">
+
+    <% @events.each do |event| %>
+    <div class="col-md-5 ">
+      <div id="event-<%= event.id %>">
+        <%= render partial: 'display_events', locals: {:event => event} %> 
+      </div>
+    </div>  
+    <% end %>
   </div>
-  <% end %>
 </div>
 
 <%= render partial: 'events_modal' %>

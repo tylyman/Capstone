@@ -19,16 +19,18 @@
     </span>
   </div>
   <div id="EventsArea" >
-    <section id="EventsIndex">
-      <div class="row events_body_background">
-        <div class="container events-label"></div>
-        <% @events.each do |event| %> 
-          <div class="col-md-4 col-md-offset-1">
-            <%= render partial: 'events/display_events_home', locals: {:event => event} %> 
-          </div>
-        <% end %>
+   <div class="buffer"></div>
+    <div id="EventsArea" >
+      <div class="row events_body_background ">
+        <div class="col-md-10 col-md-offset-2">
+          <% @events.each do |event| %> 
+            <div class="col-md-5 ">
+              <%= render partial: 'events/display_events_home', locals: {:event => event} %> 
+            </div>
+          <% end %>
+        </div>
       </div>
-    </section>
+    </div>
   </div>
 </div>
 
