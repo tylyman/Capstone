@@ -1,11 +1,13 @@
 one:
  first_name: First
  last_name: Last
+ user_name: test
  email: test@test.com
  id: 1
 
 two:
  first_name: Second
  last_name: User
+ user_name: test2
  email: second@test.com
  id: 2

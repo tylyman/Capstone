@@ -1,8 +1,10 @@
 require 'test_helper'
 
 class EventsControllerTest < ActionController::TestCase
+
   def setup
     @event = events(:one)
+    @other_event = events(:two)
     @user = users(:one)
     sign_in @user
   end
@@ -45,6 +47,8 @@ class EventsControllerTest < ActionController::TestCase
   end
 
   test "should get show" do
+    @event.events_owner_id = @user.id
+    @event.save
     get :show, id: @event.id
     assert_response :success
   end
@@ -52,6 +56,8 @@ class EventsControllerTest < ActionController::TestCase
   test "admin can view index" do
     @user.admin ='true'
     @user.save
+    @event.events_owner_id = @user.id
+    @event.save
     get :index
     assert_response :success
   end
