@@ -1,14 +1,13 @@
 class ChargesController < ApplicationController
 	before_action :authenticate_user!
+	before_action :set_event
+	before_action :verify_user
 
 	def new
-		@event = Event.find(params[:event_id])
 	end
 
 	def create
-		@event = Event.find(params[:event_id])
 	  # Amount in cents
-
 	  @amount = @event.cost * 100
 
 	  customer = Stripe::Customer.create(
@@ -31,5 +30,17 @@ class ChargesController < ApplicationController
 	rescue Stripe::CardError => e
 	  flash[:error] = e.message
 	  redirect_to charges_path
+	end
+
+	private
+	def set_event
+		@event = Event.find(params[:event_id])
+	end
+
+	def verify_user
+		if current_user == @event.owner || @event.users.include?(current_user)
+	  	flash[:danger] = "You cannot enroll in this event."
+	  	redirect_to root_url
+	  end
 	end
 end
