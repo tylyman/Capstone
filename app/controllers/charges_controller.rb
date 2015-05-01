@@ -38,7 +38,7 @@ class ChargesController < ApplicationController
 	end
 
 	def verify_user
-		if current_user == @event.owner || @event.users.inlcude?(current_user)
+		if current_user == @event.owner || @event.users.include?(current_user)
 	  	flash[:danger] = "You cannot enroll in this event."
 	  	redirect_to root_url
 	  end
