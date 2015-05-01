@@ -506,6 +506,28 @@ width: 100%;
   padding-bottom: 50px;
 }
 
+.video-description {
+  line-height: 100px;
+  width: 350px;
+  height: 150px;
+  text-align: center;
+}
+
+
+.video-description h3 {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;  
+}
+
+.learn-info {
+  text-align: center;
+}
+
+.link-separator {
+  width: 6%;
+}
+
 /* CONTACT */
 
 .contact-header {
