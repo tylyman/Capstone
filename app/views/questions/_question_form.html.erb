@@ -13,7 +13,7 @@
 	  <%= f.text_area :content, class: 'form-control'  %>
 
 	  <%= f.label :category %>
-	  <%= f.select :category, options_for_select(['General', 'Day Camp', 'Ruby', 'Other Coding']), class: 'form-control' %>	
+	  <%= f.select :category, options_for_select(['General', 'Day Camp', 'Ruby', 'Other Coding']), class: 'form-control' %>	<br>
 
 		<%= f.hidden_field :user_id, value: current_user.id, class: 'form-control'  %>	  
 		
