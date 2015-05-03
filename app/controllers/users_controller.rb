@@ -61,7 +61,7 @@ class UsersController < ApplicationController
     @user.destroy
 
     if @user.destroy
-        redirect_to request_referrer, notice: "User deleted."
+        redirect_to admin_path(:id => current_user.id), notice: "The account was succesfully deleted."
     end
   end
 
