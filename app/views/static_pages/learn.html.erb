@@ -30,32 +30,104 @@
 
 <hr class="contact-hr">
 
-<h1 class="learn-info">Additional Links</h1>
+<h1 class="learn-info">Additional Resources</h1>
 
 <hr class="contact-hr"><br>
 
-<div class="learn-info">
-	<h3>
-		<a href=http://guides.rubyonrails.org/getting_started.html target="_blank"l>Getting Started with Rails</a>
-		<br><br><hr class="link-separator"><br>
-		<a href=https://www.railstutorial.org/book/frontmatter target="_blank">12 Chapter Rails Tutorial by Michael Hartl</a>
-		<br><br><hr class="link-separator"><br>
-		<a href=http://railscasts.com/ target="_blank">Rails Casts</a>
-		<br><br><hr class="link-separator"><br>
-		<a href=http://www.codecademy.com/learn/learn-rails target="_blank">Codecademy</a>
-		<br><br><hr class="link-separator"><br>
-		<a href=http://railsforzombies.org/ target="_blank">Rails for Zombies</a>
-		<br><br><hr class="link-separator"><br>
-		<a href=https://teamtreehouse.com/library/build-a-simple-ruby-on-rails-application/getting-started-with-rails/generate-a-rails-application-2 target="_blank">Treehouse</a>
-		<br><br><hr class="link-separator"><br>
-		<a href=http://www.codelearn.org/ target="_blank">CodeLearn</a>
-		<br><br><hr class="link-separator"><br>
-		<a href=http://cli.learncodethehardway.org/book/ target="_blank">Command Line Crash Course</a>
-		<br><br><hr class="link-separator"><br>
-		<a href=https://pragprog.com/ target="_blank">The Pragmatic Bookshelf</a>
-		<br><br><hr class="link-separator"><br>
-		<a href=https://try.github.io/levels/1/challenges/1>Try Git</a>
-		<br><br><hr class="link-separator"><br>
-		<a href=http://vim-adventures.com/>VIM Adventures</a>
-	</h3>
+<div class="container">
+	<div class="col-md-12 col-md-offset-3">
+	<div role="tabpanel">
+	  <!-- Nav tabs -->
+	  <div class="col-md-2">
+  		<ul class="nav nav-pills nav-stacked profile-pills">
+		    <li role="presentation" class="active"><a href="#courses" aria-controls="home" role="tab" data-toggle="tab">Online Courses</a></li>
+		    <li role="presentation"><a href="#tutorials" aria-controls="courses" role="tab" data-toggle="tab">Tutorials and Guides</a></li>
+		    <li role="presentation"><a href="#games" aria-controls="Day Camp" role="tab" data-toggle="tab">Games</a></li>
+		    <li role="presentation"><a href="#reference" aria-controls="Other Coding" role="tab" data-toggle="tab">Reference</a></li>
+	  	</ul>
+	  </div>
+	  <!-- Tab panes -->
+	  <div class="tab-content">
+	  	<!--Courses tab pane-->
+	    <div role="tabpanel" class="tab-pane active" id="courses">
+		    <div class="col-md-4">
+			    <div class="panel panel-default post-panel ">
+			    	<%= link_to "http://www.codelearn.org" do %>
+			    	<div class="panel-body post-panel-body learn-info">
+			    		CodeLearn
+			    	</div>
+			    	<% end %>
+					</div>
+			    <div class="panel panel-default post-panel">
+			    	<div class="panel-body post-panel-body">
+			    		<a href=https://teamtreehouse.com/library/build-a-simple-ruby-on-rails-application/getting-started-with-rails/generate-a-rails-application-2 target="_blank">Treehouse</a>
+			   	  </div>
+					</div>
+			   	<div class="panel panel-default post-panel">
+			    	<div class="panel-body post-panel-body">
+			   			<a href=http://www.codecademy.com/learn/learn-rails target="_blank">Codecademy</a>
+			   	  </div>
+					</div>
+			   	<div class="panel panel-default post-panel">
+			    	<div class="panel-body post-panel-body">
+			   			<a href=http://cli.learncodethehardway.org/book/ target="_blank">Command Line Crash Course</a>
+					  </div>
+					</div>
+			  </div>
+	    </div>
+			<!--Tutorials tab pane-->
+	    <div role="tabpanel" class="tab-pane" id="tutorials">
+	    	<div class="col-md-4">
+	   	   	<div class="panel panel-default post-panel">
+			    	<div class="panel-body post-panel-body">
+	    				<a href=http://guides.rubyonrails.org/getting_started.html target="_blank"l>Getting Started with Rails</a>
+					  </div>
+					</div>
+	    		<div class="panel panel-default post-panel">
+			    	<div class="panel-body post-panel-body">
+	    				<a href=https://www.railstutorial.org/book/frontmatter target="_blank">12 Chapter Rails Tutorial by Michael Hartl</a>
+					  </div>
+					</div>
+	    		<div class="panel panel-default post-panel">
+			    	<div class="panel-body post-panel-body">
+		    			<a href=http://railscasts.com/ target="_blank">Rails Casts</a>
+					  </div>
+					</div>
+		    	<div class="panel panel-default post-panel">
+			    	<div class="panel-body post-panel-body">
+		    			<a href=http://railsforzombies.org/ target="_blank">Rails for Zombies</a>
+					  </div>
+					</div>
+		    	<div class="panel panel-default post-panel">
+			    	<div class="panel-body post-panel-body">
+		    			<a href=https://try.github.io/levels/1/challenges/1>Try Git</a>
+					  </div>
+					</div>
+				</div>
+	    </div>
+	    <!--Games tab pane-->
+	    <div role="tabpanel" class="tab-pane" id="games">
+				<div class="col-md-4">
+		    	<div class="panel panel-default post-panel">
+				    <div class="panel-body post-panel-body">
+	    				<a href=http://vim-adventures.com/>VIM Adventures</a>
+					  </div>
+					</div>
+	    	</div>
+	    </div>
+	    <!--Reference tab pane-->
+	    <div role="tabpanel" class="tab-pane" id="reference">
+	    	<div class="col-md-4">
+	    		<div class="panel panel-default post-panel">
+			    	<div class="panel-body post-panel-body">
+	    				<a href=https://pragprog.com/ target="_blank">The Pragmatic Bookshelf</a>
+	    			</div>
+					</div>
+	  		</div>
+	    </div>
+	  </div>
+	  <!--End of tab panes-->
+	</div>
+	</div>
 </div>
+
