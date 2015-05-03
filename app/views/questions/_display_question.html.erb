@@ -19,7 +19,7 @@
 		  			<i class="fa fa-pencil fa-lg" data-toggle="tooltip" title="Edit"></i>
 		  		<% end %>				
 					&nbsp;&nbsp;
-					<%= link_to question_path(question), method: :delete  do %>
+					<%= link_to question_path(question), data: { confirm: "This action cannot be undone.  Are you sure you want to delete this post?" },  method: :delete do %>
 						<i class="fa fa-trash fa-lg" data-toggle="tooltip" title="Delete"></i>
 					<% end %>
 		  	</span>
