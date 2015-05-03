@@ -383,49 +383,38 @@ width: 100%;
 }
 
 
-.delete-button {
+.delete-button, .edit-button {
   background-color: #fb502e;
   font-family: Proxima Nova;
   font-weight: bolder;
+  letter-spacing: 1px;
+  border-style: none;
   font-size: 18px;
-  letter-spacing: -1px;
   color: white;
   height: 50px;
   width: 300px;
   margin-left: 13%;
-  padding-top: 8px;
+  padding-top: 12px;
    &:hover {
     background-color: #f12c05;
      color: white;
  }
 }
 
-
 .edit-button {
-  background-color: #fb502e;
-  font-family: Proxima Nova;
-  font-weight: bolder;
-  font-size: 18px;
-  letter-spacing: -1px;
-  color: white;
-  height: 50px;
-  width: 300px;
-  margin-left: 13%;
-  padding-top: 8px;
   margin-top: -30px;
   position: relative;
-   &:hover {
-    background-color: #f12c05;
-    color: white;
- }
 }
 
-
+.delete-button {
+  margin-top: 5px;
+}
 
 #events-description {
-  height: 90px;
+  height: 80px;
   width: 300px;
-  margin-left: 13%;
+  margin-bottom: 5px;
+  margin-left: 13px;
   overflow: scroll;
 }
 
