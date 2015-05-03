@@ -7,7 +7,9 @@
 @import "bootstrap";
 @font-face {
   font-family: 'Proxima Nova';    
-  src: url('/assets/fonts/Proxima Nova');
+   src: url('/assets/fonts/Proxima Nova');
+  font-family: 'Archer';
+   src: url('/assets/fonts/ArcherPro');
 }
 
 /****** HTML ******/
@@ -56,7 +58,7 @@ width: 100%;
 
 
 .dropdown-menu {
-  min-width: 121px;
+  min-width: 118px;
   margin-right: 5px;
   color: black;
 }
@@ -84,6 +86,7 @@ width: 100%;
 }
 
 .nav_text {
+  font-family: proxima nova;
   margin-top: 10px;
   margin-right: 5px;
   font-size: 20px;
