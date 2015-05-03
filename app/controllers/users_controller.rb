@@ -43,10 +43,27 @@ class UsersController < ApplicationController
   	@questions = Question.all
   	@answers = Answer.all
 
+    @admin_count = User.where(:admin => true).count
+    @users_count = User.where(:admin => false).count
+
   	if !current_user.admin?
 			flash[:danger] = "You are not authorized to view this page."
  	  	redirect_to root_url
 		end
+  end
+
+  def destroy
+    if !current_user.admin?
+      flash[:danger] = "You are not authorized to complete this action!"
+      redirect_to root_url
+    end
+    @user = User.find(params[:id])
+    @user.destroy
+
+    if @user.destroy
+        redirect_to admin_path(:id => current_user.id)
+        flash[:success] = "The account was succesfully deleted."
+    end
   end
 
   private

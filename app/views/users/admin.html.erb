@@ -7,6 +7,7 @@
 	<div class="col-md-2">
 	  <ul class="nav nav-pills nav-stacked profile-pills">
 	    <li role="presentation" class="active"><a href="#adminUsers" aria-controls="home" role="tab" data-toggle="tab">Users</a></li>
+	    <li role="presentation"><a href="#admins" aria-controls="Admins" role="tab" data-toggle="tab">Admins</a></li>
 	    <li role="presentation"><a href="#adminForum" aria-controls="Admin Forum" role="tab" data-toggle="tab">Forum</a></li>
 	  </ul>
 	</div>
@@ -20,13 +21,37 @@
 		  		<div class="panel panel-default">
 						<div class="panel-body">
 							<div class="col-md-5">
-								<p><b>Total Users: </b><%= @users.count %> - Admins displayed first.</p>
+								<p><b>Total Users: </b><%= @users_count %></p>
 							</div>
 						</div>
 					</div>
 		  		<!--Individual user panels-->
-		  		<% @users.order("admin desc").each do |user| %>
+		  		<% @users.each do |user| %>
+		  			<% if !user.admin? %>
 		  			<%= render 'admin_user', :user => user %>
+		  			<% end %>
+					<% end %>
+					<!--End of users panels-->
+				</div>
+			</div>
+	  </div>
+
+	  <!--Admins pane-->
+	  <div role="tabpanel" class="tab-pane" id="admins">
+	  	<div class="panel panel-default col-md-10 profile-panel">
+		  	<div class="panel-body">
+		  		<div class="panel panel-default">
+						<div class="panel-body">
+							<div class="col-md-5">
+								<p><b>Total Admins: </b><%= @admin_count %></p>
+							</div>
+						</div>
+					</div>
+		  		<!--Individual user panels-->
+		  		<% @users.each do |user| %>
+		  			<% if user.admin? %>
+		  			<%= render 'admin_user', :user => user %>
+		  			<% end %>
 					<% end %>
 					<!--End of users panels-->
 				</div>
