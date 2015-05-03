@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   
   resources :users, only: [:index, :show]
 
+  match 'users/:id' => 'users#destroy', :via => :delete, :as => :admin_destroy_user
+
   get '/edit_admin/:id', to: 'users#edit_admin', as: :edit_admin
 
   patch '/upd_admin/:id', to: 'users#upd_admin', as: :upd_admin
