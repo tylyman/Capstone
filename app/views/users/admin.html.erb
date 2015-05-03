@@ -21,7 +21,7 @@
 		  		<div class="panel panel-default">
 						<div class="panel-body">
 							<div class="col-md-5">
-								<p><b>Total Users: </b><%= @users.count(:conditions => [ 'admin = ?', true ]) == @users.count %></p>
+								<p><b>Total Users: </b><%= @users_count %></p>
 							</div>
 						</div>
 					</div>
@@ -43,7 +43,7 @@
 		  		<div class="panel panel-default">
 						<div class="panel-body">
 							<div class="col-md-5">
-								<p><b>Total Admins: </b><%= @users.count %></p>
+								<p><b>Total Admins: </b><%= @admin_count %></p>
 							</div>
 						</div>
 					</div>

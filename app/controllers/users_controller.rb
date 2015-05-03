@@ -43,6 +43,9 @@ class UsersController < ApplicationController
   	@questions = Question.all
   	@answers = Answer.all
 
+    @admin_count = User.where(:admin => true).count
+    @users_count = User.where(:admin => false).count
+
   	if !current_user.admin?
 			flash[:danger] = "You are not authorized to view this page."
  	  	redirect_to root_url
