@@ -61,7 +61,8 @@ class UsersController < ApplicationController
     @user.destroy
 
     if @user.destroy
-        redirect_to admin_path(:id => current_user.id), notice: "The account was succesfully deleted."
+        redirect_to admin_path(:id => current_user.id)
+        flash[:success] = "The account was succesfully deleted."
     end
   end
 
