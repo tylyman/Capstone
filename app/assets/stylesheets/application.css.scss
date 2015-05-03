@@ -8,9 +8,24 @@
 @font-face {
   font-family: 'Proxima Nova';    
    src: url('/assets/fonts/Proxima Nova');
+}
+
+@font-face {
   font-family: 'Archer';
    src: url('/assets/fonts/ArcherPro');
 }
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: "Proxima Nova";
+}
+
 
 /****** HTML ******/
 
@@ -86,7 +101,7 @@ width: 100%;
 }
 
 .nav_text {
-  font-family: proxima nova;
+  font-family: Proxima Nova;
   margin-top: 10px;
   margin-right: 5px;
   font-size: 20px;
@@ -312,41 +327,55 @@ width: 100%;
   outline-color: #cdcdcd;
   margin-left: 11px;
   margin-bottom: 30px;
-  height: 490px;
+  height: 500px;
   width: 400px;
   font: black;
 }
 
 .events_style p {
-  text-align: center;
-  color: black;
-  margin-right: 10px;
-  margin-left: 10px;
+  text-align: left;
+  color: #acacac;
 }
 
 .events_style p:hover {
-  color: black; 
+  color: #acacac; 
 }
 
 .events_style h3 {
-  text-align: center;
-  color: black;
+  font-family: ArcherPro;
+  text-align: left;
+  margin-left: 13%;
+  color: #6f6f6f;
+}
+
+#events-image-line {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  margin-left: 13%;
 }
 
 .events_style a:hover {
   text-decoration: none;
 }
 
+#events-datetime {
+  margin-left: 13%;
+  font-weight: bold;
+  color: #6f6f6f;
+}
+
 .learn-more-button {
   background-color: #fb502e;
   font-family: Proxima Nova;
-  font-size: 23px;
-  letter-spacing: -1px;
+  font-weight: bolder;
+  font-size: 18px;
+  letter-spacing: 1px;
   color: white;
   height: 50px;
   width: 300px;
   margin-left: 13%;
-  padding-top: 8px;
+  padding-top: 12px;
+  border-style: none;
     &:hover {
       background-color: #f12c05;
       color: white;
@@ -357,7 +386,8 @@ width: 100%;
 .delete-button {
   background-color: #fb502e;
   font-family: Proxima Nova;
-  font-size: 23px;
+  font-weight: bolder;
+  font-size: 18px;
   letter-spacing: -1px;
   color: white;
   height: 50px;
@@ -374,7 +404,8 @@ width: 100%;
 .edit-button {
   background-color: #fb502e;
   font-family: Proxima Nova;
-  font-size: 23px;
+  font-weight: bolder;
+  font-size: 18px;
   letter-spacing: -1px;
   color: white;
   height: 50px;
@@ -399,7 +430,7 @@ width: 100%;
 }
 
 #events-home-description {
-  height: 125px;
+  height: 110px;
   width: 300px;
   margin-left: 13%;
   overflow: scroll;
@@ -483,12 +514,12 @@ width: 100%;
 /* FACEBOOK TWITTER LIKE/SHARE */
 
 .fb-like {
-  margin-left: 10px;
-  margin-top: 20px;
+  margin-left: 13%;
+  margin-top: 15px;
 }
 
 .tweet {
-  margin-left: 108px;
+  margin-left: 150px;
   margin-top: -20px;
 }
 
