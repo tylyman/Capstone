@@ -4,7 +4,7 @@
 			<p><b>Username: </b><%= user.user_name %></p>
   		<p><b>Name: </b><%= user.first_name %> <%= user.last_name %></p>
   		<p><b>Email: </b><%= user.email %></p>
-			<%= link_to "Delete User", admin_destroy_user_path(user), class: "btn btn-default forum-btn", method: :delete, data: { confirm: "Are you sure?" } %>
+			<%= link_to "Delete User", admin_destroy_user_path(user), class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" } %>
 		</div>
 		<div class="col-md-3">
   		<h4>Forum</h4>

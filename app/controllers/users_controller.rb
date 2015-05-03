@@ -53,6 +53,10 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    if !current_user.admin?
+      flash[:danger] = "You are not authorized to complete this action!"
+      redirect_to root_url
+    end
     @user = User.find(params[:id])
     @user.destroy
 
