@@ -67,7 +67,7 @@ class QuestionsControllerTest < ActionController::TestCase
     post :create, question: { :title => 'Test', :content => 'Test description', :user_id => 1, :category => 'General'}
     question = assigns(:question) 
     assert_difference('Question.count', -1) do
-    get :destroy, id: question.id
+      get :destroy, id: question.id
     end
     assert_redirected_to questions_path
   end

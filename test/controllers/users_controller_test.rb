@@ -29,4 +29,10 @@ class UsersControllerTest < ActionController::TestCase
     get :edit_admin, :id => @user
     assert_response :success
   end
+
+  test "Non-admin cannot delete other user account" do
+    assert_no_difference('User.count') do
+      get :destroy, id: 2
+    end
+  end
 end
