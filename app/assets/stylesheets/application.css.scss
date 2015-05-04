@@ -7,17 +7,17 @@
 @import "bootstrap";
 @font-face {
   font-family: 'ProximaNova';    
-   src:font-url('Proxima-Nova-Regular.otf');
-   src:font-url('Proxima-Nova-Regular.otf?#ProximaNova') format('embedded-opentype'),
-    url('Proxima-Nova-Regular.svg#proximanova') format('svg');
+   src:font-url('ProximaNova/Proxima-Nova-Regular.otf');
+   // src:font-url('Proxima-Nova-Regular.otf?#ProximaNova') format('embedded-opentype'),
+   //  url('Proxima-Nova-Regular.svg#proximanova') format('svg');
 }
 
 @font-face {
   font-family: 'Archer';
-   src:font-url('ArcherPro-Book-Pro.otf');
-   src:font-url('ArcherPro-Book-Pro.otf?#ArcherPro') format('embedded-opentype'),
-    url('ArcherPro-Book-Pro.svg#ArcherPro') format('svg'),
-    url('ArcherPro-Book.ttf') format('truetype');
+   src:font-url('Archer/ArcherPro-Book-Pro.otf'),
+   // src:font-url('ArcherPro-Book-Pro.otf?#ArcherPro') format('embedded-opentype'),
+   //  url('ArcherPro-Book-Pro.svg#ArcherPro') format('svg'),
+    url('Archer/ArcherPro-Book.ttf') format('truetype');
 }
 
 // @font-face {
