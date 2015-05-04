@@ -6,11 +6,18 @@
 		<p><b>Spots taken: </b><%= event.users.count if event.users %>/<%= event.total_spots %></p> 
 			<b>Description:</b>	
 		<p><%= event.description %></p>
-		<% if event.users.exclude?(current_user) && current_user != event.owner %>
-		  <button class="btn btn-default forum-btn"><%= link_to "Enroll", new_charge_path(event_id: event.id) %></button>
-		<% end %> 
-		<% if event.users.include?(current_user) %>
-		  <span class="btn btn-default forum-btn">You are enrolled in this event!</span>
+		<% if user_signed_in? %>
+			<% if event.users.exclude?(current_user) && current_user != event.owner %>
+			  <button class="btn btn-default forum-btn"><%= link_to "Enroll", new_charge_path(event_id: event.id) %></button> 
+			<% elsif event.users.include?(current_user) %>
+				<div class="panel panel-default post-panel">
+					<div class="panel-body post-panel-body enrolled">
+						You are enrolled in this event!
+					</div>
+				</div>
+			<% end %>
+		<% else %>
+			<%= link_to "Sign up to enroll in events!", root_url, class: "btn btn-default forum-btn" %>
 		<% end %>
 	</div>
 	<div class="col-md-5">
