@@ -1,3 +1,5 @@
+<div class='buffer'>
+</div>
 <div class='container'>
 	<div class="col-md-8 col-md-offset-2">
 		<div class='panel panel-default'>
@@ -17,7 +19,7 @@
 				<br>
 				<h4>Event Details</h4>
 				<P><b>Location: </b><%= @event.address %><p>
-				<p><b>When: </b><%= event.datetime.strftime("%B %d, %Y - %I:%M %P") %></p>
+				<p><b>When: </b><%= @event.datetime.strftime("%B %d, %Y - %I:%M %P") %></p>
 
 				<%= form_tag charges_path do %>
 				  <article>
