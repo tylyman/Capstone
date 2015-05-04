@@ -86,29 +86,39 @@
 	    <div role="tabpanel" class="tab-pane" id="tutorials">
 	    	<div class="col-md-4">
 	   	   	<div class="panel panel-default post-panel">
-			    	<div class="panel-body post-panel-body">
-	    				<a href=http://guides.rubyonrails.org/getting_started.html target="_blank"l>Getting Started with Rails</a>
+	   	   		<%= link_to "http://guides.rubyonrails.org/getting_started.html" do %>
+	   	   		<div class="panel-body post-panel-body learn-info">
+	    				Getting Started with Rails
 					  </div>
+					  <% end %>
 					</div>
 	    		<div class="panel panel-default post-panel">
-			    	<div class="panel-body post-panel-body">
-	    				<a href=https://www.railstutorial.org/book/frontmatter target="_blank">12 Chapter Rails Tutorial by Michael Hartl</a>
+	    			<%= link_to "https://www.railstutorial.org/book/frontmatter" do %>
+	    			<div class="panel-body post-panel-body learn-info">
+	    				12 Chapter Rails Tutorial by Michael Hartl
 					  </div>
+					  <% end %>
 					</div>
 	    		<div class="panel panel-default post-panel">
-			    	<div class="panel-body post-panel-body">
-		    			<a href=http://railscasts.com/ target="_blank">Rails Casts</a>
+	    			<%= link_to "http://railscasts.com/" do %>
+	    			<div class="panel-body post-panel-body learn-info">
+		    			Rails Casts
 					  </div>
+					  <% end %>
 					</div>
 		    	<div class="panel panel-default post-panel">
-			    	<div class="panel-body post-panel-body">
-		    			<a href=http://railsforzombies.org/ target="_blank">Rails for Zombies</a>
+		    		<%= link_to "http://railsforzombies.org/" do %>
+		    		<div class="panel-body post-panel-body learn-info">
+		    			Rails for Zombies
 					  </div>
+					  <% end %>
 					</div>
 		    	<div class="panel panel-default post-panel">
-			    	<div class="panel-body post-panel-body">
-		    			<a href=https://try.github.io/levels/1/challenges/1>Try Git</a>
+		    		<%= link_to "https://try.github.io/levels/1/challenges/1" do %>
+		    		<div class="panel-body post-panel-body learn-info">
+		    			Try Git
 					  </div>
+					  <% end %>
 					</div>
 				</div>
 	    </div>
@@ -139,7 +149,7 @@
 	    		
 	  		</div>
 	    </div>
-	  </div>
+	  
 	  <!--End of tab panes-->
 	</div>
 	</div>
