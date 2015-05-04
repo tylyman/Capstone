@@ -1,36 +1,4 @@
-<h1 class="learn-info">Tutorial Videos</h1>
-
-<hr class="contact-hr"><br>
-
-<div class="container video-container">
-	<div class="row">
-		<div class="col-md-8">
-			<div id="video_wrapper">
-				<iframe class="video" src="https://www.youtube.com/embed/BJEFbBxyvhI" frameborder="0" allowfullscreen></iframe>
-			</div>
-		</div>
-		<div class="col-md-4 video-description">
-			<h3 class="pull-right">Here's an easy to follow along video demonstrating how to set up Ruby on Rails on your own Mac machine. This tutorial also leads you through installing Git, Homebrew, and RVM, which are great tools that many Rails developers use on a daily basis.</h3>
-		</div>
-	</div>
-</div>
-
-<div class="container video-container">
-	<div class="row">
-		<div class="col-md-8">
-			<div id="video_wrapper">
-				<iframe class="video" src="https://www.youtube.com/embed/Gzj723LkRJY" frameborder="0" allowfullscreen></iframe>
-			</div>
-		</div>
-		<div class="col-md-4 video-description">
-			<h3 class="pull-right">This is one of the first demonstrations of Ruby on Rails by its creator, David Heinemeier Hansson(DHH for short). Here he shows how easy it can be to create a product quickly and efficiently. This video was recorded back in 2005.</h3>
-		</div>
-	</div>
-</div>
-
-<hr class="contact-hr">
-
-<h1 class="learn-info">Additional Resources</h1>
+<h1 class="learn-info">Learning Resources</h1>
 
 <hr class="contact-hr"><br>
 
@@ -53,26 +21,39 @@
 	    <div role="tabpanel" class="tab-pane active" id="courses">
 		    <div class="col-md-4">
 			    <div class="panel panel-default post-panel ">
-			    	<%= link_to "http://www.codelearn.org" do %>
+			    	<%= link_to "http://www.codelearn.org", target: '_blank' do %>
 			    	<div class="panel-body post-panel-body learn-info">
 			    		CodeLearn
 			    	</div>
 			    	<% end %>
 					</div>
 			    <div class="panel panel-default post-panel">
-			    	<div class="panel-body post-panel-body">
-			    		<a href=https://teamtreehouse.com/library/build-a-simple-ruby-on-rails-application/getting-started-with-rails/generate-a-rails-application-2 target="_blank">Treehouse</a>
+			    		<%= link_to "https://teamtreehouse.com/library/build-a-simple-ruby-on-rails-application/getting-started-with-rails/generate-a-rails-application-2", target: '_blank' do %>
+			    		<div class="panel-body post-panel-body learn-info">
+			    			Treehouse
 			   	  </div>
+			   	  <% end %>
 					</div>
 			   	<div class="panel panel-default post-panel">
-			    	<div class="panel-body post-panel-body">
-			   			<a href=http://www.codecademy.com/learn/learn-rails target="_blank">Codecademy</a>
+			    	<%= link_to "http://www.codecademy.com/learn/learn-rails", target: '_blank' do %>
+			    	<div class="panel-body post-panel-body learn-info">
+			   			Codecademy
 			   	  </div>
+			   	  <% end %>
 					</div>
 			   	<div class="panel panel-default post-panel">
-			    	<div class="panel-body post-panel-body">
-			   			<a href=http://cli.learncodethehardway.org/book/ target="_blank">Command Line Crash Course</a>
+			    	<%= link_to "http://cli.learncodethehardway.org/book/", target: '_blank' do %>
+			    	<div class="panel-body post-panel-body learn-info">
+			   			Command Line Crash Course
 					  </div>
+					  <% end %>
+					</div>
+					<div class="panel panel-default post-panel">
+			    	<%= link_to "http://www.codeavengers.com/", target: '_blank' do %>
+			    	<div class="panel-body post-panel-body learn-info">
+			   			Code Avengers
+					  </div>
+					  <% end %>
 					</div>
 			  </div>
 	    </div>
@@ -80,29 +61,39 @@
 	    <div role="tabpanel" class="tab-pane" id="tutorials">
 	    	<div class="col-md-4">
 	   	   	<div class="panel panel-default post-panel">
-			    	<div class="panel-body post-panel-body">
-	    				<a href=http://guides.rubyonrails.org/getting_started.html target="_blank"l>Getting Started with Rails</a>
+	   	   		<%= link_to "http://guides.rubyonrails.org/getting_started.html", target: '_blank' do %>
+	   	   		<div class="panel-body post-panel-body learn-info">
+	    				Getting Started with Rails
 					  </div>
+					  <% end %>
 					</div>
 	    		<div class="panel panel-default post-panel">
-			    	<div class="panel-body post-panel-body">
-	    				<a href=https://www.railstutorial.org/book/frontmatter target="_blank">12 Chapter Rails Tutorial by Michael Hartl</a>
+	    			<%= link_to "https://www.railstutorial.org/book/frontmatter", target: '_blank' do %>
+	    			<div class="panel-body post-panel-body learn-info">
+	    				12 Chapter Rails Tutorial by Michael Hartl
 					  </div>
+					  <% end %>
 					</div>
 	    		<div class="panel panel-default post-panel">
-			    	<div class="panel-body post-panel-body">
-		    			<a href=http://railscasts.com/ target="_blank">Rails Casts</a>
+	    			<%= link_to "http://railscasts.com/", target: '_blank' do %>
+	    			<div class="panel-body post-panel-body learn-info">
+		    			Rails Casts
 					  </div>
+					  <% end %>
 					</div>
 		    	<div class="panel panel-default post-panel">
-			    	<div class="panel-body post-panel-body">
-		    			<a href=http://railsforzombies.org/ target="_blank">Rails for Zombies</a>
+		    		<%= link_to "http://railsforzombies.org/", target: '_blank' do %>
+		    		<div class="panel-body post-panel-body learn-info">
+		    			Rails for Zombies
 					  </div>
+					  <% end %>
 					</div>
 		    	<div class="panel panel-default post-panel">
-			    	<div class="panel-body post-panel-body">
-		    			<a href=https://try.github.io/levels/1/challenges/1>Try Git</a>
+		    		<%= link_to "https://try.github.io/levels/1/challenges/1", target: '_blank' do %>
+		    		<div class="panel-body post-panel-body learn-info">
+		    			Try Git
 					  </div>
+					  <% end %>
 					</div>
 				</div>
 	    </div>
@@ -110,9 +101,32 @@
 	    <div role="tabpanel" class="tab-pane" id="games">
 				<div class="col-md-4">
 		    	<div class="panel panel-default post-panel">
-				    <div class="panel-body post-panel-body">
-	    				<a href=http://vim-adventures.com/>VIM Adventures</a>
+		    		<%= link_to "http://vim-adventures.com/", target: '_blank' do %>
+		    		<div class="panel-body post-panel-body learn-info">
+	    				VIM Adventures
 					  </div>
+					  <% end %>
+					</div>
+					<div class="panel panel-default post-panel">
+		    		<%= link_to "http://www.codewars.com/", target: '_blank' do %>
+		    		<div class="panel-body post-panel-body learn-info">
+	    				Codewars
+					  </div>
+					  <% end %>
+					</div>
+					<div class="panel panel-default post-panel">
+		    		<%= link_to "http://pcottle.github.io/learnGitBranching/", target: '_blank' do %>
+		    		<div class="panel-body post-panel-body learn-info">
+	    				Learn Git Branching
+					  </div>
+					  <% end %>
+					</div>
+					<div class="panel panel-default post-panel">
+		    		<%= link_to "http://codecombat.com/", target: '_blank' do %>
+		    		<div class="panel-body post-panel-body learn-info">
+	    				CodeCombat
+					  </div>
+					  <% end %>
 					</div>
 	    	</div>
 	    </div>
@@ -120,22 +134,50 @@
 	    <div role="tabpanel" class="tab-pane" id="reference">
 	    	<div class="col-md-4">
 	    		<div class="panel panel-default post-panel">
-			    	<div class="panel-body post-panel-body">
-	    				<a href=https://pragprog.com/ target="_blank">The Pragmatic Bookshelf</a>
+	    			<%= link_to "https://pragprog.com/", target: '_blank' do %>
+	    			<div class="panel-body post-panel-body learn-info">
+	    				The Pragmatic Bookshelf
 	    			</div>
+	    			<% end %>
+					</div>
+					<div class="panel panel-default post-panel">
+	    			<%= link_to "http://rubyweekly.com/", target: '_blank' do %>
+	    			<div class="panel-body post-panel-body learn-info">
+	    				Ruby Weekly
+	    			</div>
+	    			<% end %>
+					</div>
+					<div class="panel panel-default post-panel">
+	    			<%= link_to "https://news.ycombinator.com/", target: '_blank' do %>
+	    			<div class="panel-body post-panel-body learn-info">
+	    				Hacker News
+	    			</div>
+	    			<% end %>
+					</div>
+					<div class="panel panel-default post-panel">
+	    			<%= link_to "http://www.rubytapas.com/episodes?filter=free", target: '_blank' do %>
+	    			<div class="panel-body post-panel-body learn-info">
+	    				Ruby Tapas
+	    			</div>
+	    			<% end %>
 					</div>
 	  		</div>
 	    </div>
 	    <!--Video tab pane-->
 	    <div role="tabpanel" class="tab-pane" id="videosTab">
 	    	<div class="col-md-4">
-	    		
-	    		
+	    		<div id="video_wrapper">
+						<iframe class="video" src="https://www.youtube.com/embed/BJEFbBxyvhI" frameborder="0" allowfullscreen></iframe>
+					</div>
+					<br>
+					<div id="video_wrapper">
+						<iframe class="video" src="https://www.youtube.com/embed/Gzj723LkRJY" frameborder="0" allowfullscreen></iframe>
+					</div>
 	  		</div>
 	    </div>
-	  </div>
 	  <!--End of tab panes-->
-	</div>
+		</div>
 	</div>
 </div>
 
+<br class="clear">
