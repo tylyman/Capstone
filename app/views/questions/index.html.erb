@@ -31,7 +31,7 @@
 	    </div>
 	    <% if user_signed_in? %>
 		    <div role="tabpanel" class="tab-pane" id="yourPosts">
-			    <%= render partial: 'display_users_questions', locals: { :user => @current_user }%>
+			    <%= render partial: 'display_users_questions' %>
 			  </div>
 		  <% end %>
 	  </div>
