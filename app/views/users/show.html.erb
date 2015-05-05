@@ -4,7 +4,7 @@
 </div>
 <div class='container col-md-8 col-md-offset-2'>
 	<!-- Tabs -->
-	<div class="col-md-2">
+	<div class="col-md-2 col-sm-3">
 	  <ul class="nav nav-pills nav-stacked profile-pills">
 	    <li role="presentation" class="active"><a href="#info" aria-controls="home" role="tab" data-toggle="tab">Profile</a></li>
 	    <li role="presentation"><a href="#myEvents" aria-controls="My Events" role="tab" data-toggle="tab">Events</a></li>
@@ -14,7 +14,7 @@
 	<!-- Tab panes -->
 	<div class="tab-content"> 
 	  <div role="tabpanel" class="tab-pane active" id="info">	  	
-	  	<div class="panel panel-default col-md-10 profile-panel">		  	
+	  	<div class="panel panel-default col-md-10 col-sm-8 profile-panel">		  	
 		  	<div class="panel-body">	  		
 		  		<div class="panel panel-default">		  	
 				  	<div class="panel-body">
@@ -39,7 +39,7 @@
 			</div>
 		</div>
 	  <div role="tabpanel" class="tab-pane" id="myEvents">
-	  	<div class="panel panel-default col-md-10 profile-panel">
+	  	<div class="panel panel-default col-md-10 col-sm-8 profile-panel">
 		  	<div class="panel-body">
 			  	<% if @user.events.any? %>
 				  	<% @user.events.each do |event| %>
@@ -65,7 +65,7 @@
 		</div>
 
 	  <div role="tabpanel" class="tab-pane" id="transactions">
-	  	<div class="panel panel-default col-md-10 profile-panel">
+	  	<div class="panel panel-default col-md-10 col-sm-8 profile-panel">
 		  	<div class="panel-body">
 			  	<% if @user.transactions.any? %>
 				  	<% @user.transactions.each do |transaction| %>
