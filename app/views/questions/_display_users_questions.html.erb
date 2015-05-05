@@ -1,4 +1,4 @@
-<% user.questions.each do |question| %>
+<% current_user.questions.each do |question| %>
 	<%= link_to question_path(question) do %>
 		<div class='panel panel-default post-panel'>
 			<div class='panel-body post-panel-body'>
