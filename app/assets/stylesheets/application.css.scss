@@ -15,16 +15,6 @@
    src:font-url('Archer/Archer-Book-Pro.otf'),
 }
 
-// @font-face {
-//   font-family: 'Icomoon';
-//   src:url('icomoon.eot');
-//   src:url('icomoon.eot?#iefix') format('embedded-opentype'),
-//     url('icomoon.svg#icomoon') format('svg'),
-//     url('icomoon.woff') format('woff'),
-//     url('icomoon.ttf') format('truetype');
-//   font-weight: normal;
-//   font-style: normal;
-
 body,
 h1,
 h2,
@@ -392,7 +382,6 @@ width: 100%;
       color: white;
   }
 }
-
 
 .delete-button, .edit-button {
   background-color: #fb502e;
