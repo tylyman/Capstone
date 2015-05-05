@@ -47,7 +47,7 @@
 			  				<div class="panel-body">
 									<h4>Event: <%= event.title %></h4>
 									<p><b>Date: </b><%= event.datetime.strftime("%B %d, %Y - %I:%M %P") %></p>
-									<p><b>Location: </b><%= event.city %>, <%= event.state %></p>
+									<p><b>Location: </b><%= event.address %></p>
 									<p><b>Cost: </b>$<%= event.cost %></p>
 									<p><b>Spots Taken: </b><%= event.users.count %>/<%= event.total_spots %>
 								</div>
