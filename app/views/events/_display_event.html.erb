@@ -8,7 +8,9 @@
 		<p><%= event.description %></p>
 		<% if user_signed_in? %>
 			<% if event.users.exclude?(current_user) && current_user != event.owner %>
-			  <button class="btn btn-default forum-btn"><%= link_to "Enroll", new_charge_path(event_id: event.id) %></button> 
+				<%= link_to new_charge_path(event_id: event.id) do %>
+			  <button class="btn btn-default forum-btn">Enroll</button> 
+			  <% end %>
 			<% elsif event.users.include?(current_user) %>
 				<div class="panel panel-default post-panel">
 					<div class="panel-body post-panel-body enrolled">
