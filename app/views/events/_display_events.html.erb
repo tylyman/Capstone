@@ -13,18 +13,7 @@
       <p><b>Cost: </b>$<%= event.cost %></p>
 <% end %>
       <div id="edit-events-holder" class="modal-body"></div>
-      <% if user_signed_in? %>
-        <% if current_user.admin? %>
-          <span class = "edit-delete pull-right">
-            <%= link_to edit_event_path(event), remote: true do %>
-              <i class="fa fa-pencil fa-lg" data-toggle="tooltip" title="Edit"></i>
-            <% end %>       
-            &nbsp;&nbsp;
-            <%= link_to event_path(event), data: { confirm: "This action cannot be undone.  Are you sure you want to delete this event?" },  method: :delete do %>
-              <i class="fa fa-trash fa-lg" data-toggle="tooltip" title="Delete"></i>
-            <% end %>
-          </span>
-        <% end %>
-      <% end %>
+      <%= link_to "EDIT", edit_event_path(event), remote: true , class: 'btn btn-default edit-button' %>
+      <%= link_to "DELETE", event_path(event), method: :delete, class: 'btn btn-default delete-button' %>
     </div>
   </div>
