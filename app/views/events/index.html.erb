@@ -5,7 +5,10 @@
   </div> 
 </div>
 
-<%= render partial: 'event_panels', locals: {events: @events} %>
+<%= render partial: 'event_panels', locals: { events: @events } %>
 
 <%= render partial: 'events_modal' %>
+
 <%= render 'events/gmaps_scripts' %>
+
+<%= render 'events_modal' %>

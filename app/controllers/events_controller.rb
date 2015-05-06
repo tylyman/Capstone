@@ -24,7 +24,7 @@ class EventsController < ApplicationController
   end
 
   def edit
-    if current_user == @event.owner || current_user.admin?
+    if current_user.admin?
       respond_to do |format|
         format.html
         format.js
