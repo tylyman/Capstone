@@ -19,17 +19,8 @@
     </span>
   </div>
   <div id="EventsArea" >
-   <div class="buffer"></div>
-    <div id="EventsArea" >
-      <div class="row events_body_background ">
-        <div class="col-md-10 col-md-offset-2">
-          <% @events.each do |event| %> 
-            <div class="col-md-5 ">
-              <%= render partial: 'events/display_events_home', locals: {:event => event} %> 
-            </div>
-          <% end %>
-        </div>
-      </div>
+    <div class="buffer"></div>
+      <%= render partial: 'events/event_panels', locals: {events: @events} %>
     </div>
   </div>
 </div>
